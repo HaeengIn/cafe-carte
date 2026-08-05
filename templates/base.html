@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/base.css?v{{ static_version('static/css/base.css') }}">
+    {% block css %}{% endblock css %}
     <title>{{ title }}</title>
 </head>
 <body>
     <nav>
+        <a href="/">
+            <img class="nav-logo" src="/static/img/cafe-carte_logo.avif" alt="Cafe Carte Logo">
+        </a>
         <a href="/">MAIN</a>
         <a href="/members">MEMBERS</a>
         <a href="/social">MEET US</a>
