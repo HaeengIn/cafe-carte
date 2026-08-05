@@ -1,1 +1,15 @@
-/* Base CSS */
+body {
+    margin: 0;
+}
+
+nav {
+    background-color: #efeeea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+nav img {
+    height: 50px;
+}
