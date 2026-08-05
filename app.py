@@ -1,0 +1,19 @@
+from fastapi import FastAPI, Request
+from fastapi.staticfiles import StaticFiles
+
+from template_config import templates
+
+app = FastAPI(redirect_slashes=True)
+
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
+
+@app.get("/")
+async def index(request: Request):
+    title = "CAFE CARTE - Unofficial Fan Website"
+
+    context = {"title": title}
+
+    return templates.TemplateResponse(
+        request=request, context=context, name="index.html"
+    )
