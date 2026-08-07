@@ -1,5 +1,5 @@
-from fastapi import APIRouter, Request, HTTPException
-
+import sqlite3
+from fastapi import APIRouter, Request
 from template_config import templates
 
 members_router = APIRouter(prefix="/members", redirect_slashes=True)
@@ -36,10 +36,17 @@ async def member_page(request: Request, member: str):
     }
 
     if member in MEMBER_LIST:
+        conn = sqlite3.connect("static/data/members.db")
+        cursor = conn.cursor()
+
+        cursor.execute("SELECT * FROM info")
+        rows = cursor.fetchall()
+
         title = f"{MEMBER_MAP[member]} - Cafe Carte"
 
         context = {
             "title": title,
+            "items": rows
         }
 
         return templates.TemplateResponse(
@@ -47,9 +54,11 @@ async def member_page(request: Request, member: str):
         )
     else:
         title = "MEMBER NOT FOUND"
+        error = "멤버를 찾을 수 없습니다. URL을 확인해주세요."
 
         context = {
             "title": title,
+            "error": error,
         }
 
         return templates.TemplateResponse(
