@@ -20,7 +20,7 @@ async def index(request: Request):
 
 @members_router.get("/mocoparfe")
 async def mocoparfe(request: Request):
-    with open("static/data/members/mocoparfe", "r", encoding="utf-8") as f:
+    with open("static/data/members/mocoparfe.json", "r", encoding="utf-8") as f:
         data = json.load(f)
 
         title = "모코 파르페 - Cafe Carte"
@@ -34,7 +34,7 @@ async def mocoparfe(request: Request):
 
 @members_router.get("/hanseorin")
 async def hanseorin(request: Request):
-    with open("static/data/members/hanseorin", "r", encoding="utf-8") as f:
+    with open("static/data/members/hanseorin.json", "r", encoding="utf-8") as f:
         data = json.load(f)
 
         title = "한서린 - Cafe Carte"
@@ -48,7 +48,7 @@ async def hanseorin(request: Request):
 
 @members_router.get("/dangkey")
 async def dangkey(request: Request):
-    with open("static/data/members/dangkey", "r", encoding="utf-8") as f:
+    with open("static/data/members/dangkey.json", "r", encoding="utf-8") as f:
         data = json.load(f)
 
         title = "댕키 - Cafe Carte"
@@ -62,7 +62,7 @@ async def dangkey(request: Request):
 
 @members_router.get("/uuhee")
 async def uuhee(request: Request):
-    with open("static/data/members/uuhee", "r", encoding="utf-8") as f:
+    with open("static/data/members/uuhee.json", "r", encoding="utf-8") as f:
         data = json.load(f)
 
         title = "유우희 - Cafe Carte"
@@ -76,7 +76,7 @@ async def uuhee(request: Request):
 
 @members_router.get("/aerusolstice")
 async def aerusolstice(request: Request):
-    with open("static/data/members/aerusolstice", "r", encoding="utf-8") as f:
+    with open("static/data/members/aerusolstice.json", "r", encoding="utf-8") as f:
         data = json.load(f)
 
         title = "에루 솔스티스 - Cafe Carte"
