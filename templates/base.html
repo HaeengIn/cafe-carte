@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Import CSS -->
     <link rel="stylesheet" href="/static/css/base.css?v{{ static_version('static/css/base.css') }}">
     <link rel="stylesheet" href="/static/css/nav-bar.css?v{{ static_version('static/css/nav-bar.css') }}">
     {% block css %}{% endblock css %}
+
+    <!-- Import favicon -->
+    <link rel="icon" type="image/png" href="/static/favicon/favicon-96x96.png?v=20260809" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/static/favicon/favicon.svg?v=20260809">
+    <link rel="shortcut icon" href="/static/favicon/favicon.ico?v=20260809">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png?v=20260809">
+    <meta name="apple-mobile-web-app-title" content="Cafe Carte">
+    <link rel="manifest" href="/static/favicon/site.webmanifest?v=20260809">
+
     <title>{{ title }}</title>
 </head>
 <body>
