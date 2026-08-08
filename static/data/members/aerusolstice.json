@@ -1,0 +1,45 @@
+{
+    "nickname": "솔에루",
+    "age": "숙녀의 나이를 알려고 하지 마세요!",
+    "height": "167cm",
+    "birthday": "6월 3일",
+    "mbti": "NPYJ",
+    "personal-color": "#fde498",
+    "favorite": ["잠", "노래", "게임", "디저트", "뻐꾸"],
+    "good-at": ["영어", "에루어", "맛 구분하기", "멍 때리기"],
+    "dislike": ["높은 곳", "공포", "개구리", "도마뱀"],
+    "bad-at": ["기상", "집중", "답장", "잠들기"],
+    "hashtag": {
+        "when-missed": "#aerusolstice",
+        "broadcast-clip": "#aeruONLINE",
+        "fan-art": "PAINTaeru",
+        "ohsimark": "🪶✨"
+    },
+    "parents": {
+        "mama": {
+            "username": "Spe_531",
+            "url": "https://x.com/Spe_531"
+        },
+        "papa": {
+            "username": "Machi_0330",
+            "url": "https://www.machilive2d.com/ko"
+        }
+    },
+    "want-to-do": [
+        "노래 방송",
+        "요리 방송",
+        "브이로그",
+        "에루한테 알려줘",
+        "에루가 알려줄게",
+        "<에루의 남자친구가 되려면> 강의",
+        "VR 컨텐츠"
+    ],
+    "goal": [
+        "카페 카르테 굿즈",
+        "디저트 콜라보",
+        "오리지널 곡",
+        "게임 파트너 / 마케팅 행사 참여 / 실력+이름 알리기",
+        "역조공",
+        "3D 콘서트 & 팬미팅"
+    ]
+}
