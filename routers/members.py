@@ -1,4 +1,4 @@
-import sqlite3
+import json
 from fastapi import APIRouter, Request
 from template_config import templates
 
@@ -18,49 +18,72 @@ async def index(request: Request):
     )
 
 
-@members_router.get("/{member}")
-async def member_page(request: Request, member: str):
-    MEMBER_LIST = [
-        "mocoparfe",
-        "hanseorin",
-        "dangkey",
-        "uuhee",
-        "aerusolstice",
-    ]
-    MEMBER_MAP = {
-        "mocoparfe": "모코 파르페",
-        "hanseorin": "한서린",
-        "dangkey": "댕키",
-        "uuhee": "유우희",
-        "aerusolstice": "에루 솔스티스",
-    }
+@members_router.get("/mocoparfe")
+async def mocoparfe(request: Request):
+    with open("static/data/members/mocoparfe", "r", encoding="utf-8") as f:
+        data = json.load(f)
 
-    if member in MEMBER_LIST:
-        conn = sqlite3.connect("static/data/members.db")
-        cursor = conn.cursor()
-
-        cursor.execute("SELECT * FROM info")
-        rows = cursor.fetchall()
-
-        title = f"{MEMBER_MAP[member]} - Cafe Carte"
+        title = "모코 파르페 - Cafe Carte"
 
         context = {
             "title": title,
-            "items": rows
+            "rows": data
         }
 
-        return templates.TemplateResponse(
-            request=request, context=context, name="members/view.html"
-        )
-    else:
-        title = "MEMBER NOT FOUND"
-        error = "멤버를 찾을 수 없습니다. URL을 확인해주세요."
+        return templates.TemplateResponse(request=request, context=context, name="members/view/mocoparfe.html")
+
+@members_router.get("/hanseorin")
+async def hanseorin(request: Request):
+    with open("static/data/members/hanseorin", "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+        title = "한서린 - Cafe Carte"
 
         context = {
             "title": title,
-            "error": error,
+            "rows": data
         }
 
-        return templates.TemplateResponse(
-            request=request, context=context, name="404.html"
-        )
+        return templates.TemplateResponse(request=request, context=context, name="members/view/hanseorin.html")
+
+@members_router.get("/dangkey")
+async def dangkey(request: Request):
+    with open("static/data/members/dangkey", "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+        title = "댕키 - Cafe Carte"
+
+        context = {
+            "title": title,
+            "rows": data
+        }
+
+        return templates.TemplateResponse(request=request, context=context, name="members/view/dangkey.html")
+
+@members_router.get("/uuhee")
+async def uuhee(request: Request):
+    with open("static/data/members/uuhee", "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+        title = "유우희 - Cafe Carte"
+
+        context = {
+            "title": title,
+            "rows": data
+        }
+
+        return templates.TemplateResponse(request=request, context=context, name="members/view/uuhee.html")
+
+@members_router.get("/aerusolstice")
+async def aerusolstice(request: Request):
+    with open("static/data/members/aerusolstice", "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+        title = "에루 솔스티스 - Cafe Carte"
+
+        context = {
+            "title": title,
+            "rows": data
+        }
+
+        return templates.TemplateResponse(request=request, context=context, name="members/view/aerusolstice.html")
