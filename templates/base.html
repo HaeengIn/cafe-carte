@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Import CSS -->
-    <link rel="stylesheet" href="/static/css/base.css?v{{ static_version('static/css/base.css') }}">
-    <link rel="stylesheet" href="/static/css/nav-bar.css?v{{ static_version('static/css/nav-bar.css') }}">
+    <link rel="stylesheet" href="/static/css/base.css?v={{ static_version('static/css/base.css') }}">
+    <link rel="stylesheet" href="/static/css/nav-bar.css?v={{ static_version('static/css/nav-bar.css') }}">
     {% block css %}{% endblock css %}
 
     <!-- Import favicon -->
@@ -22,7 +22,7 @@
 <body>
     <nav>
         <a href="/">
-            <img class="nav-logo" src="/static/img/cafe-carte_logo.avif" alt="Cafe Carte Logo">
+            <img class="nav-logo" src="/static/img/cafe-carte_logo.avif?v=20260806" alt="Cafe Carte Logo">
         </a>
         <div class="nav-menu">
             <a href="/members">MEMBERS</a>
