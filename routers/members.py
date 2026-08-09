@@ -7,10 +7,14 @@ members_router = APIRouter(prefix="/members", redirect_slashes=True)
 
 @members_router.get("/")
 async def index(request: Request):
+    with open("static/data/members-name.json", "r", encoding="utf-8") as f:
+        data = json.load(f)
+
     title = "MEMBERS - Cafe Carte"
 
     context = {
         "title": title,
+        "items": data,
     }
 
     return templates.TemplateResponse(
@@ -27,10 +31,13 @@ async def mocoparfe(request: Request):
 
         context = {
             "title": title,
-            "rows": data
+            "rows": data,
         }
 
-        return templates.TemplateResponse(request=request, context=context, name="members/view/mocoparfe.html")
+        return templates.TemplateResponse(
+            request=request, context=context, name="members/view/mocoparfe.html"
+        )
+
 
 @members_router.get("/hanseorin")
 async def hanseorin(request: Request):
@@ -41,10 +48,13 @@ async def hanseorin(request: Request):
 
         context = {
             "title": title,
-            "rows": data
+            "rows": data,
         }
 
-        return templates.TemplateResponse(request=request, context=context, name="members/view/hanseorin.html")
+        return templates.TemplateResponse(
+            request=request, context=context, name="members/view/hanseorin.html"
+        )
+
 
 @members_router.get("/dangkey")
 async def dangkey(request: Request):
@@ -55,10 +65,13 @@ async def dangkey(request: Request):
 
         context = {
             "title": title,
-            "rows": data
+            "rows": data,
         }
 
-        return templates.TemplateResponse(request=request, context=context, name="members/view/dangkey.html")
+        return templates.TemplateResponse(
+            request=request, context=context, name="members/view/dangkey.html"
+        )
+
 
 @members_router.get("/uuhee")
 async def uuhee(request: Request):
@@ -69,10 +82,13 @@ async def uuhee(request: Request):
 
         context = {
             "title": title,
-            "rows": data
+            "rows": data,
         }
 
-        return templates.TemplateResponse(request=request, context=context, name="members/view/uuhee.html")
+        return templates.TemplateResponse(
+            request=request, context=context, name="members/view/uuhee.html"
+        )
+
 
 @members_router.get("/aerusolstice")
 async def aerusolstice(request: Request):
@@ -83,7 +99,9 @@ async def aerusolstice(request: Request):
 
         context = {
             "title": title,
-            "rows": data
+            "rows": data,
         }
 
-        return templates.TemplateResponse(request=request, context=context, name="members/view/aerusolstice.html")
+        return templates.TemplateResponse(
+            request=request, context=context, name="members/view/aerusolstice.html"
+        )
