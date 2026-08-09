@@ -4,35 +4,13 @@
 {% endblock css %}
 {% block body %}
     <div class="member-profiles">
+        {% for item in items %}
         <div class="member-profile">
-            <a href="/members/mocoparfe">
-                <img src="/static/img/members/member-profile-1.avif" alt="MocoParfe-profile">
-                <span>모코 파르페</span>
+            <a href="/member/{{ item.eng_name }}">
+                <img src="/static/img/members/{{ item.eng_name }}.avif" alt="Member Profile Image">
+                <span>{{ item.kor_name }}</span>
             </a>
         </div>
-        <div class="member-profile">
-            <a href="/members/hanseorin">
-                <img src="/static/img/members/member-profile-2.avif" alt="HanSeoRin-profile">
-                <span>한서린</span>
-            </a>
-        </div>
-        <div class="member-profile">
-            <a href="/members/dangkey">
-                <img src="/static/img/members/member-profile-3.avif" alt="DangKey-profile">
-                <span>댕키</span>
-            </a>
-        </div>
-        <div class="member-profile">
-            <a href="/members/uuhee">
-                <img src="/static/img/members/member-profile-4.avif" alt="UuHee-profile">
-                <span>유우희</span>
-            </a>
-        </div>
-        <div class="member-profile">
-            <a href="/members/aerusolstice">
-                <img src="/static/img/members/member-profile-5.avif" alt="AeruSolstice-profile">
-                <span>에루 솔스티스</span>
-            </a>
-        </div>
+        {% endfor %}
     </div>
 {% endblock body %}
