@@ -3,6 +3,7 @@ from fastapi.staticfiles import StaticFiles
 
 from routers.members import members_router
 from routers.meet_us import meet_us_router
+from routers.about import about_router
 
 from template_config import templates
 
@@ -26,3 +27,4 @@ async def index(request: Request):
 
 app.include_router(members_router)
 app.include_router(meet_us_router)
+app.include_router(about_router)
