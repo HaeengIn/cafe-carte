@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block css %}
+    <link rel="stylesheet" href="/static/css/meet-us-index.css?v={{ static_version('static/css/meet-us-index.css') }}">
+{% endblock css %}
+{% block body %}
+    <div class="members-banners">
+        {% for item in items %}
+        <div class="member-banner">
+            <img class="banner" src="/static/img/meet-us/{{ item.eng_name }}/banner.avif" alt="Member Banner Image">
+            <div class="member-links {{ item.eng_name }}">
+                <a href="{{ links[item.eng_name].youtube }}" target="_blank" rel="noopener noreferrer">
+                    <img src="/static/img/meet-us/{{ item.eng_name }}/youtube.png" alt="YouTube Link">
+                    YouTube
+                </a>
+                <a href="{{ links[item.eng_name].x }}" target="_blank" rel="noopener noreferrer">
+                    <img src="/static/img/meet-us/{{ item.eng_name }}/x.png" alt="X Link">
+                    X
+                </a>
+                <a href="{{ links[item.eng_name].chzzk }}" target="_blank" rel="noopener noreferrer">
+                    <img src="/static/img/meet-us/{{ item.eng_name }}/chzzk.png" alt="Chzzk Link">
+                    치지직
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock body %}

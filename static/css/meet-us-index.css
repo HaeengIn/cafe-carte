@@ -1,0 +1,62 @@
+.members-banners {
+    margin-top: 40px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.member-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.member-banner img.banner {
+    width: 70%;
+}
+
+.member-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.member-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    font-size: 150%;
+    text-decoration: none;
+}
+
+.member-links a img {
+    width: 20%;
+    margin: 4px;
+}
+
+.mocoparfe a {
+    color: #fba7d2;
+}
+
+.hanseorin a {
+    color: #f03c4b;
+}
+
+.dangkey a {
+    color: #ffce90;
+}
+
+.uuhee a {
+    color: #ceb4f1;
+}
+
+.aerusolstice a {
+    color: #a7cdfb;
+}
