@@ -3,22 +3,32 @@ html, body {
     padding: 0;
 }
 
-.mocoparfe a {
+.mocoparfe,
+.mocoparfe a,
+.mocoparfe span {
     color: #fba7d2;
 }
 
-.hanseorin a {
+.hanseorin,
+.hanseorin a,
+.hanseorin span {
     color: #f03c4b;
 }
 
-.dangkey a {
+.dangkey,
+.dangkey a,
+.dangkey span {
     color: #ffce90;
 }
 
-.uuhee a {
+.uuhee,
+.uuhee a,
+.uuhee span {
     color: #ceb4f1;
 }
 
-.aerusolstice a {
+.aerusolstice,
+.aerusolstice a,
+.aerusolstice span {
     color: #a7cdfb;
 }

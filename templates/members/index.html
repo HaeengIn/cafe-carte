@@ -8,7 +8,7 @@
         <div class="member-profile">
             <a href="/member/{{ item.eng_name }}">
                 <img src="/static/img/members/{{ item.eng_name }}.avif" alt="Member Profile Image">
-                <span>{{ item.kor_name }}</span>
+                <span class="{{ item.eng_name }}">{{ item.kor_name }}</span>
             </a>
         </div>
         {% endfor %}
