@@ -5,12 +5,35 @@
     "birthday": "11월 2일",
     "mbti": "CUTE",
     "ohsimark": "👻🫧",
-    "task": "마스코트",
-    "favorite": ["노래", "청소", "작고 보들보들한 것"],
-    "dislike": ["벌레", "깜짝 등장", "커다란 소리"],
-    "confident": ["게임", "빠른 계산", "기다리기"],
-    "non-confident": ["애교", "애정표현", "새로운 도전"],
-    "goal": ["오리지널 곡", "콘서트", "카페 카르테 정복!"],
+    "race": "지박령",
+    "story": "오래전부터 이고의 지박령으로 존재 해왔던 유유자적 유령 유우희. 어느 날 자고 일어나니 우희의 집에 카페가 들어와버렸다! 우유부단한 우희는 이 기회에 카페를 정복해버리기로 마음을 먹게된다.",
+    "position": "마스코트!!",
+    "debut-data": "26.05.28 (목) 17:00",
+    "favorite": [
+        "노래",
+        "청소",
+        "작고 보들보들한 것"
+    ],
+    "dislike": [
+        "벌레",
+        "깜짝 등장",
+        "커다란 소리"
+    ],
+    "confident": [
+        "게임",
+        "빠른 계산",
+        "기다리기"
+    ],
+    "non-confident": [
+        "애교",
+        "애정표현",
+        "새로운 도전"
+    ],
+    "goal": [
+        "오리지널 곡",
+        "콘서트",
+        "카페 카르테 정복!"
+    ],
     "parents": {
         "mama": {
             "username": "sake_dong",
@@ -21,5 +44,9 @@
             "url": "https://x.com/grempa_rigging"
         }
     },
-    "hashtag": ["#Uhee_daily", "Uhee_art", "Uhee_clip"]
+    "hashtag": [
+        "#Uhee_daily",
+        "Uhee_art",
+        "Uhee_clip"
+    ]
 }
