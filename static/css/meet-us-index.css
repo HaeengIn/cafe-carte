@@ -42,6 +42,26 @@
     margin: 4px;
 }
 
+@media (max-width: 480px) {
+    .members-banners {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        gap: 20px;
+    }
+
+    .member-banner img.banner {
+        width: 100%;
+    }
+
+    .member-links {
+        flex-direction: column;
+    }
+
+    .member-links a img {
+        max-width: 10%;
+    }
+}
+
 .mocoparfe a {
     color: #fba7d2;
 }
