@@ -5,10 +5,23 @@
 {% block body %}
     <p>{{ warning | safe }}</p>
     <span>
-        개발자: <a href="http://haeengin.com" target="_blank" rel="noopener noreferrer">{{ developer_username }}</a>
-        문의 및 연락: <a href="mailto:{{ developer_contact }}" target="_blank" rel="noopener noreferrer">{{ developer_contact }}</a>
-    </span>
-    <span>
-        GitHub 리포지토리 URL: <a href="{{ github_url }}" target="_blank" rel="noopener noreferrer">{{ github_url }}</a>
+        <b>
+            [개발자]
+        </b>
+        <a href="http://haeengin.com" target="_blank" rel="noopener noreferrer">
+            {{ developer_username }}
+        </a>
+        <b>
+            [문의 및 연락]
+        </b>
+        <a href="mailto:{{ developer_contact }}" target="_blank" rel="noopener noreferrer">
+            {{ developer_contact }}
+        </a>
+        <b>
+            [GitHub 리포지토리 URL]
+        </b>
+        <a href="{{ github_url }}" target="_blank" rel="noopener noreferrer">
+            {{ github_url }}
+        </a>
     </span>
 {% endblock body %}
