@@ -10,7 +10,7 @@
     max-width: 30%;
 }
 
-.profile span {
+.profile span.info {
     margin: 40px;
     display: flex;
     flex-direction: column;
@@ -27,4 +27,11 @@
 
 .profile span p {
     font-size: 50%;
+}
+
+.profile span.debut-date {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    align-self: flex-end;
 }
