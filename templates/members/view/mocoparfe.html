@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block css %}
+    <link rel="stylesheet" href="/static/css/members/mocoparfe.css?v={{ static_version('static/css/members/mocoparfe.css') }}">
+{% endblock css %}
+{% block body %}
+    <div class="profile">
+        <span>
+            <b>모코 파르페</b>
+            <small>Moco Parfe</small>
+            <p>{{ rows.story | safe }}</p>
+        </span>
+        <span class="debut-date">
+            {{ debut_date }}
+        </span>
+        <img src="/static/img/members/mocoparfe/portrait.webp" alt="Portrait Image">
+    </div>
+{% endblock body %}

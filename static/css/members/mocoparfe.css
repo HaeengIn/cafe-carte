@@ -1,0 +1,30 @@
+@import url(/static/css/font.css?v=20260810);
+
+.profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.profile img {
+    max-width: 30%;
+}
+
+.profile span {
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    font-size: 300%;
+}
+
+.profile span b {
+    font-family: var(--font-Heavy);
+}
+
+.profile span small {
+    font-family: var(--font-Bold);
+}
+
+.profile span p {
+    font-size: 50%;
+}
