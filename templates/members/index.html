@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% block css %}
-    <link rel="stylesheet" href="/static/css/members-index.css?v={{ static_version('static/css/members-index.css') }}">
+    <link rel="stylesheet" href="/static/css/members/index.css?v={{ static_version('static/css/members/index.css') }}">
 {% endblock css %}
 {% block body %}
     <div class="member-profiles">
         {% for item in items %}
         <div class="member-profile">
-            <a href="/member/{{ item.eng_name }}">
-                <img src="/static/img/members/{{ item.eng_name }}.avif" alt="Member Profile Image">
+            <a href="/members/{{ item.eng_name }}">
+                <img src="/static/img/members/{{ item.eng_name }}/profile.avif" alt="Member Profile Image">
                 <span class="{{ item.eng_name }}">{{ item.kor_name }}</span>
             </a>
         </div>
