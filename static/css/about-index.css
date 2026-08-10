@@ -1,0 +1,42 @@
+body {
+    line-height: 1.6;
+    word-break: keep-all;
+}
+
+p, span {
+    text-align: center;
+}
+
+p {
+    font-size: 150%;
+    color: #ff4a4a;
+}
+
+a {
+    text-decoration: none;
+    color: #3e7766;
+}
+
+a:visited {
+    color: #3e7766;
+}
+
+span {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+span a {
+    font-size: 150%;
+}
+
+@media (max-width: 480px) {
+    p {
+        font-size: 100%;
+    }
+
+    span a {
+        font-size: 110%;
+    }
+}
