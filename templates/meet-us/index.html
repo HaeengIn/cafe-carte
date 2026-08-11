@@ -8,15 +8,15 @@
         <div class="member-banner">
             <img class="banner" src="/static/img/meet-us/{{ item.eng_name }}/banner.avif" alt="Member Banner Image">
             <div class="member-links {{ item.eng_name }}">
-                <a href="{{ links[item.eng_name].youtube }}" target="_blank" rel="noopener noreferrer">
+                <a class="{{ item.eng_name }}" href="{{ links[item.eng_name].youtube }}" target="_blank" rel="noopener noreferrer">
                     <img src="/static/img/meet-us/{{ item.eng_name }}/youtube.png" alt="YouTube Link">
                     YouTube
                 </a>
-                <a href="{{ links[item.eng_name].x }}" target="_blank" rel="noopener noreferrer">
+                <a class="{{ item.eng_name }}" href="{{ links[item.eng_name].x }}" target="_blank" rel="noopener noreferrer">
                     <img src="/static/img/meet-us/{{ item.eng_name }}/x.png" alt="X Link">
                     X
                 </a>
-                <a href="{{ links[item.eng_name].chzzk }}" target="_blank" rel="noopener noreferrer">
+                <a class="{{ item.eng_name }}" href="{{ links[item.eng_name].chzzk }}" target="_blank" rel="noopener noreferrer">
                     <img src="/static/img/meet-us/{{ item.eng_name }}/chzzk.png" alt="Chzzk Link">
                     치지직
                 </a>

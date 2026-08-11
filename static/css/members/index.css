@@ -1,3 +1,5 @@
+@import url(/static/css/variables.css?v=20260812);
+
 .member-profiles {
     margin-top: 40px;
     margin-bottom: 40px;
@@ -31,4 +33,24 @@
         margin-bottom: 20px;
         gap: 20px;
     }
+}
+
+.mocoparfe {
+    color: var(--mocoparfe);
+}
+
+.hanseorin {
+    color: var(--hanseorin);
+}
+
+.dangkey {
+    color: var(--dangkey);
+}
+
+.uuhee {
+    color: var(--uuhee);
+}
+
+.aerusolstice {
+    color: var(--aerusolstice);
 }
