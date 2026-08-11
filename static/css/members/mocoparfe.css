@@ -1,13 +1,10 @@
 @import url(/static/css/font.css?v=20260810);
+@import url(/static/css/variables.css?v=202620812);
 
 .profile {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-}
-
-.profile img {
-    max-width: 30%;
 }
 
 .profile span.info {
@@ -29,9 +26,41 @@
     font-size: 50%;
 }
 
+.image-wrapper {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.image-wrapper img {
+    max-width: 450px;
+    width: 100%;
+    height: auto;
+
+    /* Image gradient mask */
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 20%
+    );
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 20%
+    );
+}
+
 .profile span.debut-date {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    align-self: flex-end;
+    white-space: nowrap;
+}
+
+.profile span.position {
+    font-size: 70%;
+}
+
+.profile span.position b {
+    color: var(--mocoparfe);
 }
