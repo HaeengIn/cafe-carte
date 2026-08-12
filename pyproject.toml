@@ -8,3 +8,6 @@ dependencies = [
     "fastapi[standard]>=0.141.1",
     "uvicorn[standard]>=0.52.1",
 ]
+
+[tool.ruff.lint]
+ignore = ["I001"]
