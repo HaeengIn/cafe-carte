@@ -5,27 +5,41 @@
 {% block body %}
     <div class="profile">
         <span class="info">
-            <b>
-                모코 파르페
-            </b>
-            <small>
-                Moco Parfe
-            </small>
-            <p>
-                {{ rows.story | safe }}
-            </p>
+            <p>{{ rows.race }}</p>
+            <b>모코 파르페</b>
+            <small>Moco Parfe</small>
+            <p>{{ rows.story | safe }}</p>
             <span class="position">
                 <b>「{{ rows.position }}」</b> of Cafe Carte
             </span>
         </span>
         <div class="image-wrapper">
             <span class="debut-date">
-                <span>
-                    [ 데뷔일 ]
-                </span>
+                <span>[ 데뷔일 ]</span>
                 {{ rows.debut_date }}
             </span>
             <img src="/static/img/members/mocoparfe/portrait.webp" alt="Portrait Image">
         </div>
+    </div>
+    <div class="detail">
+        <span class="info">
+            <span><b>나이</b>: {{ rows.age }}</span>
+            <span><b>키</b>: {{ rows.height }}</span>
+            <span><b>몸무게</b>: {{ rows.weight }}</span>
+            <span><b>생일</b>: {{ rows.birthday }}</span>
+            <span><b>MBTI</b>: {{ rows.mbti }}</span>
+        </span>
+        <span class="favorite-song">
+            <b>[ 좋아하는 노래 ]</b>
+            {% for song in rows.favorite_song %}
+                <span>{{ song }}</span>
+            {% endfor %}
+        </span>
+        <span class="hobby">
+            <b>[ 취미 ]</b>
+            {% for hobby in rows.favorite_hobby %}
+                <span>{{ hobby }}</span>
+            {% endfor %}
+        </span>
     </div>
 {% endblock body %}

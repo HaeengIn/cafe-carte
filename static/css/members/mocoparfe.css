@@ -14,6 +14,10 @@
     font-size: 300%;
 }
 
+.profile span.info p {
+    margin: 0;
+}
+
 .profile span b {
     font-family: var(--font-Heavy);
 }
@@ -63,4 +67,31 @@
 
 .profile span.position b {
     color: var(--mocoparfe);
+}
+
+.detail {
+    padding: 10px 0 10px 0;
+    background-color: #efeeea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 150%;
+}
+
+.detail span.info {
+    margin: 0 40px 0 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.detail span.favorite-song {
+    margin: 0 40px 0 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.detail span.hobby {
+    margin: 0 40px 0 40px;
+    display: flex;
+    flex-direction: column;
 }
