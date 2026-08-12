@@ -36,10 +36,14 @@
             {% endfor %}
         </span>
         <span class="hobby">
-            <b>[ 취미 ]</b>
+            <b>[ 좋아하는 것 ]</b>
             {% for hobby in rows.favorite_hobby %}
                 <span>{{ hobby }}</span>
             {% endfor %}
+        </span>
+        <span class="favorite-real">
+            {% for favorite in rows.favorite_real %}
+                <span>{{ favorite }}</span>
         </span>
     </div>
 {% endblock body %}
