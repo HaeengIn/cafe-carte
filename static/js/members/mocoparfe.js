@@ -10,10 +10,10 @@ fetch("/static/data/members/mocoparfe.json")
                 datasets: [{
                     data: percentage.map(item => item.value),
                     backgroundColor: [
-                        "#f03c4b",
-                        "#ffce90",
-                        "#ceb4f1",
-                        "#a7cdfb",
+                        "#fba7d2",
+                        "#ffaabe",
+                        "#ffb4a3",
+                        "#ffc687",
                     ]
                 }]
             },
