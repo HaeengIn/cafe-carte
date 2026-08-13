@@ -56,8 +56,40 @@
         </details>
     </div>
     <div class="contents">
-        <div class="percentage">
+        <div class="content-info">
+            <b>[ 콘텐츠 ]</b>
+    
+            <div class="content-detail">
+                <div class="percentage">
+                    {% for content_label in rows.contents.percentage %}
+                        <span>{{ content_label.label }}: {{ content_label.value }}%</span>
+                    {% endfor %}
+                </div>
+    
+                <div class="non-percentage">
+                    <span class="content-name">{{ rows.contents.non_percentage.name_1 }}</span>
+                    <span class="content-detail">{{ rows.contents.non_percentage.detail_1 }}</span>
+                    <span class="content-name">{{ rows.contents.non_percentage.name_2 }}</span>
+                    <span class="content-detail">{{ rows.contents.non_percentage.detail_2 }}</span>
+                </div>
+            </div>
+        </div>
+    
+        <div class="percentageChart">
             <canvas id="percentageChart"></canvas>
+        </div>
+    </div>
+    <div class="skills">
+        <span><b>[ 스킬 ]</b></span>
+        <div class="skill-lists">
+            <div class="skill-detail-container">
+                <span><b>{{ rows.skill.name_1 }}</b></span>
+                <span class="skill-detail">{{ rows.skill.detail_1 | safe }}</span>
+            </div>
+            <div class="skill-detail-container">
+                <span><b>{{ rows.skill.name_2 }}</b></span>
+                <span class="skill-detail">{{ rows.skill.detail_2 | safe }}</span>
+            </div>
         </div>
     </div>
 {% endblock body %}

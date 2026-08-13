@@ -124,16 +124,65 @@ summary::-webkit-details-marker {
 
 .contents {
     padding-top: 10px;
-    margin: 0 40px 0 40px;
+    margin: 0 40px;
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
+}
+
+.contents .content-info {
+    font-size: 200%;
+}
+
+.contents .content-detail {
+    display: flex;
+    align-items: center;
+    gap: 200px;
+    margin-top: 10px;
 }
 
 .contents .percentage {
-    width: 30%;
+    display: flex;
+    flex-direction: column;
 }
 
-.contents .percentage canvas {
+.contents .non-percentage {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.contents .non-percentage .content-detail {
+    font-size: 70%;
+}
+
+.contents .percentageChart {
+    width: 30%;
+    margin-left: auto;
+}
+
+.contents .percentageChart canvas {
     display: block;
     width: 100% !important;
+}
+
+.skills {
+    padding: 10px;
+    background-color: #efeeea;
+    font-size: 200%;
+    text-align: center;
+}
+
+.skills .skill-lists {
+    display: flex;
+    align-items: flex-start;
+}
+
+.skills .skill-lists .skill-detail-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.skills .skill-lists .skill-detail-container span.skill-detail {
+    font-size: 80%;
 }
