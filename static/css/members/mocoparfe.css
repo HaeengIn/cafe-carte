@@ -70,28 +70,70 @@
 }
 
 .detail {
-    padding: 10px 0 10px 0;
+    padding: 10px 0;
     background-color: #efeeea;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-size: 150%;
 }
 
+.detail-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .detail span.info {
-    margin: 0 40px 0 40px;
+    margin: 0 40px;
     display: flex;
     flex-direction: column;
 }
 
 .detail span.favorite-song {
-    margin: 0 40px 0 40px;
+    margin: 0 40px;
     display: flex;
     flex-direction: column;
 }
 
 .detail span.hobby {
-    margin: 0 40px 0 40px;
+    margin: 0 40px;
     display: flex;
     flex-direction: column;
+}
+
+.detail details {
+    width: fit-content;
+    margin: 10px auto 0;
+}
+
+.detail summary {
+    list-style: none;
+    text-align: center;
+}
+
+/* Delete markfer of <details> for Safari */
+summary::-webkit-details-marker {
+    display: none;
+}
+
+.detail details div.favorite-real-contents {
+    margin: 0 40px 0 40px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.contents {
+    padding-top: 10px;
+    margin: 0 40px 0 40px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.contents .percentage {
+    width: 30%;
+}
+
+.contents .percentage canvas {
+    display: block;
+    width: 100% !important;
 }

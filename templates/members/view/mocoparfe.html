@@ -22,28 +22,46 @@
         </div>
     </div>
     <div class="detail">
-        <span class="info">
-            <span><b>나이</b>: {{ rows.age }}</span>
-            <span><b>키</b>: {{ rows.height }}</span>
-            <span><b>몸무게</b>: {{ rows.weight }}</span>
-            <span><b>생일</b>: {{ rows.birthday }}</span>
-            <span><b>MBTI</b>: {{ rows.mbti }}</span>
-        </span>
-        <span class="favorite-song">
-            <b>[ 좋아하는 노래 ]</b>
-            {% for song in rows.favorite_song %}
-                <span>{{ song }}</span>
-            {% endfor %}
-        </span>
-        <span class="hobby">
-            <b>[ 좋아하는 것 ]</b>
-            {% for hobby in rows.favorite_hobby %}
-                <span>{{ hobby }}</span>
-            {% endfor %}
-        </span>
-        <span class="favorite-real">
-            {% for favorite in rows.favorite_real %}
-                <span>{{ favorite }}</span>
-        </span>
+        <div class="detail-main">
+            <span class="info">
+                <span><b>나이</b>: {{ rows.age }}</span>
+                <span><b>키</b>: {{ rows.height }}</span>
+                <span><b>몸무게</b>: {{ rows.weight }}</span>
+                <span><b>생일</b>: {{ rows.birthday }}</span>
+                <span><b>MBTI</b>: {{ rows.mbti }}</span>
+            </span>
+            <span class="favorite-song">
+                <b>[ 좋아하는 노래 ]</b>
+                {% for song in rows.favorite_song %}
+                    <span>{{ song }}</span>
+                {% endfor %}
+            </span>
+            <span class="hobby">
+                <b>[ 좋아하는 것 ]</b>
+                {% for hobby in rows.favorite_hobby %}
+                    <span>{{ hobby }}</span>
+                {% endfor %}
+            </span>
+        </div>
+        <details>
+            <summary class="favorite-real">[ 빨간약 먹기 ]</summary>
+            <div class="favorite-real-contents">
+                <span><b>[ 좋아하는 것 (찐) ]</b></span>
+                <span>
+                    {% for favorite in rows.favorite_real %}
+                        <span>{{ favorite }}</span>
+                    {% endfor %}
+                </span>
+            </div>
+        </details>
+    </div>
+    <div class="contents">
+        <div class="percentage">
+            <canvas id="percentageChart"></canvas>
+        </div>
     </div>
 {% endblock body %}
+{% block script %}
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/static/js/members/mocoparfe.js?v={{ static_version('static/js/members/mocoparfe.js') }}"></script>
+{% endblock script %}
