@@ -137,7 +137,6 @@ summary::-webkit-details-marker {
     display: flex;
     align-items: center;
     gap: 200px;
-    margin-top: 10px;
 }
 
 .contents .percentage {
