@@ -5,7 +5,7 @@ from template_config import templates
 about_router = APIRouter(prefix="/about", redirect_slashes=True)
 
 
-@about_router.get("/")
+@about_router.get("")
 async def index(request: Request):
     title = "ABOUT - Cafe Carte"
 

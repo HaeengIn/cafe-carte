@@ -5,7 +5,7 @@ from template_config import templates
 meet_us_router = APIRouter(prefix="/meet-us", redirect_slashes=True)
 
 
-@meet_us_router.get("/")
+@meet_us_router.get("")
 async def index(request: Request):
     with open("static/data/members-name.json", "r", encoding="utf-8") as f:
         items = json.load(f)
