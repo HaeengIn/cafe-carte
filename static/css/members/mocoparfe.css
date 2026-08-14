@@ -185,3 +185,38 @@ summary::-webkit-details-marker {
 .skills .skill-lists .skill-detail-container span.skill-detail {
     font-size: 80%;
 }
+
+.parents {
+    margin: 0 40px;
+    padding: 10px 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.parents .role {
+    font-size: 150%;
+}
+
+.parents img {
+    width: 70%;
+}
+
+.parents a {
+    text-decoration: none;
+    color: var(--cafe-carte);
+}
+
+.mama {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.papa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}

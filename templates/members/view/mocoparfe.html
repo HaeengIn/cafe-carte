@@ -92,6 +92,16 @@
             </div>
         </div>
     </div>
+    <div class="parents">
+        {% for parent, item in rows.parents.items() %}
+            <div class="{{ parent }}">
+                <span class="role"><b>[ {{ item.role }} ]</b></span>
+                <img src="/static/img/parents/{{ item.username }}.avif" alt="{{ item.username }}-Profile-Image">
+                <span>@{{ item.username }}</span>
+                <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.url }}</a>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock body %}
 {% block script %}
     <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
