@@ -228,3 +228,114 @@ summary::-webkit-details-marker {
 .mocoparfe {
     color: var(--mocoparfe);
 }
+
+@media (max-width: 768px) {
+    .profile {
+        flex-direction: column;
+    }
+
+    .profile span.info {
+        margin: 20px;
+        font-size: 220%;
+        text-align: center;
+    }
+
+    .image-wrapper {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .image-wrapper .debut-date {
+        order: -1;
+        align-items: center !important;
+        text-align: center;
+    }
+
+    .image-wrapper .debut-date > span {
+        width: 100%;
+        text-align: center;
+    }
+
+    .image-wrapper img {
+        max-width: 100%;
+    }
+
+    .detail-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .detail span.info,
+    .detail span.favorite-song,
+    .detail span.hobby {
+        margin: 10px 20px;
+        text-align: center;
+    }
+
+    .contents {
+        margin: 0 20px;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .contents .content-info {
+        font-size: 150%;
+        text-align: center;
+    }
+
+    .contents .content-detail {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .contents .percentage,
+    .contents .non-percentage {
+        width: 100%;
+    }
+
+    .contents .percentageChart {
+        width: 100%;
+        max-width: 350px;
+        margin: 20px auto 0;
+        margin-bottom: 10px;
+    }
+
+    .skills {
+        font-size: 150%;
+    }
+
+    .skills .skill-lists {
+        flex-direction: column;
+    }
+
+    .skills .skill-lists .skill-detail-container {
+        width: 100%;
+    }
+
+    .parents {
+        margin: 0 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mama,
+    .papa {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .profile-image img {
+        width: min(70%, 250px);
+    }
+
+    .parents > div {
+        min-width: 0;
+    }
+
+    .parents a {
+        overflow-wrap: anywhere;
+    }
+}
