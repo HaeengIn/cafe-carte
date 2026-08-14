@@ -6,8 +6,8 @@
     <div class="profile">
         <span class="info">
             <p>{{ rows.race }}</p>
-            <b>모코 파르페</b>
-            <small>Moco Parfe</small>
+            <b class="mocoparfe">모코 파르페</b>
+            <small class="mocoparfe">Moco Parfe</small>
             <p>{{ rows.story | safe }}</p>
             <span class="position">
                 <b>「{{ rows.position }}」</b> of Cafe Carte
@@ -16,7 +16,7 @@
         <div class="image-wrapper">
             <span class="debut-date">
                 <span>[ 데뷔일 ]</span>
-                {{ rows.debut_date }}
+                <span>{{ rows.debut_date }} on CHZZK</span>
             </span>
             <img src="/static/img/members/mocoparfe/portrait.webp" alt="Portrait Image">
         </div>
@@ -96,7 +96,9 @@
         {% for parent, item in rows.parents.items() %}
             <div class="{{ parent }}">
                 <span class="role"><b>[ {{ item.role }} ]</b></span>
-                <img src="/static/img/parents/{{ item.username }}.avif" alt="{{ item.username }}-Profile-Image">
+                <a class="profile-image" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">
+                    <img src="/static/img/parents/{{ item.username }}.avif" alt="{{ item.username }}-Profile-Image">
+                </a>
                 <span>@{{ item.username }}</span>
                 <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.url }}</a>
             </div>

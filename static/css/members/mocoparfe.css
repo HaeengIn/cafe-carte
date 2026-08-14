@@ -107,6 +107,7 @@
 .detail summary {
     list-style: none;
     text-align: center;
+    cursor: pointer;
 }
 
 /* Delete markfer of <details> for Safari */
@@ -198,25 +199,32 @@ summary::-webkit-details-marker {
     font-size: 150%;
 }
 
-.parents img {
-    width: 70%;
-}
-
 .parents a {
     text-decoration: none;
     color: var(--cafe-carte);
 }
 
-.mama {
+.profile-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-image img {
+    width: 70%;
+    aspect-ratio: 1;
+    display: block;
+    object-fit: cover;
+    border-radius: 30%;
+}
+
+.mama, .papa {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 12px;
 }
 
-.papa {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
+.mocoparfe {
+    color: var(--mocoparfe);
 }
