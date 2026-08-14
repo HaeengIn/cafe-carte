@@ -85,10 +85,12 @@
     },
     "parents": {
         "mama": {
+            "role": "마마",
             "username": "atwomaru",
             "url": "https://x.com/atwomaru"
         },
         "papa": {
+            "role": "파파",
             "username": "dohaonya",
             "url": "https://dohaonyakr.carrd.co/"
         }
