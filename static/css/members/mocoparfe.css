@@ -125,17 +125,20 @@
     cursor: pointer;
 }
 
-/* Delete markfer of <details> for Safari */
-summary::-webkit-details-marker {
+.detail summary::-webkit-details-marker {
     display: none;
 }
 
 .detail details div.favorite-real-contents {
-    margin: 0 40px 0 40px;
+    margin: 0 40px;
     text-align: center;
 
     display: flex;
     flex-direction: column;
+
+    overflow: hidden;
+    height: 0;
+    transition: height 0.4s ease;
 }
 
 .contents {

@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
 {% block css %}
     <link rel="stylesheet" href="/static/css/members/mocoparfe.css?v={{ static_version('static/css/members/mocoparfe.css') }}">
+    <link rel="stylesheet" href="/static/css/scroll-animation.css?v={{ static_version('static/css/scroll-animation.css') }}">
 {% endblock css %}
 {% block body %}
     <div class="profile">
-        <span class="info">
+        <span class="info fade-right">
             <p>{{ rows.race }}</p>
             <h1 class="mocoparfe">모코 파르페</h1>
             <small class="mocoparfe">Moco Parfe</small>
@@ -14,15 +15,15 @@
             </span>
         </span>
         <div class="image-wrapper">
-            <span class="debut-date">
+            <span class="debut-date fade-left">
                 <span>[ 데뷔일 ]</span>
                 <span>{{ rows.debut_date }} on <a class="chzzk" href="{{ rows.chzzk }}" target="_blank" rel="noopener noreferrer">CHZZK</a></span>
             </span>
-            <img loading="lazy" decoding="async" src="/static/img/members/mocoparfe/portrait.webp" alt="MocoParfe-Profile-Image">
+            <img class="fade-left" loading="lazy" decoding="async" src="/static/img/members/mocoparfe/portrait.webp" alt="MocoParfe-Profile-Image">
         </div>
     </div>
     <div class="detail">
-        <div class="detail-main">
+        <div class="detail-main fade-down">
             <span class="info">
                 <span><b>나이</b>: {{ rows.age }}</span>
                 <span><b>키</b>: {{ rows.height }}</span>
@@ -44,21 +45,22 @@
             </span>
         </div>
         <details>
-            <summary class="favorite-real">[ 빨간약 먹기 ]</summary>
+            <summary class="favorite-real fade-down">[ 빨간약 먹기 ]</summary>
             <div class="favorite-real-contents">
-                <span><b>[ 좋아하는 것 (찐) ]</b></span>
-                <span>
-                    {% for favorite in rows.favorite_real %}
-                        <span>{{ favorite }}</span>
-                    {% endfor %}
-                </span>
+                <div>
+                    <span><b>[ 좋아하는 것 (찐) ]</b></span>
+                    <span>
+                        {% for favorite in rows.favorite_real %}
+                            <span>{{ favorite }}</span>
+                        {% endfor %}
+                    </span>
+                </div>
             </div>
         </details>
     </div>
     <div class="contents">
-        <div class="content-info">
+        <div class="content-info fade-right">
             <b>[ 콘텐츠 ]</b>
-    
             <div class="content-detail">
                 <div class="percentage">
                     {% for content_label in rows.contents.percentage %}
@@ -73,12 +75,11 @@
                 </div>
             </div>
         </div>
-    
         <div class="percentageChart">
-            <canvas id="percentageChart"></canvas>
+            <canvas class="fade-left" id="percentageChart"></canvas>
         </div>
     </div>
-    <div class="skills">
+    <div class="skills fade-down">
         <span><b>[ 스킬 ]</b></span>
         <div class="skill-lists">
             {% for skill in rows.skills %}
@@ -90,19 +91,27 @@
         </div>
     </div>
     <div class="parents">
-        {% for parent, item in rows.parents.items() %}
-            <div class="{{ parent }}">
-                <span class="role"><b>[ {{ item.role }} ]</b></span>
-                <a class="profile-image" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">
-                    <img loading="lazy" decoding="async" src="/static/img/parents/{{ item.username }}.avif?v=20260815" alt="{{ item.username }}-Profile-Image">
-                </a>
-                <span>@{{ item.username }}</span>
-                <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.url }}</a>
-            </div>
-        {% endfor %}
+        <div class="mama fade-right">
+            <span class="role"><b>[ {{ rows.parents.mama.role }} ]</b></span>
+            <a class="profile-image" href="{{ rows.parents.mama.url }}" target="_blank" rel="noopener noreferrer">
+                <img loading="lazy" decoding="async" src="/static/img/parents/{{ rows.parents.mama.username }}.avif?v=20260815" alt="{{ rows.parents.mama.username }}-Profile-Image">
+            </a>
+            <span>@{{ rows.parents.mama.username }}</span>
+            <a href="{{ rows.parents.mama.url }}" target="_blank" rel="noopener noreferrer">{{ rows.parents.mama.url }}</a>
+        </div>
+        <div class="papa fade-left">
+            <span class="role"><b>[ {{ rows.parents.papa.role }} ]</b></span>
+            <a class="profile-image" href="{{ rows.parents.papa.url }}" target="_blank" rel="noopener noreferrer">
+                <img loading="lazy" decoding="async" src="/static/img/parents/{{ rows.parents.papa.username }}.avif?v=20260815" alt="{{ rows.parents.papa.username }}-Profile-Image">
+            </a>
+            <span>@{{ rows.parents.papa.username }}</span>
+            <a href="{{ rows.parents.papa.url }}" target="_blank" rel="noopener noreferrer">{{ rows.parents.papa.url }}</a>
+        </div>
     </div>
 {% endblock body %}
 {% block script %}
+    <script defer src="/static/js/scroll-animation.js?v={{ static_version('static/js/scroll-animation.js') }}"></script>
+    <script defer src="/static/js/members/details.js?v={{ static_version('static/js/members/details.js') }}"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script defer src="/static/js/members/mocoparfe.js?v={{ static_version('static/js/members/mocoparfe.js') }}"></script>
+    <script defer src="/static/js/members/mocoparfe/mocoparfe.js?v={{ static_version('static/js/members/mocoparfe/mocoparfe.js') }}"></script>
 {% endblock script %}
