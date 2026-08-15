@@ -6,7 +6,7 @@
     <div class="profile">
         <span class="info">
             <p>{{ rows.race }}</p>
-            <b class="mocoparfe">모코 파르페</b>
+            <h1 class="mocoparfe">모코 파르페</h1>
             <small class="mocoparfe">Moco Parfe</small>
             <p>{{ rows.story | safe }}</p>
             <span class="position">
@@ -16,9 +16,9 @@
         <div class="image-wrapper">
             <span class="debut-date">
                 <span>[ 데뷔일 ]</span>
-                <span>{{ rows.debut_date }} on CHZZK</span>
+                <span>{{ rows.debut_date }} on <a class="chzzk" href="{{ rows.chzzk }}" target="_blank" rel="noopener noreferrer">CHZZK</a></span>
             </span>
-            <img src="/static/img/members/mocoparfe/portrait.webp" alt="Portrait Image">
+            <img loading="lazy" decoding="async" src="/static/img/members/mocoparfe/portrait.webp" alt="MocoParfe-Profile-Image">
         </div>
     </div>
     <div class="detail">
@@ -65,12 +65,11 @@
                         <span>{{ content_label.label }}: {{ content_label.value }}%</span>
                     {% endfor %}
                 </div>
-    
                 <div class="non-percentage">
-                    <span class="content-name">{{ rows.contents.non_percentage.name_1 }}</span>
-                    <span class="content-detail">{{ rows.contents.non_percentage.detail_1 }}</span>
-                    <span class="content-name">{{ rows.contents.non_percentage.name_2 }}</span>
-                    <span class="content-detail">{{ rows.contents.non_percentage.detail_2 }}</span>
+                    {% for content in rows.contents.non_percentage %}
+                        <span class="content-name">{{ content.name }}</span>
+                        <span class="content-value">{{ content.detail }}</span>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -82,14 +81,12 @@
     <div class="skills">
         <span><b>[ 스킬 ]</b></span>
         <div class="skill-lists">
-            <div class="skill-detail-container">
-                <span><b>{{ rows.skill.name_1 }}</b></span>
-                <span class="skill-detail">{{ rows.skill.detail_1 | safe }}</span>
-            </div>
-            <div class="skill-detail-container">
-                <span><b>{{ rows.skill.name_2 }}</b></span>
-                <span class="skill-detail">{{ rows.skill.detail_2 | safe }}</span>
-            </div>
+            {% for skill in rows.skills %}
+                <div class="skill">
+                    <b>{{ skill.name }}</b>
+                    <span>{{ skill.detail | safe }}</span>
+                </div>
+            {% endfor %}
         </div>
     </div>
     <div class="parents">
@@ -97,7 +94,7 @@
             <div class="{{ parent }}">
                 <span class="role"><b>[ {{ item.role }} ]</b></span>
                 <a class="profile-image" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">
-                    <img src="/static/img/parents/{{ item.username }}.avif?v=20260815" alt="{{ item.username }}-Profile-Image">
+                    <img loading="lazy" decoding="async" src="/static/img/parents/{{ item.username }}.avif?v=20260815" alt="{{ item.username }}-Profile-Image">
                 </a>
                 <span>@{{ item.username }}</span>
                 <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.url }}</a>
@@ -107,5 +104,5 @@
 {% endblock body %}
 {% block script %}
     <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="/static/js/members/mocoparfe.js?v={{ static_version('static/js/members/mocoparfe.js') }}"></script>
+    <script defer src="/static/js/members/mocoparfe.js?v={{ static_version('static/js/members/mocoparfe.js') }}"></script>
 {% endblock script %}
