@@ -1,5 +1,8 @@
+from pathlib import Path
+
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 
 from routers.members import members_router
 from routers.meet_us import meet_us_router
@@ -9,7 +12,13 @@ from template_config import templates
 
 app = FastAPI(redirect_slashes=True)
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount(
+    "/static",
+    StaticFiles(directory="static"),
+    name="static",
+)
+
+SITEMAP = Path(__file__).parent / "sitemap.xml"
 
 
 @app.get("/")
@@ -21,7 +30,17 @@ async def index(request: Request):
     }
 
     return templates.TemplateResponse(
-        request=request, context=context, name="index.html"
+        request=request,
+        context=context,
+        name="index.html",
+    )
+
+
+@app.get("/sitemap.xml", include_in_schema=False)
+async def sitemap():
+    return FileResponse(
+        SITEMAP,
+        media_type="application/xml",
     )
 
 
