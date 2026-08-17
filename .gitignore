@@ -210,7 +210,4 @@ pip-selfcheck.json
 .history
 .ionide
 
-# Do not upload profile image of parents
-static/img/parents/
-
 # End of https://www.toptal.com/developers/gitignore/api/python,venv,virtualenv,visualstudiocode,dotenv
