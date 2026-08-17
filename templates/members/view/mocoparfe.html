@@ -19,25 +19,25 @@
                 <span>[ 데뷔일 ]</span>
                 <span>{{ rows.debut_date }} on <a class="chzzk" href="{{ rows.chzzk }}" target="_blank" rel="noopener noreferrer">CHZZK</a></span>
             </span>
-            <img class="fade-left" loading="lazy" decoding="async" src="/static/img/members/mocoparfe/portrait.webp" alt="MocoParfe-Profile-Image">
+            <img class="fade-left" loading="lazy" decoding="async" src="/static/img/members/mocoparfe/portrait.avif?v=20260817" alt="MocoParfe-Profile-Image">
         </div>
     </div>
     <div class="detail">
-        <div class="detail-main fade-down">
-            <span class="info">
+        <div class="detail-main">
+            <span class="info fade-right">
                 <span><b>나이</b>: {{ rows.age }}</span>
                 <span><b>키</b>: {{ rows.height }}</span>
                 <span><b>몸무게</b>: {{ rows.weight }}</span>
                 <span><b>생일</b>: {{ rows.birthday }}</span>
                 <span><b>MBTI</b>: {{ rows.mbti }}</span>
             </span>
-            <span class="favorite-song">
+            <span class="favorite-song fade-down">
                 <b>[ 좋아하는 노래 ]</b>
                 {% for song in rows.favorite_song %}
                     <span>{{ song }}</span>
                 {% endfor %}
             </span>
-            <span class="hobby">
+            <span class="hobby fade-left">
                 <b>[ 좋아하는 취미 ]</b>
                 {% for hobby in rows.favorite_hobby %}
                     <span>{{ hobby }}</span>
@@ -79,9 +79,9 @@
             <canvas class="fade-left" id="percentageChart"></canvas>
         </div>
     </div>
-    <div class="skills fade-down">
-        <span><b>[ 스킬 ]</b></span>
-        <div class="skill-lists">
+    <div class="skills">
+        <span class="fade-down"><b>[ 스킬 ]</b></span>
+        <div class="skill-lists fade-down">
             {% for skill in rows.skills %}
                 <div class="skill">
                     <b>{{ skill.name }}</b>
