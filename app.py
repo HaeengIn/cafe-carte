@@ -1,13 +1,10 @@
 from pathlib import Path
-
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
-
 from routers.members import members_router
 from routers.meet_us import meet_us_router
 from routers.about import about_router
-
 from template_config import templates
 
 app = FastAPI(redirect_slashes=True)
