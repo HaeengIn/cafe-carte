@@ -21,9 +21,11 @@ SITEMAP = Path(__file__).parent / "sitemap.xml"
 @app.get("/")
 async def index(request: Request):
     title = "CAFE CARTE - Unofficial Fan Website"
+    meta_description = "Cafe Carte - 카페 카르테의 비공식 팬 웹 사이트. 모코 파르페, 한서린, 댕키, 유우희, 에루 솔스티스로 구성된 카페 카르테를 만나보세요."
 
     context = {
         "title": title,
+        "meta_description": meta_description,
     }
 
     return templates.TemplateResponse(
@@ -38,6 +40,15 @@ async def sitemap():
     return FileResponse(
         SITEMAP,
         media_type="application/xml",
+    )
+
+
+@app.get("/robots.txt", include_in_schema=False)
+async def robots():
+    robots_file = Path(__file__).parent / "robots.txt"
+    return FileResponse(
+        robots_file,
+        media_type="text/plain",
     )
 
 

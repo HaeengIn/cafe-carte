@@ -8,6 +8,7 @@ about_router = APIRouter(prefix="/about", redirect_slashes=True)
 @about_router.get("")
 async def index(request: Request):
     title = "ABOUT - Cafe Carte"
+    meta_description = "Cafe Carte 팬 웹 사이트 소개 및 개발자 정보. TWILLIT STUDIO의 3D 버츄얼 스트리머 그룹 카페 카르테를 소개합니다."
 
     warning = (
         '본 웹 사이트는 <a href="https://samg.net" target="_blank" rel="noopener noreferrer">SAMG Entertainment</a>의 브랜드인 TWILLIT STUDIO의 3D 버츄얼 스트리머/유튜버 그룹, \'카페 카르테\'의 <b>비공식 팬 웹 사이트</b>입니다.<br>'
@@ -19,6 +20,7 @@ async def index(request: Request):
 
     context = {
         "title": title,
+        "meta_description": meta_description,
         "warning": warning,
         "developer_username": developer_username,
         "developer_contact": developer_contact,

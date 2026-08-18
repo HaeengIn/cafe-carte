@@ -11,9 +11,11 @@ async def index(request: Request):
         data = json.load(f)
 
     title = "MEMBERS - Cafe Carte"
+    meta_description = "카페 카르테의 멤버들을 소개합니다. 모코 파르페, 한서린, 댕키, 유우희, 에루 솔스티스의 프로필을 확인하세요."
 
     context = {
         "title": title,
+        "meta_description": meta_description,
         "items": data,
     }
 
@@ -30,9 +32,13 @@ async def mocoparfe(request: Request):
         data = json.load(f)
 
     title = "모코 파르페 - Cafe Carte"
+    meta_description = (
+        "모코 파르페(Moco Parfe)의 프로필 정보, 활동 기록, 그리고 소개글을 확인하세요."
+    )
 
     context = {
         "title": title,
+        "meta_description": meta_description,
         "rows": data,
     }
 
@@ -49,9 +55,13 @@ async def hanseorin(request: Request):
         data = json.load(f)
 
     title = "한서린 - Cafe Carte"
+    meta_description = (
+        "한서린(Han Seorin)의 프로필 정보, 활동 기록, 그리고 소개글을 확인하세요."
+    )
 
     context = {
         "title": title,
+        "meta_description": meta_description,
         "rows": data,
     }
 
@@ -68,9 +78,13 @@ async def dangkey(request: Request):
         data = json.load(f)
 
     title = "댕키 - Cafe Carte"
+    meta_description = (
+        "댕키(DangKey)의 프로필 정보, 활동 기록, 그리고 소개글을 확인하세요."
+    )
 
     context = {
         "title": title,
+        "meta_description": meta_description,
         "rows": data,
     }
 
@@ -87,9 +101,13 @@ async def uuhee(request: Request):
         data = json.load(f)
 
     title = "유우희 - Cafe Carte"
+    meta_description = (
+        "유우희(Uuhee)의 프로필 정보, 활동 기록, 그리고 소개글을 확인하세요."
+    )
 
     context = {
         "title": title,
+        "meta_description": meta_description,
         "rows": data,
     }
 
@@ -106,9 +124,11 @@ async def aerusolstice(request: Request):
         data = json.load(f)
 
     title = "에루 솔스티스 - Cafe Carte"
+    meta_description = "에루 솔스티스(AeruSolstice)의 프로필 정보, 활동 기록, 그리고 소개글을 확인하세요."
 
     context = {
         "title": title,
+        "meta_description": meta_description,
         "rows": data,
     }
 

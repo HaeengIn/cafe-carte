@@ -1,0 +1,29 @@
+# robots.txt for Cafe Carte
+# This file tells search engines how to index the site
+
+# Allow all bots
+User-agent: *
+Allow: /
+
+# Disallow admin/private areas (if any)
+Disallow: /api/
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://cafe-carte.fans/sitemap.xml
+
+# Crawl delay to be respectful to server resources
+Crawl-delay: 1
+
+# Allow specific bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Yeti
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /

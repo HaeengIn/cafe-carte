@@ -14,9 +14,11 @@ async def index(request: Request):
         links = json.load(f)
 
         title = "MEET US - Cafe Carte"
+        meta_description = "카페 카르테의 소식, 활동, 그리고 공식 링크를 확인하세요."
 
         context = {
             "title": title,
+            "meta_description": meta_description,
             "items": items,
             "links": links,
         }
