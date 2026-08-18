@@ -7,6 +7,21 @@ from template_config import templates
 status_router = APIRouter(prefix="/status", redirect_slashes=True)
 
 
+@status_router.get("")
+async def index(request: Request):
+    title = "Status - Cafe Carte"
+
+    context = {
+        "title": title,
+    }
+
+    return templates.TemplateResponse(
+        request=request,
+        context=context,
+        name="status/index.html",
+    )
+
+
 @status_router.get("/parents")
 async def parents(request: Request):
     with open("static/data/status/parents-license.json", "r", encoding="utf-8") as f:

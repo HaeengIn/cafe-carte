@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block css %}
+    <link rel="stylesheet" href="/static/css/status/index.css?v={{ static_version('static/css/status/index.css') }}">
+{% endblock css %}
+{% block body %}
+    <div class="button-container">
+        <button onclick="location.href='/status/parents'">Profile Image LICENSE</button>
+        <button onclick="location.href='/status/system'">System Status</button>
+    </div>
+{% endblock body %}
