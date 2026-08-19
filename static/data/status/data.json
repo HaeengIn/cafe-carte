@@ -1,0 +1,181 @@
+{
+    "parents_profile_image_license": [
+        {
+            "id": "atwomaru",
+            "name": "あつまる",
+            "username": "@atwomaru",
+            "status": 2,
+            "detail": "",
+            "url": ""
+        },
+        {
+            "id": "dohaonya",
+            "name": "DOHA",
+            "username": "@doahonya",
+            "status": 1,
+            "detail": "Allowed",
+            "url": "https://cafe-carte.fans/static/img/parents/LICENSE/dohaonya.avif?v=20260818"
+        },
+        {
+            "id": "haze",
+            "name": "HAZE",
+            "username": "@7h4ze",
+            "status": 2,
+            "detail": "",
+            "url": ""
+        },
+        {
+            "id": "grempa",
+            "name": "Grempa_Live2D",
+            "username": "@grempa_rigging",
+            "status": 2,
+            "detail": "",
+            "url": ""
+        },
+        {
+            "id": "boni",
+            "name": "Boni",
+            "username": "@AMUGE_5353",
+            "status": 2,
+            "detail": "",
+            "url": ""
+        },
+        {
+            "id": "machi",
+            "name": "Machi",
+            "username": "@Machi_0330",
+            "status": 2,
+            "detail": "",
+            "url": ""
+        },
+        {
+            "id": "sake_dong",
+            "name": "ソンシル Sonsiru",
+            "username": "@sake_dong",
+            "status": 1,
+            "detail": "Allowed"
+        },
+        {
+            "id": "spe",
+            "name": "Spe",
+            "username": "@Spe_531",
+            "status": 1,
+            "detail": "Allowed. Reposting links/images of Aeru Solstice's fanart is also allowed.",
+            "url": ""
+        }
+    ],
+    "system": {
+        "availability": [
+            {
+                "url": "/",
+                "status": 1
+            },
+            {
+                "url": "/members",
+                "status": 1
+            },
+            {
+                "url": "/members/mocoparfe",
+                "status": 1
+            },
+            {
+                "url": "/members/hanseorin",
+                "status": 0
+            },
+            {
+                "url": "/members/dangkey",
+                "status": 0
+            },
+            {
+                "url": "/members/uuhee",
+                "status": 0
+            },
+            {
+                "url": "/members/aerusolstice",
+                "status": 0
+            },
+            {
+                "url": "/meet-us",
+                "status": 1
+            },
+            {
+                "url": "/about",
+                "status": 1
+            },
+            {
+                "url": "/robots.txt",
+                "status": 1
+            },
+            {
+                "url": "/sitemap.xml",
+                "status": 1
+            },
+            {
+                "url": "/status/parents",
+                "status": 1
+            },
+            {
+                "url": "/status/system",
+                "status": 1
+            }
+        ],
+        "compatibility": [
+            {
+                "platform": "Google Chrome (Desktop)",
+                "status": 1
+            },
+            {
+                "platform": "Google Chrome (Mobile)",
+                "status": 2
+            },
+            {
+                "platform": "Microsoft Edge (Desktop)",
+                "status": 2
+            },
+            {
+                "platform": "Microsoft Edge (Mobile)",
+                "status": 2
+            },
+            {
+                "platform": "Samsung Internet (Mobile)",
+                "status": 1
+            },
+            {
+                "platform": "Samsung Internet (Desktop)",
+                "status": 2
+            },
+            {
+                "platform": "Safari (Mobile)",
+                "status": 1
+            },
+            {
+                "platform": "Safari (Desktop)",
+                "status": 2
+            },
+            {
+                "platform": "Firefox (Desktop)",
+                "status": 2
+            },
+            {
+                "platform": "Firefox (Mobile)",
+                "status": 2
+            },
+            {
+                "platform": "Brave (Desktop)",
+                "status": 2
+            },
+            {
+                "platform": "Brave (Mobile)",
+                "status": 2
+            },
+            {
+                "platform": "Opera (Desktop)",
+                "status": 2
+            },
+            {
+                "platform": "Opera (Mobile)",
+                "status": 2
+            }
+        ]
+    }
+}

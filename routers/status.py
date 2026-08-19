@@ -9,50 +9,18 @@ status_router = APIRouter(prefix="/status", redirect_slashes=True)
 
 @status_router.get("")
 async def index(request: Request):
+    with open("static/data/status/data.json", "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    license_data = data["parents_profile_image_license"]
+    availability_data = data["system"]["availability"]
+    compatibility_data = data["system"]["compatibility"]
+
     title = "Status - Cafe Carte"
 
     context = {
         "title": title,
-    }
-
-    return templates.TemplateResponse(
-        request=request,
-        context=context,
-        name="status/index.html",
-    )
-
-
-@status_router.get("/parents")
-async def parents(request: Request):
-    with open("static/data/status/parents-license.json", "r", encoding="utf-8") as f:
-        data = json.load(f)
-
-    title = "LICENSE Status - Cafe Carte"
-
-    context = {
-        "title": title,
-        "items": data,
-    }
-
-    return templates.TemplateResponse(
-        request=request,
-        context=context,
-        name="status/license.html",
-    )
-
-
-@status_router.get("/system")
-async def system(request: Request):
-    with open("static/data/status/system.json", "r", encoding="utf-8") as f:
-        data = json.load(f)
-
-    title = "System Status - Cafe Carte"
-
-    availability_data = data["availability"]
-    compatibility_data = data["compatibility"]
-
-    context = {
-        "title": title,
+        "license_items": license_data,
         "availability_items": availability_data,
         "compatibility_items": compatibility_data,
     }
@@ -60,5 +28,5 @@ async def system(request: Request):
     return templates.TemplateResponse(
         request=request,
         context=context,
-        name="status/system.html",
+        name="status/index.html",
     )
