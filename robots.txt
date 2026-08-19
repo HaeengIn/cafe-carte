@@ -12,6 +12,9 @@ Disallow: /admin/
 # Sitemap location
 Sitemap: https://cafe-carte.fans/sitemap.xml
 
+# Content Signals preferences
+Content-Signal: ai-train=no, search=yes, ai-input=no
+
 # Crawl delay to be respectful to server resources
 Crawl-delay: 1
 
