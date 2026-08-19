@@ -36,6 +36,9 @@ async def index(request: Request):
         request=request,
         context=context,
         name="index.html",
+        headers={
+            "Link": '</openapi.json>; rel="service-desc", </docs>; rel="service-doc"',
+        },
     )
 
 
