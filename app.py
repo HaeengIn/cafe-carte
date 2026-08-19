@@ -19,8 +19,6 @@ app.mount(
     name="static",
 )
 
-SITEMAP = Path(__file__).parent / "sitemap.xml"
-
 
 @app.get("/")
 async def index(request: Request):
@@ -44,6 +42,8 @@ async def index(request: Request):
 
 @app.get("/sitemap.xml", include_in_schema=False)
 async def sitemap():
+    SITEMAP = Path(__file__).parent / "sitemap.xml"
+
     return FileResponse(
         SITEMAP,
         media_type="application/xml",
@@ -52,9 +52,10 @@ async def sitemap():
 
 @app.get("/robots.txt", include_in_schema=False)
 async def robots():
-    robots_file = Path(__file__).parent / "robots.txt"
+    ROBOTS = Path(__file__).parent / "robots.txt"
+
     return FileResponse(
-        robots_file,
+        ROBOTS,
         media_type="text/plain",
     )
 
