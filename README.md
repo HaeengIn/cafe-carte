@@ -10,8 +10,8 @@ This is repository of Unofficial Fan Website of **Cafe Carte**, 3D V-Tuber group
 
 Please install following requirements to contribute.
 
-- Python 3.12.1 (or upper, but recommend 3.12.1)
-- uv (which is installed by pip)
+- Python 3.12.0 (or upper, but recommend 3.12.0)
+- uv (which is installed via pip)
 
 If you have(or already) installed these requirements, follow below steps:
 
