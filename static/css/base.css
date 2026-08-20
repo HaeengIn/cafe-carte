@@ -4,3 +4,13 @@ html, body {
     line-height: 1.6;
     word-break: keep-all;
 }
+
+main {
+    margin: 55px 0 0 0;
+}
+
+.details-contents {
+    overflow: hidden;
+    height: 0;
+    transition: height 0.4s ease;
+}
