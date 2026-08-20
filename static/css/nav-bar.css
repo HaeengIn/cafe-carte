@@ -6,6 +6,12 @@ nav {
     justify-content: center;
     gap: 24px;
     height: 55px;
+
+    /* Fix nav bar on top */
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    z-index: 1000;
 }
 
 .nav-menu {
