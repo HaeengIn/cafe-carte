@@ -104,11 +104,7 @@
                 "status": 1
             },
             {
-                "url": "/status/parents",
-                "status": 1
-            },
-            {
-                "url": "/status/system",
+                "url": "/status",
                 "status": 1
             }
         ],
