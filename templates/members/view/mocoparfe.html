@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% block css %}
     <link rel="stylesheet" href="/static/css/members/mocoparfe.css?v={{ static_version('static/css/members/mocoparfe.css') }}">
-    <link rel="stylesheet" href="/static/css/scroll-animation.css?v={{ static_version('static/css/scroll-animation.css') }}">
 {% endblock css %}
 {% block body %}
     <div class="profile">
@@ -111,7 +110,6 @@
 {% endblock body %}
 {% block script %}
     <script defer src="/static/js/scroll-animation.js?v={{ static_version('static/js/scroll-animation.js') }}"></script>
-    <script defer src="/static/js/members/details.js?v={{ static_version('static/js/members/details.js') }}"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script defer src="/static/js/members/mocoparfe/mocoparfe.js?v={{ static_version('static/js/members/mocoparfe/mocoparfe.js') }}"></script>
 {% endblock script %}
