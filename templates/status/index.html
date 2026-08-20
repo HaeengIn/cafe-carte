@@ -32,8 +32,33 @@
     </details>
     <details>
         <summary>[ System Status ]</summary>
+        <div class="availability">
+            {% for item in availability_items %}
+                <h1 class="fade-right">{{ item.url }}</h1>
+                {% if item.status == 0 %}
+                    <span class="fade-right unavailable">❎ Unavailable</span>
+                {% endif %}
+                {% if item.status == 1 %}
+                    <span class="fade-right available">✅ Available</span>
+                {% endif %}
+            {% endfor %}
+        </div>
     </details>
     <details>
         <summary>[ Browser Compatibility Status ]</summary>
+        <div class="compatibility">
+            {% for item in compatibility_items %}
+                <h1 class="fade-right">{{ item.platform }}</h1>
+                {% if item.status == 0 %}
+                    <span class="fade-right uncompatible">❎ Uncompatible</span>
+                {% endif %}
+                {% if item.status == 1 %}
+                    <span class="fade-right compatible">✅ Compatible</span>
+                {% endif %}
+                {% if item.status == 2 %}
+                    <span class="fade-right unknown">❓ Unknown</span>
+                {% endif %}
+            {% endfor %}
+        </div>
     </details>
 {% endblock body %}

@@ -6,7 +6,7 @@ summary {
     text-align: center;
 }
 
-.license {
+.license, .availability, .compatibility {
     margin: 16px;
     display: flex;
     flex-direction: column;
@@ -16,11 +16,12 @@ summary {
 .license .content-container {
     display: flex;
     align-items: center;
-    img {
-        aspect-ratio: 1;
-        object-fit: cover;
-        border-radius: 30%;
-    }
+}
+
+.license .content-container img {
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 30%;
 }
 
 .license .content-container .content {
@@ -29,14 +30,24 @@ summary {
     flex-direction: column;
     justify-content: center;
     gap: 8px;
-    h1 {
-        margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--cafe-carte);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .license .content-container {
+        flex-direction: column;
     }
-    a {
-        text-decoration: none;
-        color: var(--cafe-carte);
-    }
-    a:hover {
-        text-decoration: underline;
+
+    .license .content-container .content {
+        align-items: center;
+        text-align: center;
     }
 }
