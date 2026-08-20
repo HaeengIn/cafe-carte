@@ -5,48 +5,42 @@
             "name": "あつまる",
             "username": "@atwomaru",
             "status": 2,
-            "detail": "",
-            "url": ""
+            "detail": ""
         },
         {
             "id": "dohaonya",
             "name": "DOHA",
-            "username": "@doahonya",
+            "username": "@dohaonya",
             "status": 1,
-            "detail": "Allowed",
-            "url": "https://cafe-carte.fans/static/img/parents/LICENSE/dohaonya.avif?v=20260818"
+            "detail": "Allowed"
         },
         {
             "id": "haze",
             "name": "HAZE",
             "username": "@7h4ze",
             "status": 2,
-            "detail": "",
-            "url": ""
+            "detail": ""
         },
         {
             "id": "grempa",
             "name": "Grempa_Live2D",
             "username": "@grempa_rigging",
-            "status": 2,
-            "detail": "",
-            "url": ""
+            "status": 1,
+            "detail": "Allowed"
         },
         {
             "id": "boni",
             "name": "Boni",
             "username": "@AMUGE_5353",
             "status": 2,
-            "detail": "",
-            "url": ""
+            "detail": ""
         },
         {
             "id": "machi",
             "name": "Machi",
             "username": "@Machi_0330",
             "status": 2,
-            "detail": "",
-            "url": ""
+            "detail": ""
         },
         {
             "id": "sake_dong",
@@ -60,8 +54,7 @@
             "name": "Spe",
             "username": "@Spe_531",
             "status": 1,
-            "detail": "Allowed. Reposting links/images of Aeru Solstice's fanart is also allowed.",
-            "url": ""
+            "detail": "Allowed. Reposting links/images of Aeru Solstice's fanart is also allowed."
         }
     ],
     "system": {
