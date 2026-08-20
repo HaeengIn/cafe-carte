@@ -1,28 +1,39 @@
 {% extends 'base.html' %}
 {% block css %}
-    <!-- <link rel="stylesheet" href="/static/css/status/index.css?v={{ static_version('static/css/status/index.css') }}"> -->
+    <link rel="stylesheet" href="/static/css/status/index.css?v={{ static_version('static/css/status/index.css') }}">
 {% endblock css %}
 {% block body %}
-    <div class="license">
-        {% for item in license_items %}
-        <div class="content">
-            <img loading="lazy" width="200" height="200" src="/static/img/parents/{{ item.id }}.avif?v=20260819" alt="{{ item.name }}-Profile-Image">
-            <h1>{{ item.name }}</h1>
-            <span>{{ item.username }}</span>
-            {% if item.status == 0 %}
-                <span>Status: Rejected</span>
-            {% elif item.status == 1 %}
-                <span>Status: Allowed</span>
-            {% elif item.status == 2 %}
-                <span>Status: Pending</span>
-            {% endif %}
-            <span>Detail: {{ item.detail }}</span>
-            {% if item.id == "sake_dong" %}
-                <span>Unable to view due to request</span>
-            {% else %}
-                <a href="https://cafe-carte.fans/static/img/parents/LICENSE/{{ item.id }}.avif?v=20260819" target="_blank" rel="noopener noreferrer">View Screenshot</a>
-            {% endif %}
+    <details>
+        <summary>[ Profile Image Usage Status ]</summary>
+        <div class="license">
+            {% for item in license_items %}
+            <div class="fade-right content-container">
+                <img loading="lazy" width="200" height="200" src="/static/img/parents/{{ item.id }}.avif?v=20260819" alt="{{ item.name }}-Profile-Image">
+                <div class="content">
+                    <h1>{{ item.name }}</h1>
+                    <a href="https://x.com/{{ item.username }}" target="_blank" rel="noopener noreferrer">{{ item.username }}</a>
+                    {% if item.status == 0 %}
+                        <span>Status: Rejected</span>
+                    {% elif item.status == 1 %}
+                        <span>Status: Allowed</span>
+                    {% elif item.status == 2 %}
+                        <span>Status: Pending</span>
+                    {% endif %}
+                    <span>Detail: {{ item.detail }}</span>
+                    {% if item.id == "sake_dong" %}
+                        <span>Unable to view due to request</span>
+                    {% else %}
+                        <a href="/static/img/parents/LICENSE/{{ item.id }}.avif?v=20260819" target="_blank" rel="noopener noreferrer">View Screenshot</a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
-    </div>
+    </details>
+    <details>
+        <summary>[ System Status ]</summary>
+    </details>
+    <details>
+        <summary>[ Browser Compatibility Status ]</summary>
+    </details>
 {% endblock body %}
