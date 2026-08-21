@@ -41,6 +41,18 @@ a:hover {
     text-decoration: underline;
 }
 
+.available, .compatible {
+    color: green;
+}
+
+.unavailable, .uncompatible {
+    color: red;
+}
+
+.ongoing, .unknown {
+    color: orange;
+}
+
 @media (max-width: 768px) {
     .license .content-container {
         flex-direction: column;
