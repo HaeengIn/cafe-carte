@@ -41,6 +41,9 @@
                 {% if item.status == 1 %}
                     <span class="fade-right available">✅ Available</span>
                 {% endif %}
+                {% if item.status == 2 %}
+                    <span class="fade-right ongoing">🔁 Ongoing</span>
+                {% endif %}
             {% endfor %}
         </div>
     </details>
