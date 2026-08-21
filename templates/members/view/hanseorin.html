@@ -54,4 +54,14 @@
             </div>
         </details>
     </div>
+    <div class="contents">
+        {% for items in rows.contents.values() %}
+            <div>
+                <b>[ {{ items.name }} ]</b>
+                {% for item in items.content %}
+                    <span>{{ item }}</span>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
 {% endblock body %}
