@@ -1,8 +1,7 @@
 @import url(/static/css/variables.css?v=20260812);
 
 .member-profiles {
-    margin-top: 40px;
-    margin-bottom: 40px;
+    padding: 20px 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,8 +28,7 @@
 @media (max-width: 480px) {
     .member-profiles {
         flex-direction: column;
-        margin-top: 20px;
-        margin-bottom: 20px;
+        padding: 20px 0;
         gap: 20px;
     }
 }
