@@ -87,14 +87,17 @@
     ],
     "parents": {
         "mama_1": {
+            "role": "마마",
             "username": "HAZE",
             "url": "https://x.com/7H4ZE"
         },
         "mama_2": {
+            "role": "마마",
             "username": "TWILLIT",
             "url": "https://x.com/TWILLIT_studio_"
         },
         "papa": {
+            "role": "파파",
             "username": "Grempa_Live2D",
             "url": "https://x.com/grempa_rigging"
         }
