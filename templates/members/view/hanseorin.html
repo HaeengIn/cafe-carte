@@ -64,4 +64,48 @@
             </div>
         {% endfor %}
     </div>
+    <div class="dream">
+        <b>[ 목표 ]</b>
+        {% for item in rows.dream %}
+            <span>{{ item }}</span>
+        {% endfor %}
+    </div>
+    <div class="sns">
+        <div class="ohsimark">
+            <b>[ 오시마크 ]</b>
+            <span>{{ rows.sns.ohsimark }}</span>
+        </div>
+        <div class="hashtag">
+            <b>[ 해시태그 ]</b>
+            {% for item in rows.sns.hashtag %}
+                <span>{{ item }}</span>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="parents">
+        <div class="mama-1 fade-right">
+            <span class="role"><b>[ {{ rows.parents.mama_1.role }} ]</b></span>
+            <a class="profile-image" href="{{ rows.parents.mama_1.url }}" target="_blank" rel="noopener noreferrer">
+                <img loading="lazy" decoding="async" src="/static/img/parents/{{ rows.parents.mama_1.username }}.avif?v=20260815" alt="{{ rows.parents.mama_1.username }}-Profile-Image">
+            </a>
+            <span>@{{ rows.parents.mama_1.username }}</span>
+            <a href="{{ rows.parents.mama_1.url }}" target="_blank" rel="noopener noreferrer">{{ rows.parents.mama_1.url }}</a>
+        </div>
+        <div class="mama-2 fade-right">
+            <span class="role"><b>[ {{ rows.parents.mama_2.role }} ]</b></span>
+            <a class="profile-image" href="{{ rows.parents.mama_2.url }}" target="_blank" rel="noopener noreferrer">
+                <img loading="lazy" decoding="async" src="/static/img/parents/{{ rows.parents.mama_2.username }}.avif?v=20260815" alt="{{ rows.parents.mama_2.username }}-Profile-Image">
+            </a>
+            <span>@{{ rows.parents.mama_2.username }}</span>
+            <a href="{{ rows.parents.mama_2.url }}" target="_blank" rel="noopener noreferrer">{{ rows.parents.mama_2.url }}</a>
+        </div>
+        <div class="papa fade-left">
+            <span class="role"><b>[ {{ rows.parents.papa.role }} ]</b></span>
+            <a class="profile-image" href="{{ rows.parents.papa.url }}" target="_blank" rel="noopener noreferrer">
+                <img loading="lazy" decoding="async" src="/static/img/parents/{{ rows.parents.papa.username }}.avif?v=20260815" alt="{{ rows.parents.papa.username }}-Profile-Image">
+            </a>
+            <span>@{{ rows.parents.papa.username }}</span>
+            <a href="{{ rows.parents.papa.url }}" target="_blank" rel="noopener noreferrer">{{ rows.parents.papa.url }}</a>
+        </div>
+    </div>
 {% endblock body %}
