@@ -22,6 +22,8 @@
                     <span>Detail: {{ item.detail }}</span>
                     {% if item.id == "sake_dong" %}
                         <span>Unable to view due to request</span>
+                    {% if item.id == "atwomaru" %}
+                        <a>Visit ofiicial homepage</a>
                     {% else %}
                         <a href="/static/img/parents/LICENSE/{{ item.id }}.avif?v=20260819" target="_blank" rel="noopener noreferrer">View Screenshot</a>
                     {% endif %}
