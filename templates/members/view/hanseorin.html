@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
+{% block css %}
+    <link rel="stylesheet" href="/static/css/members/hanseorin.css?v={{ static_version('static/css/members/hanseorin.css') }}">
+{% endblock css %}
 {% block body %}
     <div class="profile">
         <span class="info fade-right">
             <p>{{ rows.race }}</p>
-            <h1 class="mocoparfe">한서린</h1>
-            <small class="mocoparfe">Han Seo Rin</small>
+            <h1 class="hanseorin">한서린</h1>
+            <small class="hanseorin">Han Seo Rin</small>
             <p>{{ rows.story | safe }}</p>
             <span class="position">
                 <b>「{{ rows.position }}」</b> of Cafe Carte
@@ -15,7 +18,7 @@
                 <span>[ 데뷔일 ]</span>
                 <span>{{ rows.debut_date }} on <a class="chzzk" href="{{ rows.chzzk }}" target="_blank" rel="noopener noreferrer">CHZZK</a></span>
             </span>
-            <img class="fade-left" loading="lazy" decoding="async" src="/static/img/members/hanseorin/portrait.avif?v=20260817" alt="HanSeoRin-Profile-Image">
+            <!-- <img class="fade-left" loading="lazy" decoding="async" src="/static/img/members/hanseorin/portrait.avif?v=20260817" alt="HanSeoRin-Profile-Image"> -->
         </div>
     </div>
     <div class="detail">
@@ -27,13 +30,13 @@
                 <span><b>생일</b>: {{ rows.birthday }}</span>
                 <span><b>MBTI</b>: {{ rows.mbti }}</span>
             </span>
-            <span class="favorites fade-left">
+            <span class="favorites fade-down">
                 <b>[ 좋아하는 것 ]</b>
                 {% for hobby in rows.favorite %}
                     <span>{{ hobby }}</span>
                 {% endfor %}
             </span>
-            <span class="dislikes">
+            <span class="dislikes fade-left">
                 <b>[ 싫어하는 것 ]</b>
                 {% for item in rows.dislike %}
                     <span>{{ item }}</span>
@@ -54,9 +57,9 @@
             </div>
         </details>
     </div>
-    <div class="contents">
+    <div class="contents-container">
         {% for items in rows.contents.values() %}
-            <div>
+            <div class="contents fade-down">
                 <b>[ {{ items.name }} ]</b>
                 {% for item in items.content %}
                     <span>{{ item }}</span>
@@ -66,9 +69,11 @@
     </div>
     <div class="dream">
         <b>[ 목표 ]</b>
-        {% for item in rows.dream %}
-            <span>{{ item }}</span>
-        {% endfor %}
+        <div class="dream-contents">
+            {% for item in rows.dream %}
+                <span>{{ item }}</span>
+            {% endfor %}
+        </div>
     </div>
     <div class="sns">
         <div class="ohsimark">
