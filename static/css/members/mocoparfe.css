@@ -45,6 +45,15 @@
     height: auto;
 }
 
+.image-wrapper img.fade-left {
+    opacity: 1;
+}
+
+.image-wrapper img.fade-left.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 /* Apply gradient mask to image only PC browser */
 @media (min-width: 769px) {
     .image-wrapper img {
