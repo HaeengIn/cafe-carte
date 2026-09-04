@@ -174,9 +174,171 @@
     font-size: 150%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .dream-contents {
     display: flex;
     gap: 40px;
+}
+
+.sns {
+    margin: 0 40px;
+    padding: 10px 0;
+    font-size: 150%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.sns .ohsimark,
+.sns .hashtag {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.parents {
+    padding: 10px 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    background-color: #efeeea;
+}
+
+.parents .role {
+    font-size: 150%;
+}
+
+.parents a {
+    text-decoration: none;
+    color: var(--cafe-carte);
+}
+
+.parents .profile-image {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+}
+
+.parents .profile-image img {
+    width: 100%;
+    aspect-ratio: 1;
+    display: block;
+    object-fit: cover;
+    border-radius: 30%;
+}
+
+.parents .mama-1,
+.parents .mama-2,
+.parents .papa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    width: 250px;
+}
+
+@media (max-width: 768px) {
+    .profile {
+        flex-direction: column;
+    }
+
+    .profile span.info {
+        margin: 20px;
+        font-size: 220%;
+        text-align: center;
+    }
+
+    .image-wrapper {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .image-wrapper .debut-date {
+        order: -1;
+        align-items: center !important;
+        text-align: center;
+    }
+
+    .image-wrapper .debut-date > span {
+        width: 100%;
+        text-align: center;
+    }
+
+    .image-wrapper img {
+        max-width: 100%;
+
+        /* Apply gradient mask to image */
+        mask-image: linear-gradient(
+            to bottom,
+            transparent 0%,
+            black 20%
+        );
+        -webkit-mask-image: linear-gradient(
+            to bottom,
+            transparent 0%,
+            black 20%
+        );
+    }
+
+    .detail-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .detail span.info,
+    .detail span.favorites,
+    .detail span.dislikes {
+        margin: 10px 20px;
+        text-align: center;
+    }
+
+    .contents-container {
+        margin: 0 20px;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px !important;
+    }
+
+    .skills {
+        font-size: 150%;
+    }
+
+    .skills .skill-lists {
+        flex-direction: column;
+    }
+
+    .skills .skill-lists .skill {
+        width: 100%;
+    }
+
+    .parents {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mama-1,
+    .mama-2,
+    .papa {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .profile-image img {
+        width: min(70%, 250px);
+    }
+
+    .parents > div {
+        min-width: 0;
+    }
+
+    .parents a {
+        overflow-wrap: anywhere;
+    }
 }
