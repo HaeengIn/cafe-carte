@@ -1,10 +1,15 @@
 const observer = new IntersectionObserver(
   (entries, observer) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
-      }
+      if (!entry.isIntersecting) return;
+
+      const element = entry.target;
+
+      element.classList.add("is-visible");
+      element.style.setProperty("opacity", "1", "important");
+      element.style.setProperty("transform", "none", "important");
+
+      observer.unobserve(element);
     });
   },
   {
