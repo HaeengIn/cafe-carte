@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block css %}
+    <link rel="stylesheet" href="/static/css/members/dangkey.css?v={{ static_version('static/css/members/dangkey.css') }}">
+{% endblock css %}
+{% block body %}
+    <div class="profile">
+        <span class="info fade-right">
+            <p>{{ rows.race }}</p>
+            <h1 class="dangkey">댕키</h1>
+            <small class="dangkey">DangKey</small>
+            <p>{{ rows.story | safe }}</p>
+            <span class="position">
+                <b>「{{ rows.position }}」</b> of Cafe Carte
+            </span>
+        </span>
+        <div class="image-wrapper">
+            <span class="debut-date fade-left">
+                <span>[ 데뷔일 ]</span>
+                <span>{{ rows.debut_date }} on <a class="chzzk" href="{{ rows.chzzk }}" target="_blank" rel="noopener noreferrer">CHZZK</a></span>
+            </span>
+            <img class="fade-left" decoding="async" width="450" height="450" src="/static/img/members/dangkey/portrait.avif?v=20260817" alt="DangKey-Profile-Image">
+        </div>
+    </div>
+    <div class="detail">
+        <div class="detail-main">
+            <span class="info fade-right">
+                <span><b>나이</b>: {{ rows.age }}</span>
+                <span><b>키</b>: {{ rows.height }}</span>
+                <span><b>몸무게</b>: {{ rows.weight }}</span>
+                <span><b>생일</b>: {{ rows.birthday }}</span>
+            </span>
+            <span class="favorite">
+                <b>[ 집에서 가져온 것 ]</b>
+                {% for item in rows.favorite %}
+                    <span>{{ item }}</span>
+                {% endfor %}
+            </span>
+            <span class="dislikes">
+                <b>[ 싫어하는 것 ]</b>
+                {% for item in rows.dislikes %}
+                    <span>{{ item }}</span>
+                {% endfor %}
+            </span>
+        </div>
+    </div>
+    <div class="sns">
+        <div class="ohsimark">
+            <b>[ 오시마크 ]</b>
+            <span>{{ rows.ohsimark }}</span>
+        </div>
+        <div class="hashtag">
+            <b>[ 해시태그 ]</b>
+            {% for item in rows.hashtag %}
+                <span>{{ item }}</span>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="parents">
+        <div class="mama fade-right">
+            <span class="role"><b>[ {{ rows.parents.mama.role }} ]</b></span>
+            <a class="profile-image" href="{{ rows.parents.mama.url }}" target="_blank" rel="noopener noreferrer">
+                <img decoding="async" src="/static/img/parents/{{ rows.parents.mama.username }}.avif?v=20260815" alt="{{ rows.parents.mama.username }}-Profile-Image">
+            </a>
+            <span>@{{ rows.parents.mama.username }}</span>
+            <a href="{{ rows.parents.mama.url }}" target="_blank" rel="noopener noreferrer">{{ rows.parents.mama.url }}</a>
+        </div>
+        <div class="papa fade-left">
+            <span class="role"><b>[ {{ rows.parents.papa.role }} ]</b></span>
+            <a class="profile-image" href="{{ rows.parents.papa.url }}" target="_blank" rel="noopener noreferrer">
+                <img decoding="async" src="/static/img/parents/{{ rows.parents.papa.username }}.avif?v=20260815" alt="{{ rows.parents.papa.username }}-Profile-Image">
+            </a>
+            <span>@{{ rows.parents.papa.username }}</span>
+            <a href="{{ rows.parents.papa.url }}" target="_blank" rel="noopener noreferrer">{{ rows.parents.papa.url }}</a>
+        </div>
+    </div>
+{% endblock body %}
