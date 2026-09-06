@@ -96,15 +96,15 @@
                 "status": 1
             },
             {
+                "url": "/status",
+                "status": 1
+            },
+            {
                 "url": "/robots.txt",
                 "status": 1
             },
             {
                 "url": "/sitemap.xml",
-                "status": 1
-            },
-            {
-                "url": "/status",
                 "status": 1
             }
         ],
