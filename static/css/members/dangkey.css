@@ -1,0 +1,95 @@
+@import url(/static/css/font.css?v=20260927);
+@import url(/static/css/variables.css?v=20260927);
+
+.dangkey {
+    color: var(--dangkey);
+}
+
+.profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.profile span.info {
+    margin: 40px 40px 0 40px;
+    display: flex;
+    flex-direction: column;
+    font-size: 300%;
+}
+
+.profile span.info p {
+    margin: 0;
+}
+
+.profile span h1 {
+    font-family: var(--font-Heavy);
+    line-height: 1;
+    margin: 0;
+    height: auto;
+}
+
+.profile span small {
+    font-family: var(--font-Bold);
+}
+
+.profile span p {
+    font-size: 50%;
+}
+
+.image-wrapper {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.image-wrapper img {
+    display: block;
+    width: 450px;
+    max-width: 450px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+/* Apply gradient mask to image only PC browser */
+@media (min-width: 769px) {
+    .image-wrapper img {
+        width: 100%;
+        max-width: 450px;
+        
+        mask-image: linear-gradient(
+            to right,
+            transparent 0%,
+            black 20%
+        );
+        -webkit-mask-image: linear-gradient(
+            to right,
+            transparent 0%,
+            black 20%
+        );
+    }
+}
+
+.profile span.debut-date {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    white-space: nowrap;
+}
+
+.profile span.debut-date a.chzzk {
+    text-decoration: none;
+    color: #00FFA3;
+    background-color: black;
+    padding: 4px;
+    border-radius: 8px;
+}
+
+.profile span.position {
+    font-size: 70%;
+}
+
+.profile span.position b {
+    color: var(--dangkey);
+}
