@@ -93,3 +93,7 @@
 .profile span.position b {
     color: var(--dangkey);
 }
+
+.detail {
+    background-color: var(--cafe-carte-background);
+}
