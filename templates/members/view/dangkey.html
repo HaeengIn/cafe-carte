@@ -28,7 +28,7 @@
             <span><b>몸무게</b>: {{ rows.weight }}</span>
             <span><b>생일</b>: {{ rows.birthday }}</span>
         </span>
-        <span class="favorites">
+        <span class="favorites fade-down">
             <b>[ 집에서 가져온 것 ]</b>
             <div class="favorites-content">
                 {% for item in rows.favorite %}
@@ -36,7 +36,7 @@
                 {% endfor %}
             </div>
         </span>
-        <span class="dislikes">
+        <span class="dislikes fade-left">
             <b>[ 싫어하는 것 ]</b>
             <div class="dislikes-content">
                 {% for item in rows.dislikes %}
@@ -46,11 +46,11 @@
         </span>
     </div>
     <div class="sns">
-        <div class="ohsimark">
+        <div class="ohsimark fade-right">
             <b>[ 오시마크 ]</b>
             <span>{{ rows.ohsimark }}</span>
         </div>
-        <div class="hashtag">
+        <div class="hashtag fade-left">
             <b>[ 해시태그 ]</b>
             {% for item in rows.hashtag %}
                 <span>{{ item }}</span>
