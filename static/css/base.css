@@ -1,21 +1,22 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    word-break: keep-all;
-    overflow-x: clip;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  word-break: keep-all;
+  overflow-x: clip;
 }
 
 main {
-    margin: 55px 0 0 0;
+  margin: 55px 0 0 0;
 }
 
 h1 {
-    margin: 0;
+  margin: 0;
 }
 
 .details-contents {
-    overflow: hidden;
-    height: 0;
-    transition: height 0.4s ease;
+  overflow: hidden;
+  height: 0;
+  transition: height 0.4s ease;
 }

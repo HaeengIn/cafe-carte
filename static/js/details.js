@@ -1,78 +1,78 @@
-document.querySelectorAll('details').forEach(details => {
-    const summary = details.querySelector(':scope > summary');
+document.querySelectorAll("details").forEach((details) => {
+  const summary = details.querySelector(":scope > summary");
 
-    if (!summary) {
+  if (!summary) {
+    return;
+  }
+
+  let contents = details.querySelector(":scope > .details-contents");
+
+  if (!contents) {
+    contents = details.querySelector(":scope > .favorite-real-contents");
+  }
+
+  if (!contents) {
+    contents = document.createElement("div");
+    contents.className = "details-contents";
+
+    while (summary.nextSibling) {
+      contents.append(summary.nextSibling);
+    }
+
+    details.append(contents);
+  }
+
+  const finishAnimation = (callback) => {
+    let finished = false;
+    const finish = () => {
+      if (finished) {
         return;
-    }
+      }
 
-    let contents = details.querySelector(':scope > .details-contents');
-
-    if (!contents) {
-        contents = details.querySelector(':scope > .favorite-real-contents');
-    }
-
-    if (!contents) {
-        contents = document.createElement('div');
-        contents.className = 'details-contents';
-
-        while (summary.nextSibling) {
-            contents.append(summary.nextSibling);
-        }
-
-        details.append(contents);
-    }
-
-    const finishAnimation = callback => {
-        let finished = false;
-        const finish = () => {
-            if (finished) {
-                return;
-            }
-
-            finished = true;
-            contents.removeEventListener('transitionend', finish);
-            callback();
-        };
-
-        contents.addEventListener('transitionend', finish, { once: true });
-        setTimeout(finish, 500);
+      finished = true;
+      contents.removeEventListener("transitionend", finish);
+      callback();
     };
 
-    summary.addEventListener('click', event => {
-        event.preventDefault();
+    contents.addEventListener("transitionend", finish, { once: true });
+    setTimeout(finish, 500);
+  };
 
-        if (details.dataset.animating) {
-            return;
-        }
+  summary.addEventListener("click", (event) => {
+    event.preventDefault();
 
-        details.dataset.animating = 'true';
+    if (details.dataset.animating) {
+      return;
+    }
 
-        if (!details.open) {
-            details.open = true;
+    details.dataset.animating = "true";
 
-            const height = contents.scrollHeight;
+    if (!details.open) {
+      details.open = true;
 
-            requestAnimationFrame(() => {
-                contents.style.height = `${height}px`;
-            });
+      const height = contents.scrollHeight;
 
-            finishAnimation(() => {
-                contents.style.height = 'auto';
-                delete details.dataset.animating;
-            });
+      requestAnimationFrame(() => {
+        contents.style.height = `${height}px`;
+      });
 
-            return;
-        }
+      finishAnimation(() => {
+        contents.style.height = "auto";
+        delete details.dataset.animating;
+      });
 
-        contents.style.height = `${contents.scrollHeight}px`;
+      return;
+    }
 
-        requestAnimationFrame(() => {
-            contents.style.height = '0';
-        });
+    contents.style.height = `${contents.scrollHeight}px`;
 
-        finishAnimation(() => {
-            details.open = false;
-            delete details.dataset.animating;
-        });
+    requestAnimationFrame(() => {
+      contents.style.height = "0";
     });
+
+    finishAnimation(() => {
+      details.open = false;
+      delete details.dataset.animating;
+    });
+  });
 });

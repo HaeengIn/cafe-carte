@@ -1,65 +1,70 @@
 @import url(/static/css/variables.css?v=20260820);
 
 summary {
-    margin: 12px;
-    cursor: pointer;
-    text-align: center;
+  margin: 12px;
+  cursor: pointer;
+  text-align: center;
 }
 
-.license, .availability, .compatibility {
-    margin: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+.license,
+.availability,
+.compatibility {
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .license .content-container {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .license .content-container img {
-    aspect-ratio: 1;
-    object-fit: cover;
-    border-radius: 30%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 30%;
 }
 
 .license .content-container .content {
-    margin: 0 16px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 8px;
+  margin: 0 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
 }
 
 a {
-    text-decoration: none;
-    color: var(--cafe-carte);
+  text-decoration: none;
+  color: var(--cafe-carte);
 }
 
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
-.available, .compatible {
-    color: green;
+.available,
+.compatible {
+  color: green;
 }
 
-.unavailable, .uncompatible {
-    color: red;
+.unavailable,
+.uncompatible {
+  color: red;
 }
 
-.ongoing, .unknown {
-    color: orange;
+.ongoing,
+.unknown {
+  color: orange;
 }
 
 @media (max-width: 768px) {
-    .license .content-container {
-        flex-direction: column;
-    }
+  .license .content-container {
+    flex-direction: column;
+  }
 
-    .license .content-container .content {
-        align-items: center;
-        text-align: center;
-    }
+  .license .content-container .content {
+    align-items: center;
+    text-align: center;
+  }
 }
