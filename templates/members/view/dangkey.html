@@ -22,26 +22,28 @@
         </div>
     </div>
     <div class="detail">
-        <div class="detail-main">
-            <span class="info fade-right">
-                <span><b>나이</b>: {{ rows.age }}</span>
-                <span><b>키</b>: {{ rows.height }}</span>
-                <span><b>몸무게</b>: {{ rows.weight }}</span>
-                <span><b>생일</b>: {{ rows.birthday }}</span>
-            </span>
-            <span class="favorite">
-                <b>[ 집에서 가져온 것 ]</b>
+        <span class="info fade-right">
+            <span><b>나이</b>: {{ rows.age }}</span>
+            <span><b>키</b>: {{ rows.height }}</span>
+            <span><b>몸무게</b>: {{ rows.weight }}</span>
+            <span><b>생일</b>: {{ rows.birthday }}</span>
+        </span>
+        <span class="favorites">
+            <b>[ 집에서 가져온 것 ]</b>
+            <div class="favorites-content">
                 {% for item in rows.favorite %}
                     <span>{{ item }}</span>
                 {% endfor %}
-            </span>
-            <span class="dislikes">
-                <b>[ 싫어하는 것 ]</b>
+            </div>
+        </span>
+        <span class="dislikes">
+            <b>[ 싫어하는 것 ]</b>
+            <div class="dislikes-content">
                 {% for item in rows.dislikes %}
                     <span>{{ item }}</span>
                 {% endfor %}
-            </span>
-        </div>
+            </div>
+        </span>
     </div>
     <div class="sns">
         <div class="ohsimark">
