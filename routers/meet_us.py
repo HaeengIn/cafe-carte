@@ -18,19 +18,19 @@ async def index(request: Request):
     with open("static/data/meet-us/links.json", "r", encoding="utf-8") as f:
         links = json.load(f)
 
-        title = "MEET US - Cafe Carte"
-        meta_description = "카페 카르테의 소식, 활동, 그리고 공식 링크를 확인하세요."
+    title = "MEET US - Cafe Carte"
+    meta_description = "카페 카르테의 소식, 활동, 그리고 공식 링크를 확인하세요."
 
-        context = {
-            "title": title,
-            "meta_description": meta_description,
-            "items": items,
-            "links": links,
-            "image_base_url": BUCKET_BASE_URL,
-        }
+    context = {
+        "title": title,
+        "meta_description": meta_description,
+        "items": items,
+        "links": links,
+        "image_base_url": BUCKET_BASE_URL,
+    }
 
-        return templates.TemplateResponse(
-            request=request,
-            context=context,
-            name="meet-us/index.html",
-        )
+    return templates.TemplateResponse(
+        request=request,
+        context=context,
+        name="meet-us/index.html",
+    )
