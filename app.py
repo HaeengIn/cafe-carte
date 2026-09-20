@@ -10,9 +10,12 @@ from routers.meet_us import meet_us_router
 from routers.about import about_router
 from routers.status import status_router
 
-from template_config import templates
 
-app = FastAPI(redirect_slashes=True)
+from auto_template import setup_templates
+
+app = FastAPI()
+
+templates = setup_templates(directory="templates")
 
 BUCKET_BASE_URL = "https://static.cafe-carte.fans/img"
 
@@ -76,7 +79,7 @@ async def index(request: Request):
     context = {
         "title": title,
         "meta_description": meta_description,
-        "image_base_url": BUCKET_BASE_URL
+        "image_base_url": BUCKET_BASE_URL,
     }
 
     return templates.TemplateResponse(

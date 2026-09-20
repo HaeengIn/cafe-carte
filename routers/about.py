@@ -1,8 +1,11 @@
 import json
 from fastapi import APIRouter, Request
-from template_config import templates
 
-about_router = APIRouter(prefix="/about", redirect_slashes=True)
+from auto_template import setup_templates
+
+about_router = APIRouter(prefix="/about")
+
+templates = setup_templates(directory="templates")
 
 
 @about_router.get("")

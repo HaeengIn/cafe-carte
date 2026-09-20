@@ -1,8 +1,11 @@
 import json
 from fastapi import APIRouter, Request
-from template_config import templates
 
-members_router = APIRouter(prefix="/members", redirect_slashes=True)
+from auto_template import setup_templates
+
+members_router = APIRouter(prefix="/members")
+
+templates = setup_templates(directory="templates")
 
 BUCKET_BASE_URL = "https://static.cafe-carte.fans/img"
 
