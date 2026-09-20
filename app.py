@@ -3,20 +3,19 @@ from pathlib import Path
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse, Response
-from markdownify import markdownify
 
 from routers.members import members_router
 from routers.meet_us import meet_us_router
 from routers.about import about_router
 from routers.status import status_router
 
+from markdownify import markdownify
 
 from auto_template import setup_templates
 
 app = FastAPI()
 
 templates = setup_templates(directory="templates")
-
 BUCKET_BASE_URL = "https://static.cafe-carte.fans/img"
 
 
@@ -34,8 +33,8 @@ def accepts_markdown(request: Request) -> bool:
                     quality = float(value)
                 except ValueError:
                     quality = 0.0
-        return quality > 0
 
+        return quality > 0
     return False
 
 
@@ -64,11 +63,7 @@ async def markdown_negotiation(request: Request, call_next):
     )
 
 
-app.mount(
-    "/static",
-    StaticFiles(directory="static"),
-    name="static",
-)
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
 @app.get("/")
