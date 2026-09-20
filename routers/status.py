@@ -19,9 +19,11 @@ async def index(request: Request):
     compatibility_data = data["system"]["compatibility"]
 
     title = "Status - Cafe Carte"
+    meta_description = "카페 카르테 비공식 웹 사이트의 시스템 상태"
 
     context = {
         "title": title,
+        "meta_description": meta_description,
         "license_items": license_data,
         "availability_items": availability_data,
         "compatibility_items": compatibility_data,
@@ -31,5 +33,5 @@ async def index(request: Request):
     return templates.TemplateResponse(
         request=request,
         context=context,
-        name="status/index.html",
+        name="status.html",
     )
