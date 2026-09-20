@@ -53,6 +53,7 @@ async def mocoparfe(request: Request):
         "meta_description": meta_description,
         "rows": data,
         "image_url": image_url,
+        "member": "mocoparfe",
     }
 
     return templates.TemplateResponse(
@@ -82,6 +83,7 @@ async def hanseorin(request: Request):
         "meta_description": meta_description,
         "rows": data,
         "image_url": image_url,
+        "member": "hanseorin",
     }
 
     return templates.TemplateResponse(
@@ -110,6 +112,7 @@ async def dangkey(request: Request):
         "meta_description": meta_description,
         "rows": data,
         "image_url": image_url,
+        "member": "dangkey",
     }
 
     return templates.TemplateResponse(
@@ -138,6 +141,7 @@ async def uuhee(request: Request):
         "meta_description": meta_description,
         "rows": data,
         "image_url": image_url,
+        "member": "uuhee",
     }
 
     return templates.TemplateResponse(
@@ -166,6 +170,7 @@ async def aerusolstice(request: Request):
         "meta_description": meta_description,
         "rows": data,
         "image_url": image_url,
+        "member": "aerusolstice",
     }
 
     return templates.TemplateResponse(
