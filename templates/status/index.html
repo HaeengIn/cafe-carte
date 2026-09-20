@@ -8,7 +8,7 @@
         <div class="license">
             {% for item in license_items %}
             <div class="fade-right content-container">
-                <img width="200" height="200" src="/static/img/parents/{{ item.id }}.avif?v=20260819" alt="{{ item.name }}-Profile-Image">
+                <img width="200" height="200" src="{{ image_base_url }}/{{ item.id }}.avif?v=20260819" alt="{{ item.name }}-Profile-Image">
                 <div class="content">
                     <h1>{{ item.name }}</h1>
                     <a href="https://x.com/{{ item.username }}" target="_blank" rel="noopener noreferrer">{{ item.username }}</a>
@@ -27,7 +27,7 @@
                         <a href="https://lit.link/ko/atwomaru" target="_blank" rel="noopener noreferrer">Visit official homepage</a>
                     {% endif %}
                     {% if item.id != "sake_dong" and item.id != "atwomaru" %}
-                        <a href="/static/img/parents/LICENSE/{{ item.id }}.avif?v=20260819" target="_blank" rel="noopener noreferrer">View Screenshot</a>
+                        <a href="{{ image_base_url }}/license/{{ item.id }}.avif?v=20260819" target="_blank" rel="noopener noreferrer">View Screenshot</a>
                     {% endif %}
                 </div>
             </div>

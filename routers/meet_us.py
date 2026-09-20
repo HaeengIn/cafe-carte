@@ -4,6 +4,8 @@ from template_config import templates
 
 meet_us_router = APIRouter(prefix="/meet-us", redirect_slashes=True)
 
+BUCKET_BASE_URL = "https://static.cafe-carte.fans/img"
+
 
 @meet_us_router.get("")
 async def index(request: Request):
@@ -21,6 +23,7 @@ async def index(request: Request):
             "meta_description": meta_description,
             "items": items,
             "links": links,
+            "image_base_url": BUCKET_BASE_URL,
         }
 
         return templates.TemplateResponse(

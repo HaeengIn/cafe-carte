@@ -1,7 +1,8 @@
-{% set desc = "Cafe Carte - 카페 카르테의 비공식 팬 웹 사이트. 모코 파르페, 한서린, 댕키, 유우희, 에루 솔스티스로 구성된 카페 카르테를 만나보세요." %}
+{% set desc = "Cafe Carte - 카페 카르테의 비공식 팬 웹 사이트." %}
 {% set page_desc = meta_description if meta_description is defined else desc %}
 {% set banner = "https://cafe-carte.fans/static/img/banner.jpg?v=20260818" %}
 {% set page_url = "https://cafe-carte.fans" + request.url.path %}
+{% set bucket_base_url = "https://static.cafe-carte.fans/" %}
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -15,19 +16,22 @@
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="googlebot" content="index, follow">
     <meta name="bingbot" content="index, follow">
+
     <!-- Import CSS -->
     <link rel="stylesheet" href="/static/css/base.css?v={{ static_version('static/css/base.css') }}">
     <link rel="stylesheet" href="/static/css/nav-bar.css?v={{ static_version('static/css/nav-bar.css') }}">
     <link rel="stylesheet" href="/static/css/font.css?v={{ static_version('static/css/font.css') }}">
     <link rel="stylesheet" href="/static/css/scroll-animation.css?v={{ static_version('static/css/scroll-animation.css') }}">
     {% block css %}{% endblock css %}
+
     <!-- Import favicon -->
-    <link rel="icon" type="image/png" href="/static/favicon/favicon-96x96.png?v=20260809" sizes="96x96">
-    <link rel="icon" type="image/svg+xml" href="/static/favicon/favicon.svg?v=20260809">
-    <link rel="shortcut icon" href="/static/favicon/favicon.ico?v=20260809">
-    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png?v=20260809">
+    <link rel="icon" type="image/png" href="{{ bucket_base_url }}favicon/favicon-96x96.png?v=20260809" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="{{ bucket_base_url }}favicon/favicon.svg?v=20260809">
+    <link rel="shortcut icon" href="{{ bucket_base_url }}favicon/favicon.ico?v=20260809">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ bucket_base_url }}favicon/apple-touch-icon.png?v=20260809">
     <meta name="apple-mobile-web-app-title" content="Cafe Carte">
-    <link rel="manifest" href="/static/favicon/site.webmanifest?v=20260809">
+    <link rel="manifest" href="{{ bucket_base_url }}favicon/site.webmanifest?v=20260809">
+
     <!-- Open graph settings -->
     <meta property="og:title" content="Cafe Carte - 카페 카르테">
     <meta property="og:site_name" content="Cafe Carte">
@@ -40,17 +44,21 @@
     <meta property="og:locale" content="ko_KR">
     <meta property="og:type" content="website">
     <link rel="canonical" href="{{ page_url }}">
+
+    <!-- X card settings -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:description" content="{{ page_desc }}">
     <meta name="twitter:image" content="{{ banner }}">
     <meta name="twitter:site" content="@TWILLIT_studio_">
     <meta name="theme-color" content="#efeeea">
+
+    <!-- Title of page -->
     <title>{{ title }}</title>
 </head>
 <body>
     <nav>
         <a href="/">
-            <img width="93" height="50" class="nav-logo" src="/static/img/cafe-carte_logo.avif?v=20260806" alt="Cafe Carte Logo">
+            <img width="93" height="50" class="nav-logo" src="https://static.cafe-carte.fans/img/cafe-carte/logo.avif?v=20260806" alt="카페 카르테 로고">
         </a>
         <div class="nav-menu">
             <a href="/members">MEMBERS</a>
@@ -73,14 +81,14 @@
             "@type": "Organization",
             "name": "Cafe Carte",
             "url": "https://cafe-carte.fans",
-            "logo": "https://cafe-carte.fans/static/img/cafe-carte_logo.avif",
+            "logo": "https://static.cafe-carte.fans/img/cafe-carte/logo.avif",
             "description": "{{ desc }}",
             "image": "{{ banner }}",
             "potentialAction": {
               "@type": "SearchAction",
               "target": {
                 "@type": "EntryPoint",
-                "urlTemplate": "https://cafe-carte.fans/members"
+                "urlTemplate": "https://cafe-carte.fans"
               }
             }
           }

@@ -6,6 +6,8 @@ from template_config import templates
 
 status_router = APIRouter(prefix="/status", redirect_slashes=True)
 
+BUCKET_BASE_URL = "https://static.cafe-carte.fans/img/parents"
+
 
 @status_router.get("")
 async def index(request: Request):
@@ -23,6 +25,7 @@ async def index(request: Request):
         "license_items": license_data,
         "availability_items": availability_data,
         "compatibility_items": compatibility_data,
+        "image_base_url": BUCKET_BASE_URL,
     }
 
     return templates.TemplateResponse(

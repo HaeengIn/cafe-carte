@@ -18,7 +18,7 @@
                 <span>[ 데뷔일 ]</span>
                 <span>{{ rows.debut_date }} on <a class="chzzk" href="{{ rows.chzzk }}" target="_blank" rel="noopener noreferrer">CHZZK</a></span>
             </span>
-            <img class="fade-left" decoding="async" width="450" height="450" src="/static/img/members/dangkey/portrait.avif?v=20260817" alt="DangKey-Profile-Image">
+            <img class="fade-left" decoding="async" width="450" height="450" src="{{ image_url.portrait }}" alt="DangKey-Profile-Image">
         </div>
     </div>
     <div class="detail">
@@ -61,7 +61,7 @@
         <div class="mama fade-right">
             <span class="role"><b>[ 마마 ]</b></span>
             <a class="profile-image" href="{{ rows.parents.mama.url }}" target="_blank" rel="noopener noreferrer">
-                <img decoding="async" src="/static/img/parents/{{ rows.parents.mama.username }}.avif?v=20260815" alt="{{ rows.parents.mama.username }}-Profile-Image">
+                <img decoding="async" src="{{ image_url.mama }}" alt="{{ rows.parents.mama.username }}-Profile-Image">
             </a>
             <span>@{{ rows.parents.mama.username }}</span>
             <a href="{{ rows.parents.mama.url }}" target="_blank" rel="noopener noreferrer">{{ rows.parents.mama.url }}</a>
@@ -69,7 +69,7 @@
         <div class="papa fade-left">
             <span class="role"><b>[ 파파 ]</b></span>
             <a class="profile-image" href="{{ rows.parents.papa.url }}" target="_blank" rel="noopener noreferrer">
-                <img decoding="async" src="/static/img/parents/{{ rows.parents.papa.username }}.avif?v=20260815" alt="{{ rows.parents.papa.username }}-Profile-Image">
+                <img decoding="async" src="{{ image_url.papa }}" alt="{{ rows.parents.papa.username }}-Profile-Image">
             </a>
             <span>@{{ rows.parents.papa.username }}</span>
             <a href="{{ rows.parents.papa.url }}" target="_blank" rel="noopener noreferrer">{{ rows.parents.papa.url }}</a>

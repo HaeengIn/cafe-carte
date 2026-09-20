@@ -14,6 +14,8 @@ from template_config import templates
 
 app = FastAPI(redirect_slashes=True)
 
+BUCKET_BASE_URL = "https://static.cafe-carte.fans/img"
+
 
 def accepts_markdown(request: Request) -> bool:
     for media_range in request.headers.get("accept", "").split(","):
@@ -74,6 +76,7 @@ async def index(request: Request):
     context = {
         "title": title,
         "meta_description": meta_description,
+        "image_base_url": BUCKET_BASE_URL
     }
 
     return templates.TemplateResponse(
