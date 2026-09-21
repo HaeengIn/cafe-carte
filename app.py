@@ -1,3 +1,5 @@
+import json
+
 from pathlib import Path
 
 from fastapi import FastAPI, Request
@@ -6,14 +8,13 @@ from fastapi.responses import FileResponse, Response
 
 from routers.members import members_router
 from routers.meet_us import meet_us_router
-from routers.about import about_router
-from routers.status import status_router
 
 from markdownify import markdownify
 
 from auto_template import setup_templates
 
 app = FastAPI()
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 templates = setup_templates(directory="templates")
 BUCKET_BASE_URL = "https://static.cafe-carte.fans/img"
@@ -63,9 +64,6 @@ async def markdown_negotiation(request: Request, call_next):
     )
 
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
-
-
 @app.get("/")
 async def index(request: Request):
     title = "CAFE CARTE - Unofficial Fan Website"
@@ -85,6 +83,67 @@ async def index(request: Request):
             "Link": '</openapi.json>; rel="service-desc", </docs>; rel="service-doc"',
         },
     )
+
+
+@app.get("/about")
+async def about(request: Request):
+    title = "ABOUT - Cafe Carte"
+    meta_description = "Cafe Carte 팬 웹 사이트 소개 및 개발자 정보. TWILLIT STUDIO의 3D 버츄얼 스트리머 그룹 카페 카르테를 소개합니다."
+
+    warning = (
+        '본 웹 사이트는 <a href="https://samg.net" target="_blank" rel="noopener noreferrer">SAMG Entertainment</a>의 브랜드인 TWILLIT STUDIO의 3D 버츄얼 스트리머/유튜버 그룹, \'카페 카르테\'의 <b>비공식 팬 웹 사이트</b>입니다.<br>'
+        "SAMG Entertainment 또는 TWILLIT STUDIO의 허가없이 제작된 웹 사이트이며, 사전 공지 없이 언제든 삭제될 수 있습니다."
+    )
+    developer_username = "HaeengIn"
+    developer_contact = "haeengin@gmail.com"
+    github_url = "https://github.com/HaeengIn/cafe-carte"
+
+    context = {
+        "title": title,
+        "meta_description": meta_description,
+        "warning": warning,
+        "developer_username": developer_username,
+        "developer_contact": developer_contact,
+        "github_url": github_url,
+    }
+
+    return templates.TemplateResponse(
+        request=request,
+        context=context,
+        name="about/index.html",
+    )
+
+
+@app.get("/status")
+async def status(request: Request):
+    with open("static/data/status/data.json", "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    global BUCKET_BASE_URL
+    BUCKET_BASE_URL = f"{BUCKET_BASE_URL}/parents"
+
+    license_data = data["parents_profile_image_license"]
+    availability_data = data["system"]["availability"]
+    compatibility_data = data["system"]["compatibility"]
+
+    title = "Status - Cafe Carte"
+    meta_description = "카페 카르테 비공식 웹 사이트의 시스템 상태"
+
+    context = {
+        "title": title,
+        "meta_description": meta_description,
+        "license_items": license_data,
+        "availability_items": availability_data,
+        "compatibility_items": compatibility_data,
+        "image_base_url": BUCKET_BASE_URL,
+    }
+
+    return templates.TemplateResponse(
+        request=request,
+        context=context,
+        name="status.html",
+    )
+
 
 
 @app.get("/sitemap.xml", include_in_schema=False)
@@ -109,5 +168,3 @@ async def robots():
 
 app.include_router(members_router)
 app.include_router(meet_us_router)
-app.include_router(about_router)
-app.include_router(status_router)
