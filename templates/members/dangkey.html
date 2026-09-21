@@ -1,50 +1,23 @@
-{% extends 'base.html' %}
-{% block css %}
-    <link rel="stylesheet" href="/static/css/members/dangkey.css?v={{ static_version('static/css/members/dangkey.css') }}">
-{% endblock css %}
-{% block body %}
-    <div class="profile">
-        <span class="info fade-right">
-            <p>{{ rows.race }}</p>
-            <h1 class="dangkey">댕키</h1>
-            <small class="dangkey">DangKey</small>
-            <p>{{ rows.story | safe }}</p>
-            <span class="position">
-                <b>「{{ rows.position }}」</b> of Cafe Carte
-            </span>
-        </span>
-        <div class="image-wrapper">
-            <span class="debut-date fade-left">
-                <span>[ 데뷔일 ]</span>
-                <span>{{ rows.debut_date }} on <a class="chzzk" href="{{ rows.chzzk }}" target="_blank" rel="noopener noreferrer">CHZZK</a></span>
-            </span>
-            <img class="fade-left" decoding="async" width="450" height="450" src="{{ image_url.portrait }}" alt="DangKey-Profile-Image">
+{% extends 'members/base.html' %}
+{% block personal_details %}
+    <span class="favorites fade-down">
+        <b>[ 집에서 가져온 것 ]</b>
+        <div class="favorites-content">
+            {% for item in rows.favorite %}
+                <span>{{ item }}</span>
+            {% endfor %}
         </div>
-    </div>
-    <div class="detail">
-        <span class="info fade-right">
-            <span><b>나이</b>: {{ rows.age }}</span>
-            <span><b>키</b>: {{ rows.height }}</span>
-            <span><b>몸무게</b>: {{ rows.weight }}</span>
-            <span><b>생일</b>: {{ rows.birthday }}</span>
-        </span>
-        <span class="favorites fade-down">
-            <b>[ 집에서 가져온 것 ]</b>
-            <div class="favorites-content">
-                {% for item in rows.favorite %}
-                    <span>{{ item }}</span>
-                {% endfor %}
-            </div>
-        </span>
-        <span class="dislikes fade-left">
-            <b>[ 싫어하는 것 ]</b>
-            <div class="dislikes-content">
-                {% for item in rows.dislikes %}
-                    <span>{{ item }}</span>
-                {% endfor %}
-            </div>
-        </span>
-    </div>
+    </span>
+    <span class="dislikes fade-left">
+        <b>[ 싫어하는 것 ]</b>
+        <div class="dislikes-content">
+            {% for item in rows.dislikes %}
+                <span>{{ item }}</span>
+            {% endfor %}
+        </div>
+    </span>
+{% endblock personal_details %}
+{% block other_info %}
     <div class="sns">
         <div class="ohsimark fade-right">
             <b>[ 오시마크 ]</b>
@@ -57,22 +30,4 @@
             {% endfor %}
         </div>
     </div>
-    <div class="parents">
-        <div class="mama fade-right">
-            <span class="role"><b>[ 마마 ]</b></span>
-            <a class="profile-image" href="{{ rows.parents.mama.url }}" target="_blank" rel="noopener noreferrer">
-                <img decoding="async" src="{{ image_url.mama }}" alt="{{ rows.parents.mama.username }}-Profile-Image">
-            </a>
-            <span>@{{ rows.parents.mama.username }}</span>
-            <a href="{{ rows.parents.mama.url }}" target="_blank" rel="noopener noreferrer">{{ rows.parents.mama.url }}</a>
-        </div>
-        <div class="papa fade-left">
-            <span class="role"><b>[ 파파 ]</b></span>
-            <a class="profile-image" href="{{ rows.parents.papa.url }}" target="_blank" rel="noopener noreferrer">
-                <img decoding="async" src="{{ image_url.papa }}" alt="{{ rows.parents.papa.username }}-Profile-Image">
-            </a>
-            <span>@{{ rows.parents.papa.username }}</span>
-            <a href="{{ rows.parents.papa.url }}" target="_blank" rel="noopener noreferrer">{{ rows.parents.papa.url }}</a>
-        </div>
-    </div>
-{% endblock body %}
+{% endblock other_info %}

@@ -48,12 +48,18 @@ async def mocoparfe(request: Request):
         "papa": f"{BUCKET_BASE_URL}/parents/dohaonya.avif",
     }
 
+    member = {
+        "en": "mocoparfe",
+        "en_title": "Moco Parfe",
+        "kr": "모코 파르페",
+    }
+
     context = {
         "title": title,
         "meta_description": meta_description,
         "rows": data,
         "image_url": image_url,
-        "member": "mocoparfe",
+        "member": member,
     }
 
     return templates.TemplateResponse(
@@ -78,12 +84,18 @@ async def hanseorin(request: Request):
         "papa": f"{BUCKET_BASE_URL}/parents/Grempa_Live2D.avif",
     }
 
+    member = {
+            "en": "hanseorin",
+            "en_title": "Han Seo Rin",
+            "kr": "한서린",
+        }
+
     context = {
         "title": title,
         "meta_description": meta_description,
         "rows": data,
         "image_url": image_url,
-        "member": "hanseorin",
+        "member": member,
     }
 
     return templates.TemplateResponse(
@@ -107,12 +119,18 @@ async def dangkey(request: Request):
         "papa": f"{BUCKET_BASE_URL}/parents/Machi_0330_.avif",
     }
 
+    member = {
+            "en": "dangkey",
+            "en_title": "DangKey",
+            "kr": "댕키",
+        }
+
     context = {
         "title": title,
         "meta_description": meta_description,
         "rows": data,
         "image_url": image_url,
-        "member": "dangkey",
+        "member": member,
     }
 
     return templates.TemplateResponse(
@@ -136,12 +154,18 @@ async def uuhee(request: Request):
         "papa": f"{BUCKET_BASE_URL}/parents/Grempa_Live2D.avif",
     }
 
+    member = {
+            "en": "uuhee",
+            "en_title": "UuHee",
+            "kr": "유우희",
+        }
+
     context = {
         "title": title,
         "meta_description": meta_description,
         "rows": data,
         "image_url": image_url,
-        "member": "uuhee",
+        "member": member,
     }
 
     return templates.TemplateResponse(
@@ -165,12 +189,18 @@ async def aerusolstice(request: Request):
         "papa": f"{BUCKET_BASE_URL}/parents/Machi_0330.avif",
     }
 
+    member = {
+            "en": "aerusolstice",
+            "en_title": "Aeru Solstice",
+            "kr": "에루 솔스티스",
+        }
+
     context = {
         "title": title,
         "meta_description": meta_description,
         "rows": data,
         "image_url": image_url,
-        "member": "aerusolstice",
+        "member": member,
     }
 
     return templates.TemplateResponse(

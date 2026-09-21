@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+{% block css %}
+    <link rel="stylesheet" href="/static/css/members/{{ member.en }}.css?v={{ static_version('static/css/members/' ~ member.en ~ '.css') }}">
+{% endblock css %}
+{% block body %}
+    <div class="profile">
+        <span class="info fade-right">
+            <p>{{ rows.race }}</p>
+            <h1 class="{{ member.en }}">{{ member.kr }}</h1>
+            <small class="{{ member.en }}">{{ member.en_title }}</small>
+            <p>{{ rows.story | safe }}</p>
+            <span class="position">
+                <b>「{{ rows.position }}」</b> of Cafe Carte
+            </span>
+        </span>
+        <div class="image-wrapper">
+            <span class="debut-date fade-left">
+                <span>[ 데뷔일 ]</span>
+                <span>{{ rows.debut_date }} on <a class="chzzk" href="{{ rows.chzzk }}" target="_blank" rel="noopener noreferrer">CHZZK</a></span>
+            </span>
+            <img class="fade-left" decoding="async" width="450px" height="450px" src="{{ image_url.portrait }}" alt="{{ member.en_title }} Portrait Image">
+        </div>
+    </div>
+    <div class="detail">
+        {% if member.en == "mocoparfe" or member.en == "hanseorin" %}
+            <div class="detail-main">
+                <span class="info fade-right">
+                    <span><b>나이</b>: {{ rows.age }}</span>
+                    <span><b>키</b>: {{ rows.height }}</span>
+                    <span><b>몸무게</b>: {{ rows.weight }}</span>
+                    <span><b>생일</b>: {{ rows.birthday }}</span>
+                    <span><b>MBTI</b>: {{ rows.mbti }}</span>
+                </span>
+                {% if member.en == "mocoparfe" %}
+                    <span class="favorite-song fade-down">
+                        <b>[ 좋아하는 노래 ]</b>
+                        {% for song in rows.favorite_song %}
+                            <span>{{ song }}</span>
+                        {% endfor %}
+                    </span>
+                    <span class="hobby fade-left">
+                        <b>[ 좋아하는 취미 ]</b>
+                        {% for hobby in rows.favorite_hobby %}
+                            <span>{{ hobby }}</span>
+                        {% endfor %}
+                    </span>
+                {% endif %}
+                {% if member.en == "hanseorin" %}
+                    <span class="favorites fade-down">
+                        <b>[ 좋아하는 것 ]</b>
+                        {% for hobby in rows.favorite %}
+                            <span>{{ hobby }}</span>
+                        {% endfor %}
+                    </span>
+                    <span class="dislikes fade-left">
+                        <b>[ 싫어하는 것 ]</b>
+                        {% for item in rows.dislike %}
+                            <span>{{ item }}</span>
+                        {% endfor %}
+                    </span>
+                {% endif %}
+            </div>
+            <details>
+                <summary class="favorite-real fade-down">[ 빨간약 먹기 ]</summary>
+                <div class="favorite-real-contents">
+                    <div>
+                        <span><b>[ 좋아하는 것 (찐) ]</b></span>
+                        <span>
+                            {% for favorite in rows.favorite_real %}
+                                <span>{{ favorite }}</span>
+                            {% endfor %}
+                        </span>
+                    </div>
+                </div>
+            </details>
+        {% endif %}
+        {% if member.en != "mocoparfe" and member.en != "hanseorin" %}
+            <span class="info fade-right">
+                {% if member.en != dangkey %}
+                    <span><b>나이</b>: {{ rows.age }}</span>
+                    <span><b>키</b>: {{ rows.height }}</span>
+                    <span><b>몸무게</b>: {{ rows.weight }}</span>
+                    <span><b>생일</b>: {{ rows.birthday }}</span>
+                    <span><b>MBTI</b>: {{ rows.mbti }}</span>
+                {% endif %}
+                {% if member.en == "dangkey" %}
+                    <span><b>나이</b>: {{ rows.age }}</span>
+                    <span><b>키</b>: {{ rows.height }}</span>
+                    <span><b>몸무게</b>: {{ rows.weight }}</span>
+                    <span><b>생일</b>: {{ rows.birthday }}</span>
+                {% endif %}
+            </span>
+            {% block personal_details %}{% endblock personal_details %}
+        {% endif %}
+    </div>
+    {% block other_info %}{% endblock other_info %}
+    <div class="parents">
+        {% if member.en == "hanseorin" %}
+            <div class="mama-1 fade-right">
+                <span class="role"><b>[ 마마 ]</b></span>
+                <a class="profile-image" href="{{ rows.parents.mama_1.url }}" target="_blank" rel="noopener noreferrer">
+                    <img decoding="async" src="{{ image_url.mama_1 }}" alt="{{ rows.parents.mama_1.username }}-Profile-Image">
+                </a>
+                <span>@{{ rows.parents.mama_1.username }}</span>
+                <a href="{{ rows.parents.mama_1.url }}" target="_blank" rel="noopener noreferrer">{{ rows.parents.mama_1.url }}</a>
+            </div>
+            <div class="mama-2 fade-down">
+                <span class="role"><b>[ 마마 ]</b></span>
+                <a class="profile-image" href="{{ rows.parents.mama_2.url }}" target="_blank" rel="noopener noreferrer">
+                    <img decoding="async" src="{{ image_url.mama_2 }}" alt="{{ rows.parents.mama_2.username }}-Profile-Image">
+                </a>
+                <span>@{{ rows.parents.mama_2.username }}</span>
+                <a href="{{ rows.parents.mama_2.url }}" target="_blank" rel="noopener noreferrer">{{ rows.parents.mama_2.url }}</a>
+            </div>
+            <div class="papa fade-left">
+                <span class="role"><b>[ 파파 ]</b></span>
+                <a class="profile-image" href="{{ rows.parents.papa.url }}" target="_blank" rel="noopener noreferrer">
+                    <img decoding="async" src="{{ image_url.papa }}" alt="{{ rows.parents.papa.username }}-Profile-Image">
+                </a>
+                <span>@{{ rows.parents.papa.username }}</span>
+                <a href="{{ rows.parents.papa.url }}" target="_blank" rel="noopener noreferrer">{{ rows.parents.papa.url }}</a>
+            </div>
+        {% endif %}
+        {% if member.en != "hanseorin" %}
+            <div class="mama fade-right">
+                <span class="role"><b>[ 마마 ]</b></span>
+                <a class="profile-image" href="{{ rows.parents.mama.url }}" target="_blank" rel="noopener noreferrer">
+                    <img decoding="async" src="{{ image_url.mama }}" alt="{{ rows.parents.mama.username }}-Profile-Image">
+                </a>
+                <span>@{{ rows.parents.mama.username }}</span>
+                <a href="{{ rows.parents.mama.url }}" target="_blank" rel="noopener noreferrer">{{ rows.parents.mama.url }}</a>
+            </div>
+            <div class="papa fade-left">
+                <span class="role"><b>[ 파파 ]</b></span>
+                <a class="profile-image" href="{{ rows.parents.papa.url }}" target="_blank" rel="noopener noreferrer">
+                    <img decoding="async" src="{{ image_url.papa }}" alt="{{ rows.parents.papa.username }}-Profile-Image">
+                </a>
+                <span>@{{ rows.parents.papa.username }}</span>
+                <a href="{{ rows.parents.papa.url }}" target="_blank" rel="noopener noreferrer">{{ rows.parents.papa.url }}</a>
+            </div>
+        {% endif %}
+    </div>
+{% endblock body %}
