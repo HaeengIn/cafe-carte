@@ -30,7 +30,7 @@ async def index(request: Request):
     return templates.TemplateResponse(
         request=request,
         context=context,
-        name="members/index.html",
+        name="members.html",
     )
 
 
@@ -59,7 +59,7 @@ async def mocoparfe(request: Request):
     return templates.TemplateResponse(
         request=request,
         context=context,
-        name="members/view/mocoparfe.html",
+        name="members/mocoparfe.html",
     )
 
 
@@ -89,7 +89,7 @@ async def hanseorin(request: Request):
     return templates.TemplateResponse(
         request=request,
         context=context,
-        name="members/view/hanseorin.html",
+        name="members/hanseorin.html",
     )
 
 
@@ -118,7 +118,7 @@ async def dangkey(request: Request):
     return templates.TemplateResponse(
         request=request,
         context=context,
-        name="members/view/dangkey.html",
+        name="members/dangkey.html",
     )
 
 
@@ -147,7 +147,7 @@ async def uuhee(request: Request):
     return templates.TemplateResponse(
         request=request,
         context=context,
-        name="members/view/uuhee.html",
+        name="members/uuhee.html",
     )
 
 
@@ -176,5 +176,5 @@ async def aerusolstice(request: Request):
     return templates.TemplateResponse(
         request=request,
         context=context,
-        name="members/view/aerusolstice.html",
+        name="members/aerusolstice.html",
     )

@@ -32,5 +32,5 @@ async def index(request: Request):
     return templates.TemplateResponse(
         request=request,
         context=context,
-        name="sns/index.html",
+        name="sns.html",
     )

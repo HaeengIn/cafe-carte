@@ -110,7 +110,7 @@ async def about(request: Request):
     return templates.TemplateResponse(
         request=request,
         context=context,
-        name="about/index.html",
+        name="about.html",
     )
 
 
