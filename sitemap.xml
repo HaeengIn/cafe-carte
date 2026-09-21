@@ -2,32 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://cafe-carte.fans/</loc>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://cafe-carte.fans/members</loc>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://cafe-carte.fans/members/mocoparfe</loc>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://cafe-carte.fans/members/hanseorin</loc>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://cafe-carte.fans/members/dangkey</loc>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://cafe-carte.fans/members/uuhee</loc>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://cafe-carte.fans/members/aerusolstice</loc>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://cafe-carte.fans/sns</loc>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://cafe-carte.fans/about</loc>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://cafe-carte.fans/status</loc>
+    <priority>0.6</priority>
   </url>
 </urlset>
