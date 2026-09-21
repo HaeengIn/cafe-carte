@@ -3,14 +3,14 @@ from fastapi import APIRouter, Request
 
 from auto_template import setup_templates
 
-meet_us_router = APIRouter(prefix="/meet-us")
+sns_router = APIRouter(prefix="/sns")
 
 templates = setup_templates(directory="templates")
 
 BUCKET_BASE_URL = "https://static.cafe-carte.fans/img"
 
 
-@meet_us_router.get("")
+@sns_router.get("")
 async def index(request: Request):
     with open("static/data/members-name.json", "r", encoding="utf-8") as f:
         items = json.load(f)

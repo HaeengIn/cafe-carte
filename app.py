@@ -7,7 +7,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse, Response
 
 from routers.members import members_router
-from routers.meet_us import meet_us_router
+from routers.sns import sns_router
 
 from markdownify import markdownify
 
@@ -167,4 +167,4 @@ async def robots():
 
 
 app.include_router(members_router)
-app.include_router(meet_us_router)
+app.include_router(sns_router)
