@@ -69,7 +69,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 @app.get("/")
 async def index(request: Request):
     title = "CAFE CARTE - Unofficial Fan Website"
-    meta_description = "Cafe Carte - 카페 카르테의 비공식 팬 웹 사이트. 모코 파르페, 한서린, 댕키, 유우희, 에루 솔스티스로 구성된 카페 카르테를 만나보세요."
+    meta_description = "Cafe Carte - 카페 카르테의 비공식 팬 웹 사이트. Not associated with SAMG Entertainment or TWILLIT Studio."
 
     context = {
         "title": title,
