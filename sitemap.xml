@@ -28,9 +28,6 @@
     <loc>https://cafe-carte.fans/about</loc>
   </url>
   <url>
-    <loc>https://cafe-carte.fans/status/parents</loc>
-  </url>
-  <url>
-    <loc>https://cafe-carte.fans/status/system</loc>
+    <loc>https://cafe-carte.fans/status</loc>
   </url>
 </urlset>
