@@ -1,10 +1,13 @@
 import json
+import logging
 
 from pathlib import Path
 
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse, Response
+
+from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from routers.members import members_router
 from routers.sns import sns_router
@@ -18,6 +21,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 templates = setup_templates(directory="templates")
 BUCKET_BASE_URL = "https://static.cafe-carte.fans/img"
+logger = logging.getLogger(__name__)
 
 
 def accepts_markdown(request: Request) -> bool:
@@ -61,6 +65,50 @@ async def markdown_negotiation(request: Request, call_next):
         status_code=response.status_code,
         headers=headers,
         media_type="text/markdown",
+    )
+
+
+@app.exception_handler(StarletteHTTPException)
+async def http_exception_handler(request: Request, exception: StarletteHTTPException):
+    ERROR_MESSAGES = {
+        400: "잘못된 요청입니다.",
+        403: "접근 권한이 없습니다.",
+        404: "요청하신 페이지를 찾을 수 없습니다.",
+        405: "허용되지 않은 요청 방식입니다.",
+        408: "요청 시간이 초과되었습니다.",
+        409: "요청이 현재 서버 상태와 충돌합니다.",
+        422: "요청 데이터의 형식이 올바르지 않습니다.",
+        429: "너무 많은 요청이 발생했습니다. 잠시 후 다시 시도해주세요.",
+        500: "서버 내부 오류가 발생했습니다.",
+        502: "외부 서비스 연결에 실패했습니다.",
+        503: "서비스를 일시적으로 사용할 수 없습니다.",
+        504: "외부 서비스 응답 시간이 초과되었습니다.",
+    }
+
+    context = {
+        "error": ERROR_MESSAGES.get(exception.status_code, exception.detail),
+    }
+
+    return templates.TemplateResponse(
+        request=request,
+        context=context,
+        name="error.html",
+        status_code=exception.status_code,
+    )
+
+
+@app.exception_handler(Exception)
+async def general_exception_handler(request: Request, exception: Exception):
+    logger.exception(f"Unhandled exception occured")
+    context = {
+        "error": "Error has occured at server",
+    }
+
+    return templates.TemplateResponse(
+        request=request,
+        context=context,
+        name="error.html",
+        status_code=500,
     )
 
 
@@ -143,7 +191,6 @@ async def status(request: Request):
         context=context,
         name="status.html",
     )
-
 
 
 @app.get("/sitemap.xml", include_in_schema=False)
