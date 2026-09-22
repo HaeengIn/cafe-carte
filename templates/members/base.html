@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% block css %}
     <link rel="stylesheet" href="/static/css/members/{{ member.en }}.css?v={{ static_version('static/css/members/' ~ member.en ~ '.css') }}">
+    <link rel="stylesheet" href="/static/css/member-color.css?v={{ static_version('static/css/member-color.css') }}">
+    <link rel="stylesheet" href="/static/css/members/base.css?v={{ static_version('static/css/members/base.css') }}">
 {% endblock css %}
 {% block body %}
     <div class="profile">
@@ -10,7 +12,7 @@
             <small class="{{ member.en }}">{{ member.en_title }}</small>
             <p>{{ rows.story | safe }}</p>
             <span class="position">
-                <b>「{{ rows.position }}」</b> of Cafe Carte
+                <b style="color: var(--{{ member.en }});">「{{ rows.position }}」</b> of Cafe Carte
             </span>
         </span>
         <div class="image-wrapper">

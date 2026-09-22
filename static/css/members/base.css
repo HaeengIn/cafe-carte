@@ -1,0 +1,151 @@
+@import url(/static/css/font.css?v=20260922);
+@import url(/static/css/variables.css?v=20260922);
+
+/* Base CSS for profile div */
+.profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.profile span.info {
+  margin: 40px 40px 0 40px;
+  display: flex;
+  flex-direction: column;
+  font-size: 300%;
+}
+
+.profile span.info p {
+  margin: 0;
+}
+
+.profile span h1 {
+  font-family: var(--font-Heavy);
+  line-height: 1;
+  margin: 0;
+  height: auto;
+}
+
+.profile span small {
+  font-family: var(--font-Bold);
+}
+
+.profile span p {
+  font-size: 50%;
+}
+
+.image-wrapper {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.image-wrapper img {
+  max-width: 450px;
+  width: 100%;
+  height: auto;
+}
+
+/* Apply gradient mask to image only PC browser */
+@media (min-width: 769px) {
+  .image-wrapper img {
+    mask-image: linear-gradient(to right, transparent 0%, black 20%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%);
+  }
+}
+
+.profile span.debut-date {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  white-space: nowrap;
+}
+
+.profile span.debut-date a.chzzk {
+  text-decoration: none;
+  color: #00ffa3;
+  background-color: black;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.profile span.position {
+  font-size: 70%;
+}
+
+/* Base CSS for parents div */
+.parents .role {
+  font-size: 150%;
+}
+
+.parents a {
+  text-decoration: none;
+  color: var(--cafe-carte);
+}
+
+.parents .profile-image {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+}
+
+.parents .profile-image img {
+  width: 100%;
+  aspect-ratio: 1;
+  display: block;
+  object-fit: cover;
+  border-radius: 30%;
+}
+
+/* Mobile compatibility */
+@media (max-width: 768px) {
+  /* Base CSS for profile div */
+  .profile {
+    flex-direction: column;
+  }
+
+  .profile span.info {
+    margin: 20px;
+    font-size: 220%;
+    text-align: center;
+  }
+
+  .image-wrapper {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .image-wrapper .debut-date {
+    order: -1;
+    align-items: center !important;
+    text-align: center;
+  }
+
+  .image-wrapper .debut-date > span {
+    width: 100%;
+    text-align: center;
+  }
+
+  .image-wrapper img {
+    max-width: 100%;
+
+    /* Apply gradient mask to image */
+    mask-image: linear-gradient(to bottom, transparent 0%, black 20%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%);
+  }
+
+  /* Base CSS for parents div */
+  .profile-image img {
+    width: min(70%, 250px);
+  }
+
+  .parents > div {
+    min-width: 0;
+  }
+
+  .parents a {
+    overflow-wrap: anywhere;
+  }
+}
