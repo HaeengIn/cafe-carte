@@ -116,7 +116,7 @@ async def dangkey(request: Request):
     image_url = {
         "portrait": f"{BUCKET_BASE_URL}/dangkey/portrait.avif",
         "mama": f"{BUCKET_BASE_URL}/parents/boni_53__.avif",
-        "papa": f"{BUCKET_BASE_URL}/parents/Machi_0330_.avif",
+        "papa": f"{BUCKET_BASE_URL}/parents/Machi_0330.avif",
     }
 
     member = {
