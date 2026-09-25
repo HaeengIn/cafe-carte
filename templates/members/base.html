@@ -78,7 +78,7 @@
         {% endif %}
         {% if member.en != "mocoparfe" and member.en != "hanseorin" %}
             <span class="info fade-right">
-                <span><b>나이</b>: {{ rows.age }}</span>
+                <span><b>나이</b>: {{ rows.age | safe }}</span>
                 <span><b>키</b>: {{ rows.height }}</span>
                 <span><b>몸무게</b>: {{ rows.weight }}</span>
                 <span><b>생일</b>: {{ rows.birthday }}</span>
