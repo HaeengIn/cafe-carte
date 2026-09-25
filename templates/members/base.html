@@ -78,18 +78,16 @@
         {% endif %}
         {% if member.en != "mocoparfe" and member.en != "hanseorin" %}
             <span class="info fade-right">
-                {% if member.en != "dangkey" %}
-                    <span><b>나이</b>: {{ rows.age }}</span>
-                    <span><b>키</b>: {{ rows.height }}</span>
-                    <span><b>몸무게</b>: {{ rows.weight }}</span>
-                    <span><b>생일</b>: {{ rows.birthday }}</span>
+                <span><b>나이</b>: {{ rows.age }}</span>
+                <span><b>키</b>: {{ rows.height }}</span>
+                <span><b>몸무게</b>: {{ rows.weight }}</span>
+                <span><b>생일</b>: {{ rows.birthday }}</span>
+                {% if member.en == "uuhee" %}
                     <span><b>MBTI</b>: {{ rows.mbti }}</span>
                 {% endif %}
-                {% if member.en == "dangkey" %}
-                    <span><b>나이</b>: {{ rows.age }}</span>
-                    <span><b>키</b>: {{ rows.height }}</span>
-                    <span><b>몸무게</b>: {{ rows.weight }}</span>
-                    <span><b>생일</b>: {{ rows.birthday }}</span>
+                {% if member.en == "aerusolstice" %}
+                    <span><b>MBTI</b>: {{ rows.mbti }}</span>
+                    <span><b>퍼스널 컬러</b>: <span class="personal-color">{{ rows.personal_color }}</span></span>
                 {% endif %}
             </span>
             {% block personal_details %}{% endblock personal_details %}
