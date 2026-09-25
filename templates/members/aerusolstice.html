@@ -1,0 +1,57 @@
+{% extends 'members/base.html' %}
+{% block personal_details %}
+    <span class="favorites fade-down">
+        <b>[ 좋아하는 것 ]</b>
+        {% for item in rows.favorites %}
+            <span>{{ item }}</span>
+        {% endfor %}
+    </span>
+    <span class="dislikes fade-left">
+        <b>[ 싫어하는 것 ]</b>
+        {% for item in rows.dislikes %}
+            <span>{{ item }}</span>
+        {% endfor %}
+    </span>
+{% endblock personal_details %}
+{% block other_info %}
+    <div class="traits">
+        <span class="good-at fade-right">
+            <b>[ 잘하는 것 ]</b>
+            {% for item in rows.good_at %}
+                <span>{{ item }}</span>
+            {% endfor %}
+        </span>
+        <span class="bad-at fade-left">
+            <b>[ 못하는 것 ]</b>
+            {% for item in rows.bad_at %}
+                <span>{{ item }}</span>
+            {% endfor %}
+        </span>
+    </div>
+    <div class="goals">
+        <div class="want-to-do fade-right">
+            <b>[ 하고 싶은 것 ]</b>
+            {% for item in rows.want_to_do %}
+                <span>{{ item }}</span>
+            {% endfor %}
+        </div>
+        <div class="goal fade-left">
+            <b>[ 목표 ]</b>
+            {% for item in rows.goal %}
+                <span>{{ item }}</span>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="sns">
+        <span class="ohsimark fade-right">
+            <b>[ 오시마크 ]</b>
+            <span>{{ rows.ohsimark }}</span>
+        </span>
+        <span class="hashtag fade-left">
+            <b>[ 해시태그 ]</b>
+            <span>보고 싶을 때: {{ rows.hashtag.when_missed }}</span>
+            <span>방송 클립: {{ rows.hashtag.broadcast_clip }}</span>
+            <span>팬아트: {{ rows.hashtag.fan_art }}</span>
+        </span>
+    </div>
+{% endblock other_info %}
