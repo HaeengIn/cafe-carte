@@ -32,7 +32,7 @@
         <div class="want-to-do fade-right">
             <b>[ 하고 싶은 것 ]</b>
             {% for item in rows.want_to_do %}
-                <span>{{ item }}</span>
+                <span>{{ item | safe}}</span>
             {% endfor %}
         </div>
         <div class="goal fade-left">
@@ -49,9 +49,9 @@
         </span>
         <span class="hashtag fade-left">
             <b>[ 해시태그 ]</b>
-            <span>보고 싶을 때: {{ rows.hashtag.when_missed }}</span>
-            <span>방송 클립: {{ rows.hashtag.broadcast_clip }}</span>
-            <span>팬아트: {{ rows.hashtag.fan_art }}</span>
+            <span><b>보고 싶을 때</b>: {{ rows.hashtag.when_missed }}</span>
+            <span><b>방송 클립</b>: {{ rows.hashtag.broadcast_clip }}</span>
+            <span><b>팬아트</b>: {{ rows.hashtag.fan_art }}</span>
         </span>
     </div>
 {% endblock other_info %}
