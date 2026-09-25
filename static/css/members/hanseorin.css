@@ -80,6 +80,8 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .dream {
@@ -93,7 +95,8 @@
 
 .dream-contents {
   display: flex;
-  gap: 40px;
+  flex-direction: column;
+  text-align: center;
 }
 
 .sns {

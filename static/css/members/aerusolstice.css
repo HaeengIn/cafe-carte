@@ -16,9 +16,23 @@
 .detail span.info,
 .detail span.favorites,
 .detail span.dislikes {
-  width: 33%;
   display: flex;
   flex-direction: column;
+}
+
+.detail span.info span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail span.info del.age {
+  font-size: 70%;
+  color: gray;
+}
+
+.detail span.info span span.personal-color:hover {
+  color: #fde498;
 }
 
 .traits {
@@ -56,6 +70,10 @@
 .goals .goal {
   display: flex;
   flex-direction: column;
+}
+
+.goals .want-to-do span b {
+  font-size: larger;
 }
 
 .sns {
