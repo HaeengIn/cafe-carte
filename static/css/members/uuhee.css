@@ -17,8 +17,6 @@
 .detail .info,
 .detail .favorites,
 .detail .dislikes {
-  width: 33%;
-
   display: flex;
   flex-direction: column;
 }
