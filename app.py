@@ -168,7 +168,7 @@ async def status(request: Request):
         data = json.load(f)
 
     global BUCKET_BASE_URL
-    BUCKET_BASE_URL = f"{BUCKET_BASE_URL}/parents"
+    image_base_url = f"{BUCKET_BASE_URL}/parents"
 
     license_data = data["parents_profile_image_license"]
     availability_data = data["system"]["availability"]
@@ -183,7 +183,7 @@ async def status(request: Request):
         "license_items": license_data,
         "availability_items": availability_data,
         "compatibility_items": compatibility_data,
-        "image_base_url": BUCKET_BASE_URL,
+        "image_base_url": image_base_url,
     }
 
     return templates.TemplateResponse(
