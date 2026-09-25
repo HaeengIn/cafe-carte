@@ -77,6 +77,10 @@
   margin: 0 40px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 40px;
+
+  text-align: center;
 }
 
 .contents .content-info {
@@ -86,7 +90,7 @@
 .contents .content-detail {
   display: flex;
   align-items: center;
-  gap: 200px;
+  gap: 100px;
 }
 
 .contents span.content-value,
@@ -107,7 +111,6 @@
 
 .contents .percentageChart {
   width: 30%;
-  margin-left: auto;
 }
 
 .contents .percentageChart canvas {
