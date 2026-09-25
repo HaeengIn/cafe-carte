@@ -1,0 +1,53 @@
+{% extends 'members/base.html' %}
+{% block personal_details %}
+    <span class="favorites fade-down">
+        <b>[ 좋아하는 것 ]</b>
+        {% for item in rows.favorites %}
+            <span>{{ item }}</span>            
+        {% endfor %}
+    </span>
+    <span class="dislikes fade-left">
+        <b>[ 싫어하는 것 ]</b>
+        {% for item in rows.dislikes %}
+            <span>{{ item }}</span>
+        {% endfor %}
+    </span>
+{% endblock personal_details %}
+{% block other_info %}
+    <div class="confident">
+        <span class="confidents fade-right">
+            <b>[ 자신 있는 것 ]</b>
+            {% for item in rows.confident %}
+                <span>{{ item }}</span>
+            {% endfor %}
+        </span>
+        <span class="non-confidents fade-left">
+            <b>[ 자신 없는 것 ]</b>
+            {% for item in rows.non_confident %}
+                <span>{{ item }}</span>
+            {% endfor %}
+        </span>
+    </div>
+    <div class="goal">
+        <span class="goal-content fade-down">
+            <b>[ 목표 ]</b>
+            {% for item in rows.goal %}
+                <span>{{ item }}</span>
+            {% endfor %}
+        </span>
+    </div>
+    <div class="sns">
+        <div class="ohsimark fade-right">
+            <b>[ 오시마크 ]</b>
+            {% for item in rows.ohsimark %}
+                <span>{{ item }}</span>
+            {% endfor %}
+        </div>
+        <div class="hashtag fade-left">
+            <b>[ 해시태그 ]</b>
+            {% for item in rows.hashtag %}
+                <span>{{ item }}</span>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock other_info %}

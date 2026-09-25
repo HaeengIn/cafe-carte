@@ -1,0 +1,137 @@
+@import url(/static/css/variables.css?v=20260925);
+
+.detail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+
+  background-color: var(--cafe-carte-background);
+
+  padding: 10px 40px;
+
+  font-size: 150%;
+  text-align: center;
+}
+
+.detail .info,
+.detail .favorites,
+.detail .dislikes {
+  width: 33%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.confident {
+  margin: 0 40px;
+  padding: 10px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+
+  font-size: 150%;
+  text-align: center;
+}
+
+.confident .confidents,
+.confident .non-confidents {
+  display: flex;
+  flex-direction: column;
+}
+
+.goal {
+  background-color: var(--cafe-carte-background);
+
+  padding: 10px 40px;
+  
+  font-size: 150%;
+  text-align: center;
+}
+
+.goal span.goal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sns {
+  margin: 0 40px;
+  padding: 10px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+
+  font-size: 150%;
+  text-align: center;
+}
+
+.sns .ohsimark,
+.sns .hashtag {
+  display: flex;
+  flex-direction: column;
+}
+
+.parents {
+  background-color: var(--cafe-carte-background);
+
+  padding: 10px 40px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+}
+
+.parents .mama,
+.parents .papa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .detail {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .detail span.info,
+  .detail span.favorites,
+  .detail span.dislikes {
+    width: 100%;
+    margin: 10px 20px;
+    text-align: center;
+  }
+
+  .confident {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .parents {
+    margin: 0 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sns {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .parents {
+    margin: 0;
+  }
+
+  .mama,
+  .papa {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
