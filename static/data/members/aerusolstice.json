@@ -1,23 +1,24 @@
 {
+  "chzzk": "https://chzzk.naver.com/1bacd9d540012f7cf0c77fa968b47394",
   "nickname": "솔에루",
   "age": "숙녀의 나이를 알려고 하지 마세요!",
   "height": "167cm",
   "birthday": "6월 3일",
   "mbti": "NPYJ",
-  "personal-color": "#fde498",
+  "personal_color": "#fde498",
   "race": "북부대공 막내딸",
-  "story": "검으로 나라를 수호하는 솔스티스 가문의 막내딸 에루 솔스티스. 가문의 뜻을 어기고 홀로 총기를 사용하다 들켜 가문에서 쫓겨나게 되었다. 길을 잃은 에루는 카페 카르테의 문과 마주친다.",
+  "story": "검으로 나라를 수호하는 솔스티스 가문의 막내딸 에루 솔스티스.<br>가문의 뜻을 어기고 홀로 총기를 사용하다 들켜 가문에서 쫓겨나게 되었다.<br>길을 잃은 에루는 카페 카르테의 문과 마주친다.",
   "position": "서빙",
-  "debut-data": "26.07.23 (목) 18:00",
-  "favorite": ["잠", "노래", "게임", "디저트", "뻐꾸"],
-  "good-at": ["영어", "에루어", "맛 구분하기", "멍 때리기"],
-  "dislike": ["높은 곳", "공포", "개구리", "도마뱀"],
-  "bad-at": ["기상", "집중", "답장", "잠들기"],
+  "debut_date": "26.07.23 (목) 18:00",
+  "favorites": ["잠", "노래", "게임", "디저트", "뻐꾸"],
+  "good_at": ["영어", "에루어", "맛 구분하기", "멍 때리기"],
+  "dislikes": ["높은 곳", "공포", "개구리", "도마뱀"],
+  "bad_at": ["기상", "집중", "답장", "잠들기"],
+  "ohsimark": "🪶✨",
   "hashtag": {
-    "when-missed": "#aerusolstice",
-    "broadcast-clip": "#aeruONLINE",
-    "fan-art": "PAINTaeru",
-    "ohsimark": "🪶✨"
+    "when_missed": "#aerusolstice",
+    "broadcast_clip": "#aeruONLINE",
+    "fan_art": "#PAINTaeru"
   },
   "parents": {
     "mama": {
@@ -29,7 +30,7 @@
       "url": "https://www.machilive2d.com/ko"
     }
   },
-  "want-to-do": [
+  "want_to_do": [
     "노래 방송",
     "요리 방송",
     "브이로그",
@@ -42,7 +43,9 @@
     "카페 카르테 굿즈",
     "디저트 콜라보",
     "오리지널 곡",
-    "게임 파트너 / 마케팅 행사 참여 / 실력+이름 알리기",
+    "게임 파트너",
+    "마케팅 행사 참여",
+    "실력+이름 알리기",
     "역조공",
     "3D 콘서트 & 팬미팅"
   ]
