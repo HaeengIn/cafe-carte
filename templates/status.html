@@ -23,10 +23,10 @@
                     {% if item.id == "sake_dong" %}
                         <span>Unable to view due to request</span>
                     {% endif %}
-                    {% if item.id == "atwomaru" %}
-                        <a href="https://lit.link/ko/atwomaru" target="_blank" rel="noopener noreferrer">Visit official homepage</a>
+                    {% if item.id == "atwomaru" or item.id == "HAZE" %}
+                        <a href="{{ item.homepage }}" target="_blank" rel="noopener noreferrer">Visit official homepage</a>
                     {% endif %}
-                    {% if item.id != "sake_dong" and item.id != "atwomaru" %}
+                    {% if item.id != "sake_dong" and item.id != "atwomaru" and item.id != "HAZE" %}
                         <a href="{{ image_base_url }}/license/{{ item.id }}.avif?v=20260819" target="_blank" rel="noopener noreferrer">View Screenshot</a>
                     {% endif %}
                 </div>
