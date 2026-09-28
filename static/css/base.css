@@ -1,16 +1,9 @@
 @import url(/static/css/variables.css?v=20260928);
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  word-break: keep-all;
-  overflow-x: clip;
-}
-
 body {
   font-family: var(--font-Regular);
+
+  line-height: 1.6;
 }
 
 main {
@@ -18,9 +11,36 @@ main {
 }
 
 h1 {
-  margin: 0;
+  font-size: 200%;
+  font-family: var(--font-Black);
+}
 
+h2 {
+  font-size: 180%;
+  font-family: var(--font-ExtraBold);
+}
+
+h3 {
+  font-size: 160%;
   font-family: var(--font-Bold);
+}
+
+h4 {
+  font-size: 140%;
+  font-family: var(--font-SemiBold);
+}
+
+h5 {
+  font-size: 120%;
+  font-family: var(--font-Medium);
+}
+
+h6 {
+  font-size: 100%;
+}
+
+b {
+  font-family: var(--font-SemiBold);
 }
 
 .details-contents {
