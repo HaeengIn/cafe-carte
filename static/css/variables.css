@@ -1,9 +1,22 @@
+@import url(/static/css/font.css?v=20260928);
+
 :root {
   --mocoparfe: #fba7d2;
   --hanseorin: #f03c4b;
   --dangkey: #ffce90;
   --uuhee: #ceb4f1;
   --aerusolstice: #a7cdfb;
+
   --cafe-carte: #3e7766;
   --cafe-carte-background: #efeeea;
+
+  --font-Thin: "Pretendard Thin";
+  --font-ExtraLight: "Pretendard ExtraLight";
+  --font-Light: "Pretendard Light";
+  --font-Regular: "Pretendard Regular";
+  --font-Medium: "Pretendard Medium";
+  --font-SemiBold: "Pretendard SemiBold";
+  --font-Bold: "Pretendard Bold";
+  --font-ExtraBold: "Pretendard ExtraBold";
+  --font-Black: "Pretendard Black";
 }
