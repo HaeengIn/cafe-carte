@@ -4,7 +4,7 @@ from auto_template import setup_templates
 from modules.database import get_connection
 from pydantic import BaseModel
 
-from modules.hasher import HashPassword
+from modules.hasher import HashPassword, VerifyPassword
 
 router = APIRouter()
 templates = setup_templates(directory="templates")
