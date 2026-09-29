@@ -4,6 +4,8 @@ from auto_template import setup_templates
 from modules.database import get_connection
 from pydantic import BaseModel
 
+from modules.hasher import HashPassword
+
 router = APIRouter()
 templates = setup_templates(directory="templates")
 
@@ -40,6 +42,8 @@ async def index(request: Request):
 
 @router.post("/guestbook")
 def create_guestbook(data: GuestbookCreate):
+    hashed_password = HashPassword(data.password)
+
     with get_connection() as conn:
         with conn.cursor() as cursor:
             cursor.execute(
@@ -49,7 +53,7 @@ def create_guestbook(data: GuestbookCreate):
                 (
                     data.author,
                     data.content,
-                    data.password,
+                    hashed_password,
                 ),
             )
 
