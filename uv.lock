@@ -135,6 +135,7 @@ dependencies = [
     { name = "argon2-cffi" },
     { name = "auto-template" },
     { name = "fastapi", extra = ["standard"] },
+    { name = "getkst" },
     { name = "markdownify" },
     { name = "psycopg", extra = ["binary"] },
     { name = "uvicorn", extra = ["standard"] },
@@ -145,6 +146,7 @@ requires-dist = [
     { name = "argon2-cffi", specifier = ">=25.1.0" },
     { name = "auto-template", specifier = ">=1.0.0" },
     { name = "fastapi", extras = ["standard"], specifier = ">=0.141.1" },
+    { name = "getkst", specifier = ">=1.0.2" },
     { name = "markdownify", specifier = ">=1.2.2" },
     { name = "psycopg", extras = ["binary"], specifier = ">=3.3.6" },
     { name = "uvicorn", extras = ["standard"], specifier = ">=0.52.1" },
@@ -465,6 +467,18 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/51/45/72c2bf5ae3386407009fe51c40e548e41f70181bbe34a6477bb6078be047/fastar-0.12.0-cp315-cp315t-win32.whl", hash = "sha256:39dad3351f1399cd28e2e649b6651299ef857df6c745e598b00b4167dcf93dbc", size = 449932, upload-time = "2026-08-20T09:12:10.589Z" },
     { url = "https://files.pythonhosted.org/packages/7f/74/0adeb47b838c62ebd78bdf11ee2255e6e205ea176f9147978efa022ef855/fastar-0.12.0-cp315-cp315t-win_amd64.whl", hash = "sha256:00cda9a3f11871261a4e77a3b8f0eede85c9730fb7516811bcbcf96a2bb3b75b", size = 482858, upload-time = "2026-08-20T09:11:53.714Z" },
     { url = "https://files.pythonhosted.org/packages/bf/b9/b2ce5a79c57150d36aa8e0514dd65999ea76f091242aba93c403cd20e491/fastar-0.12.0-cp315-cp315t-win_arm64.whl", hash = "sha256:e8e0fb057b5c271f46f3300b539b0d3dab8c8cb2515205a37c818c2f68d16806", size = 458287, upload-time = "2026-08-20T09:11:36.952Z" },
+]
+
+[[package]]
+name = "getkst"
+version = "1.0.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "tzdata", marker = "sys_platform == 'win32'" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/90/18/a7f86465934ab7cd3da7833a2ceb629365f03610592edcf7c5107ac05726/getkst-1.0.2.tar.gz", hash = "sha256:34b3f93036e54567115b31c4b9989b90a82c465fd6f4d57218cb24e1329eef39", size = 3160, upload-time = "2026-09-24T01:00:14.547Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/07/68/defaae2834fd33d8739768be8ce09dfe981efa6615b56fbfab7aa626238d/getkst-1.0.2-py3-none-any.whl", hash = "sha256:92ce94699f17b515d928e85b9529b0e34a8809705c8ea7d19891fe4b6b061a49", size = 3457, upload-time = "2026-09-24T01:00:13.22Z" },
 ]
 
 [[package]]
