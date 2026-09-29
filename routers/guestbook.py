@@ -12,7 +12,7 @@ router = APIRouter()
 templates = setup_templates(directory="templates")
 
 
-class GuestbookCreate(BaseModel):
+class CreateGuestbook(BaseModel):
     author: str
     content: str
     password: str
@@ -48,7 +48,7 @@ async def index(request: Request):
 
 
 @router.post("/guestbook")
-def create_guestbook(data: GuestbookCreate):
+def create_guestbook(data: CreateGuestbook):
     hashed_password = HashPassword(data.password)
 
     with get_connection() as conn:
