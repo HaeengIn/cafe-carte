@@ -9,5 +9,5 @@ def HashPassword(password: str) -> str:
     return hashed_password
 
 
-def VerifyPasswordp(password: str, hashed_password: str) -> bool:
+def VerifyPassword(password: str, hashed_password: str) -> bool:
     return HASHER.verify(hashed_password, password)
