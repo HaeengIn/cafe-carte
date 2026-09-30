@@ -2,7 +2,7 @@ from fastapi import APIRouter, Request, HTTPException
 from auto_template import setup_templates
 
 from modules.database import get_connection
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from modules.hasher import HashPassword, VerifyPassword
 
@@ -13,14 +13,14 @@ templates = setup_templates(directory="templates")
 
 
 class CreateGuestbook(BaseModel):
-    author: str
-    content: str
-    password: str
+    author: str = Field(max_length=20)
+    content: str = Field(max_length=100)
+    password: str = Field(min_length=8, max_length=20)
 
 
 class EditGuestbook(BaseModel):
-    content: str
-    password: str
+    content: str = Field(max_length=100)
+    password: str = Field(min_length=8, max_length=20)
 
 
 @router.get("/guestbook")
