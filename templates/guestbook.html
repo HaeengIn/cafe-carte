@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block body %}
+    <div class="guestbooks">
+        {% for item in guestbooks %}
+            <div class="guestbook">
+                <button class="edit-guestbook" data-id="{{ item.id }}" data-author="{{ item.author }}" data-content="{{ item.content }}">
+                    수정
+                </button>
+                <p>{{ item.content }}</p>
+                <small>작성자: <b>{{ item.author }}</b></small>
+                <small>작성일: <b>{{ item.created_at }}</b></small>
+                <small>수정 횟수: <b>{{ item.fixed_count }}</b></small>
+                <small>마지막 수정일: <b>{{ item.last_fixed or '-' }}</b></small>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="write">
+        <button id="write-guestbook">작성</button>
+    </div>
+    <dialog class="guestbook-dialog" id="guestbook-dialog">
+        <form id="guestbook-form">
+            <h2 id="dialog-title"></h2>
+            <label>
+                <span>작성자: </span>
+                <input type="text" name="author" id="author" maxlength="20" required>
+            </label>
+            <label>
+                <span>내용: </span>
+                <textarea name="content" id="content" maxlength="100" required></textarea>
+            </label>
+            <label>
+                <span>비밀번호: </span>
+                <input type="password" name="password" id="password" minlength="8" maxlength="20" required>
+            </label>
+            <div>
+                <button type="submit" id="submit-dialog">등록</button>
+                <button type="button" id="cancel-dialog">취소</button>
+            </div>
+        </form>
+    </dialog>
+{% endblock body %}
+{% block script %}
+    <script defer src="/static/js/guestbook.js?v={{ static_version('static/js/guestbook.js') }}"></script>
+{% endblock script %}
