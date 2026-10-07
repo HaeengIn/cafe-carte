@@ -11,6 +11,7 @@ from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from routers.members import members_router
 from routers.sns import sns_router
+from routers import guestbook
 
 from markdownify import markdownify
 
@@ -215,3 +216,4 @@ async def robots():
 
 app.include_router(members_router)
 app.include_router(sns_router)
+app.include_router(guestbook.router)
