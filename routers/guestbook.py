@@ -1,11 +1,9 @@
 from fastapi import APIRouter, Request, HTTPException
 from auto_template import setup_templates
-
 from modules.database import get_connection
-from pydantic import BaseModel, Field
-
 from modules.hasher import HashPassword, VerifyPassword
-
+from pydantic import BaseModel, Field
+from typing import Any, cast
 from getKST import getKST
 
 router = APIRouter()
@@ -30,10 +28,20 @@ async def index(request: Request):
     with get_connection() as conn:
         with conn.cursor() as cursor:
             cursor.execute("""
-                SELECT id, author, content, created_at, fixed_count, last_fixed FROM guestbook ORDER BY created_at DESC
-                """)
+                SELECT id, author, content, created_at, fixed_count, last_fixed
+                FROM main
+                ORDER BY created_at DESC
+            """)
 
-            guestbooks = cursor.fetchall()
+            guestbooks = cast(list[dict[str, Any]], cursor.fetchall())
+
+    for guestbook in guestbooks:
+        guestbook["created_at"] = guestbook["created_at"].strftime("%Y-%m-%d %H:%M:%S")
+
+        if guestbook["last_fixed"]:
+            guestbook["last_fixed"] = guestbook["last_fixed"].strftime(
+                "%Y-%m-%d %H:%M:%S"
+            )
 
     context = {
         "title": title,
@@ -55,7 +63,7 @@ def create_guestbook(data: CreateGuestbook):
         with conn.cursor() as cursor:
             cursor.execute(
                 """
-                INSERT INTO guestbook (author, content, password) VALUES (%s, %s, %s) RETURNING id, author, content, created_at, fixed_count, last_fixed
+                INSERT INTO main (author, content, password) VALUES (%s, %s, %s) RETURNING id, author, content, created_at, fixed_count, last_fixed
                 """,
                 (
                     data.author,
@@ -74,7 +82,7 @@ def edit_guestbook(data: EditGuestbook, id: int):
     with get_connection() as conn:
         with conn.cursor() as cursor:
             cursor.execute(
-                """SELECT password FROM guestbook WHERE id = %s""",
+                """SELECT password FROM main WHERE id = %s""",
                 (id,),
             )
             guestbook = cursor.fetchone()
@@ -92,7 +100,7 @@ def edit_guestbook(data: EditGuestbook, id: int):
                 )
 
             cursor.execute(
-                """UPDATE guestbook SET content = %s, fixed_count = fixed_count + 1, last_fixed = %s WHERE id = %s RETURNING id, author, content, created_at, fixed_count, last_fixed""",
+                """UPDATE main SET content = %s, fixed_count = fixed_count + 1, last_fixed = %s WHERE id = %s RETURNING id, author, content, created_at, fixed_count, last_fixed""",
                 (
                     data.content,
                     KST,
