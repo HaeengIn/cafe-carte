@@ -45,19 +45,46 @@ document.querySelectorAll(".edit-guestbook").forEach((button) => {
 });
 
 form.addEventListener("submit", async (event) => {
-  event.preventDefault;
+  event.preventDefault();
 
-  const data = {
-    author: authorInput.value,
-    content: contentInput.value,
-    password: passwordInput.value,
-  };
+  let response;
 
   if (mode === "create") {
-    // POST /guestbook
+    const data = {
+      author: authorInput.value,
+      content: contentInput.value,
+      password: passwordInput.value,
+    };
+
+    response = await fetch("/guestbook", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
   }
 
   if (mode === "edit") {
-    // POST /guestbook/edit/{id}
+    const data = {
+      content: contentInput.value,
+      password: passwordInput.value,
+    };
+
+    response = await fetch(`/guestbook/edit/${editId}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+  }
+
+  if (response.ok) {
+    dialog.close();
+    location.reload();
+  } else {
+    const error = await response.json();
+    alert(error.detail);
   }
 });
