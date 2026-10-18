@@ -1,20 +1,17 @@
 import json
 import logging
-
 from pathlib import Path
 
+import aiofiles
+from auto_template import setup_templates
 from fastapi import FastAPI, Request
-from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse, Response
-
+from fastapi.staticfiles import StaticFiles
+from markdownify import markdownify
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from routers.members import members_router
 from routers.sns import sns_router
-
-from markdownify import markdownify
-
-from auto_template import setup_templates
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -99,7 +96,7 @@ async def http_exception_handler(request: Request, exception: StarletteHTTPExcep
 
 @app.exception_handler(Exception)
 async def general_exception_handler(request: Request, exception: Exception):
-    logger.exception(f"Unhandled exception occured")
+    logger.exception("Unhandled exception occured")
     context = {
         "error": "Error has occured at server",
     }
@@ -164,10 +161,13 @@ async def about(request: Request):
 
 @app.get("/status")
 async def status(request: Request):
-    with open("static/data/status/data.json", "r", encoding="utf-8") as f:
-        data = json.load(f)
+    async with aiofiles.open(
+        "static/data/status/data.json",
+        "r",
+        encoding="utf-8",
+    ) as file:
+        data = json.loads(await file.read())
 
-    global BUCKET_BASE_URL
     image_base_url = f"{BUCKET_BASE_URL}/parents"
 
     license_data = data["parents_profile_image_license"]
