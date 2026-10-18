@@ -13,7 +13,7 @@ from starlette.exceptions import HTTPException as StarletteHTTPException
 from routers.members import members_router
 from routers.sns import sns_router
 
-app = FastAPI()
+app = FastAPI(title="Cafe Carte")
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 templates = setup_templates(directory="templates")
