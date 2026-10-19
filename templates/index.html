@@ -1,9 +1,23 @@
 {% extends 'base.html' %}
+{% block css %}
+    <link rel="stylesheet" href="/static/css/index.css?v={{ static_version('static/css/index.css') }}">
+{% endblock css %}
 {% block body %}
+    <p class="description">
+        Cafe Carte - 카페 카르테. TWILLIT STUDIO의 3D VTuber 그룹인 카페 카르테의 비공식 팬 웹사이트입니다. 모코 파르페, 한서린, 댕키, 유우희, 에루 솔스티스를 포함한 멤버들과 카페 카르테에 대해 알아보세요!
+    </p>
     <div class="front">
-        <img decoding="async" width="100%" class="front-image" src="{{ image_base_url }}/cafe-carte/front.avif" alt="카페 카르테 대문">
+        <img class="front-image fade-down" decoding="async" class="front-image" src="{{ image_base_url }}/cafe-carte/front.avif" alt="카페 카르테 대문">
     </div>
-    <footer data-nosnippet>
+    <div class="members">
+        <h2>멤버 - Members</h2>
+        {% for item in members %}
+            <a href="/members/{{ item }}">
+                <img src="{{ image_base_url }}/{{ item }}/profile.avif" alt="{{ members_ko.item }} 프로필 이미지">
+            </a>
+        {% endfor %}
+    </div>
+    <!-- <footer data-nosnippet>
         <div class="logo">
             <img width="120" src="{{ image_base_url }}/cafe-carte/logo.avif" alt="카페 카르테 로고">
         </div>
@@ -39,5 +53,5 @@
                 <a href="mailto:haeengin@gmail.com">haeengin@gmail.com</a>
             </div>
         </div>
-    </footer>
+    </footer> -->
 {% endblock body %}
