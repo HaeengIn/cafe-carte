@@ -114,10 +114,28 @@ async def index(request: Request):
     title = "CAFE CARTE - Unofficial Fan Website"
     meta_description = "Cafe Carte - 카페 카르테의 비공식 팬 웹 사이트. Not associated with SAMG Entertainment or TWILLIT Studio."
 
+    members = [
+        "mocoparfe",
+        "hanseorin",
+        "dangkey",
+        "uuhee",
+        "aerusolstice"
+    ]
+
+    members_ko = {
+        "mocoparfe": "모코 파르페",
+        "hanseorin": "한서린",
+        "dangkey": "댕키",
+        "uuhee": "유우희",
+        "aerusolstice": "에루 솔스티스"
+    }
+
     context = {
         "title": title,
         "meta_description": meta_description,
         "image_base_url": BUCKET_BASE_URL,
+        "members": members,
+        "members_ko": members_ko,
     }
 
     return templates.TemplateResponse(
