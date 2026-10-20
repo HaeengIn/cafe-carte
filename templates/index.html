@@ -10,12 +10,15 @@
         <img class="front-image fade-down" decoding="async" class="front-image" src="{{ image_base_url }}/cafe-carte/front.avif" alt="카페 카르테 대문">
     </div>
     <div class="members">
-        <h2>멤버 - Members</h2>
-        {% for item in members %}
-            <a href="/members/{{ item }}">
-                <img src="{{ image_base_url }}/{{ item }}/profile.avif" alt="{{ members_ko.item }} 프로필 이미지">
-            </a>
-        {% endfor %}
+        <h1 class="fade-down">멤버 - Members</h1>
+        <h3 id="memberName" class="member-name"></h3>
+        <div class="members-list">
+            {% for item in members %}
+                <a class="fade-right profile" href="/members/{{ item }}" data-name="{{ members_ko[item] }}" data-en="{{ item }}">
+                    <img class="profile" src="{{ image_base_url }}/{{ item }}/profile.avif" alt="{{ members_ko[item] }} 프로필 이미지">
+                </a>
+            {% endfor %}
+        </div>
     </div>
     <!-- <footer data-nosnippet>
         <div class="logo">
@@ -55,3 +58,6 @@
         </div>
     </footer> -->
 {% endblock body %}
+{% block script %}
+    <script src="/static/js/index.js?v={{ static_version('static/js/index.js') }}"></script>
+{% endblock script %}
