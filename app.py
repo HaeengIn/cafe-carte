@@ -113,21 +113,16 @@ async def general_exception_handler(request: Request, exception: Exception):
 async def index(request: Request):
     title = "CAFE CARTE - Unofficial Fan Website"
     meta_description = "Cafe Carte - 카페 카르테의 비공식 팬 웹 사이트. Not associated with SAMG Entertainment or TWILLIT Studio."
+    fanding_link = "https://fanding.kr/@TWILLITSTUDIO_"
 
-    members = [
-        "mocoparfe",
-        "hanseorin",
-        "dangkey",
-        "uuhee",
-        "aerusolstice"
-    ]
+    members = ["mocoparfe", "hanseorin", "dangkey", "uuhee", "aerusolstice"]
 
     members_ko = {
         "mocoparfe": "모코 파르페",
         "hanseorin": "한서린",
         "dangkey": "댕키",
         "uuhee": "유우희",
-        "aerusolstice": "에루 솔스티스"
+        "aerusolstice": "에루 솔스티스",
     }
 
     context = {
@@ -136,6 +131,7 @@ async def index(request: Request):
         "image_base_url": BUCKET_BASE_URL,
         "members": members,
         "members_ko": members_ko,
+        "fanding": fanding_link,
     }
 
     return templates.TemplateResponse(
