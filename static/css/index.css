@@ -1,5 +1,9 @@
 @import url(./variables.css?v=20261019);
 
+div {
+  padding: 12px 0;
+}
+
 .description {
   display: none;
 }
@@ -52,12 +56,43 @@
   gap: 20px;
 }
 
-.members .members-list .profile {
+.members .members-list .profile,
+.fanding .link {
   transition: 0.5s cubic-bezier(0, 1, 1, 1);
   -webkit-transition: 0.5s cubic-bezier(0, 1, 1, 1);
 }
 
-.members .members-list .profile:hover {
+.fanding {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.fanding .fanding-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.fanding .link {
+  background-color: #5d63f6;
+  color: white;
+
+  font-family: var(--font-SemiBold);
+  font-size: 110%;
+
+  border-radius: 16px;
+  border-style: none;
+  padding: 20px;
+
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+.members .members-list .profile:hover,
+.fanding .link:hover {
   transform: scale(1.2);
   -webkit-transform: scale(1.2);
   -ms-transform: scale(1.2);
