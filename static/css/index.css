@@ -57,7 +57,8 @@ div {
 }
 
 .members .members-list .profile,
-.fanding .link {
+.fanding .link,
+.twillitstudio .twillit-link-container .twillit-link .link {
   transition: 0.5s cubic-bezier(0, 1, 1, 1);
   -webkit-transition: 0.5s cubic-bezier(0, 1, 1, 1);
 }
@@ -69,7 +70,8 @@ div {
   gap: 20px;
 }
 
-.fanding .fanding-title {
+.fanding .fanding-title,
+.twillitstudio .twillit-title {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -92,8 +94,73 @@ div {
 }
 
 .members .members-list .profile:hover,
-.fanding .link:hover {
+.fanding .link:hover,
+.twillitstudio .twillit-link-container .twillit-link .link:hover {
   transform: scale(1.2);
   -webkit-transform: scale(1.2);
   -ms-transform: scale(1.2);
+}
+
+.twillitstudio {
+  background-color: var(--cafe-carte-background);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.twillitstudio .twillit-logo {
+  width: 64px;
+  height: auto;
+
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px 0px white;
+}
+
+.twillitstudio .twillit-link-container {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.twillitstudio .twillit-link-container .twillit-link {
+  text-decoration: none;
+}
+
+.twillitstudio .twillit-link-container .twillit-link .link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+
+  font-family: var(--font-SemiBold);
+  font-size: 120%;
+
+  border-radius: 24px;
+  border-style: none;
+  padding: 8px 32px 8px 20px;
+
+  cursor: pointer;
+}
+
+.twillitstudio .twillit-link-container .logo {
+  width: auto;
+  height: 48px;
+}
+
+.twillitstudio .twillit-link-container .twillit-link .twillit-x {
+  background-color: black;
+}
+
+.twillitstudio .twillit-link-container .twillit-link .twillit-naver-cafe {
+  background-color: white;
+  color: #03C75A;
+}
+
+.twillitstudio .twillit-link-container .twillit-link .twillit-youtube {
+  background-color: #FF0033;
 }
