@@ -125,6 +125,12 @@ async def index(request: Request):
         "aerusolstice": "에루 솔스티스",
     }
 
+    twillit_links = {
+        "x": "https://x.com/TWILLIT_studio_",
+        "naver_cafe": "https://cafe.naver.com/twillitstudio",
+        "youtube": "https://youtube.com/@TWILLITSTUDIOofficial",
+    }
+
     context = {
         "title": title,
         "meta_description": meta_description,
@@ -132,6 +138,7 @@ async def index(request: Request):
         "members": members,
         "members_ko": members_ko,
         "fanding": fanding_link,
+        "twillit_links": twillit_links,
     }
 
     return templates.TemplateResponse(
