@@ -111,11 +111,17 @@ async def general_exception_handler(request: Request, exception: Exception):
 
 @app.get("/")
 async def index(request: Request):
-    title = "CAFE CARTE - Unofficial Fan Website"
-    meta_description = "Cafe Carte - 카페 카르테의 비공식 팬 웹 사이트. Not associated with SAMG Entertainment or TWILLIT Studio."
+    title = "카페 카르테 - Cafe Carte | 비공식 웹 사이트"
+    meta_description = "카페 카르테의 비공식 팬 웹 사이트. Not associated with SAMG Entertainment or TWILLIT Studio."
     fanding_link = "https://fanding.kr/@TWILLITSTUDIO_"
 
-    members = ["mocoparfe", "hanseorin", "dangkey", "uuhee", "aerusolstice"]
+    members = [
+        "mocoparfe",
+        "hanseorin",
+        "dangkey",
+        "uuhee",
+        "aerusolstice",
+    ]
 
     members_ko = {
         "mocoparfe": "모코 파르페",
@@ -153,8 +159,8 @@ async def index(request: Request):
 
 @app.get("/about")
 async def about(request: Request):
-    title = "ABOUT - Cafe Carte"
-    meta_description = "Cafe Carte 팬 웹 사이트 소개 및 개발자 정보. TWILLIT STUDIO의 3D 버츄얼 스트리머 그룹 카페 카르테를 소개합니다."
+    title = "소개 - 카페 카르테"
+    meta_description = "비공식 웹 사이트 소개 및 개발자 정보."
 
     warning = (
         '본 웹 사이트는 <a href="https://samg.net" target="_blank" rel="noopener noreferrer">SAMG Entertainment</a>의 브랜드인 TWILLIT STUDIO의 3D 버츄얼 스트리머/유튜버 그룹, \'카페 카르테\'의 <b>비공식 팬 웹 사이트</b>입니다.<br>'
@@ -195,7 +201,7 @@ async def status(request: Request):
     availability_data = data["system"]["availability"]
     compatibility_data = data["system"]["compatibility"]
 
-    title = "Status - Cafe Carte"
+    title = "시스템 상태 - 카페 카르테"
     meta_description = "카페 카르테 비공식 웹 사이트의 시스템 상태"
 
     context = {

@@ -23,8 +23,8 @@ async def index(request: Request):
     ) as file:
         data = json.loads(await file.read())
 
-    title = "MEMBERS - Cafe Carte"
-    meta_description = "카페 카르테의 멤버들을 소개합니다. 모코 파르페, 한서린, 댕키, 유우희, 에루 솔스티스의 프로필을 확인하세요."
+    title = "멤버 - 카페 카르테"
+    meta_description = "카페 카르테의 멤버, 「모코 파르페/한서린/댕키/유우희/에루 솔스티스」에 대해 알아보세요."
 
     image_base_url = f"{BUCKET_BASE_URL}"
 
@@ -51,8 +51,8 @@ async def mocoparfe(request: Request):
     ) as file:
         data = json.loads(await file.read())
 
-    title = "모코 파르페 - Cafe Carte"
-    meta_description = "모코 파르페(Moco Parfe)의 프로필 정보를 확인하세요."
+    title = "모코 파르페 - 멸망한 핫초코 왕국의 왕녀"
+    meta_description = "멸망한 핫초코 왕국의 왕녀, 모코 파르페의 프로필 정보를 확인하세요."
 
     image_url = {
         "portrait": f"{BUCKET_BASE_URL}/mocoparfe/portrait.avif",
@@ -90,8 +90,8 @@ async def hanseorin(request: Request):
     ) as file:
         data = json.loads(await file.read())
 
-    title = "한서린 - Cafe Carte"
-    meta_description = "한서린(Han Seorin)의 프로필 정보를 확인하세요."
+    title = "한서린 - 강력한 저승사자 공무원"
+    meta_description = "강력한 저승사자 공무원, 한서린의 프로필 정보를 확인하세요."
 
     image_url = {
         "portrait": f"{BUCKET_BASE_URL}/hanseorin/portrait.avif",
@@ -130,8 +130,8 @@ async def dangkey(request: Request):
     ) as file:
         data = json.loads(await file.read())
 
-    title = "댕키 - Cafe Carte"
-    meta_description = "댕키(DangKey)의 프로필 정보를 확인하세요."
+    title = "댕키 - 시골 출신 배달부 시바견"
+    meta_description = "시골 출신 배달부 시바견, 댕키의 프로필 정보를 확인하세요."
 
     image_url = {
         "portrait": f"{BUCKET_BASE_URL}/dangkey/portrait.avif",
@@ -169,8 +169,8 @@ async def uuhee(request: Request):
     ) as file:
         data = json.loads(await file.read())
 
-    title = "유우희 - Cafe Carte"
-    meta_description = "유우희(Uuhee)의 프로필 정보를 확인하세요."
+    title = "유우희 - 이고의 유유자적 지박령"
+    meta_description = "이고의 유유자적 지박령, 유우희의 프로필 정보를 확인하세요."
 
     image_url = {
         "portrait": f"{BUCKET_BASE_URL}/uuhee/portrait.avif",
@@ -208,8 +208,8 @@ async def aerusolstice(request: Request):
     ) as file:
         data = json.loads(await file.read())
 
-    title = "에루 솔스티스 - Cafe Carte"
-    meta_description = "에루 솔스티스(AeruSolstice)의 프로필 정보를 확인하세요."
+    title = "에루 솔스티스 - 북부대공 솔스티스 가문의 막내딸"
+    meta_description = "북부대공 솔스티스 가문의 막내딸, 에루 솔스티스의 프로필 정보를 확인하세요."
 
     image_url = {
         "portrait": f"{BUCKET_BASE_URL}/aerusolstice/portrait.avif",

@@ -30,7 +30,7 @@ async def index(request: Request):
     ) as file:
         links = json.loads(await file.read())
 
-    title = "MEET US - Cafe Carte"
+    title = "SNS - 카페 카르테"
     meta_description = "카페 카르테의 소식, 활동, 그리고 공식 링크를 확인하세요."
 
     context = {
