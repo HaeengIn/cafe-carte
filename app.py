@@ -1,35 +1,48 @@
 import json
 import logging
+from logging import Logger
 from pathlib import Path
+from typing import Any
 
 import aiofiles
 from auto_template import setup_templates
 from fastapi import FastAPI, Request
-from fastapi.responses import FileResponse, Response
+from fastapi.responses import FileResponse, HTMLResponse, Response
 from fastapi.staticfiles import StaticFiles
 from markdownify import markdownify
 from starlette.exceptions import HTTPException as StarletteHTTPException
+from starlette.templating import Jinja2Templates
 
 from routers.members import members_router
 from routers.sns import sns_router
 
-app = FastAPI(title="Cafe Carte")
+app: FastAPI = FastAPI(title="Cafe Carte")
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-templates = setup_templates(directory="templates")
-BUCKET_BASE_URL = "https://static.cafe-carte.fans/img"
-logger = logging.getLogger(__name__)
+templates: Jinja2Templates = setup_templates(directory="templates")
+BUCKET_BASE_URL: str = "https://static.cafe-carte.fans/img"
+logger: Logger = logging.getLogger(__name__)
 
 
 def accepts_markdown(request: Request) -> bool:
-    for media_range in request.headers.get("accept", "").split(","):
-        media_type, *parameters = media_range.split(";")
+    accept_header: str = request.headers.get("accept", "")
+
+    for media_range in accept_header.split(","):
+        parts: list[str] = media_range.split(";")
+        media_type: str = parts[0]
+        parameters: list[str] = parts[1:]
+
         if media_type.strip().lower() != "text/markdown":
             continue
 
-        quality = 1.0
+        quality: float = 1.0
+
         for parameter in parameters:
+            name: str
+            _: str
+            value: str
             name, _, value = parameter.strip().partition("=")
+
             if name.lower() == "q":
                 try:
                     quality = float(value)
@@ -37,21 +50,25 @@ def accepts_markdown(request: Request) -> bool:
                     quality = 0.0
 
         return quality > 0
+
     return False
 
 
 @app.middleware("http")
-async def markdown_negotiation(request: Request, call_next):
+async def markdown_negotiation(
+    request: Request,
+    call_next,
+) -> Response:
     response = await call_next(request)
 
     content_type = response.headers.get("content-type", "").split(";", 1)[0]
     if not accepts_markdown(request) or content_type != "text/html":
         return response
 
-    html = b"".join([chunk async for chunk in response.body_iterator]).decode("utf-8")
-    markdown = markdownify(html, strip=["script", "style", "nav"]).strip() + "\n"
+    html: str = b"".join([chunk async for chunk in response.body_iterator]).decode("utf-8")
+    markdown: str = markdownify(html, strip=["script", "style", "nav"]).strip() + "\n"
 
-    headers = dict(response.headers)
+    headers: dict = dict(response.headers)
     headers.pop("content-length", None)
     headers.pop("content-type", None)
     vary = headers.get("vary", "")
@@ -66,8 +83,11 @@ async def markdown_negotiation(request: Request, call_next):
 
 
 @app.exception_handler(StarletteHTTPException)
-async def http_exception_handler(request: Request, exception: StarletteHTTPException):
-    ERROR_MESSAGES = {
+async def http_exception_handler(
+    request: Request,
+    exception: StarletteHTTPException,
+) -> HTMLResponse:
+    ERROR_MESSAGES: dict[int, str] = {
         400: "잘못된 요청입니다.",
         403: "접근 권한이 없습니다.",
         404: "요청하신 페이지를 찾을 수 없습니다.",
@@ -82,8 +102,11 @@ async def http_exception_handler(request: Request, exception: StarletteHTTPExcep
         504: "외부 서비스 응답 시간이 초과되었습니다.",
     }
 
-    context = {
-        "error": ERROR_MESSAGES.get(exception.status_code, exception.detail),
+    context: dict[str, Any] = {
+        "error": ERROR_MESSAGES.get(
+            exception.status_code,
+            exception.detail,
+        ),
     }
 
     return templates.TemplateResponse(
@@ -95,9 +118,13 @@ async def http_exception_handler(request: Request, exception: StarletteHTTPExcep
 
 
 @app.exception_handler(Exception)
-async def general_exception_handler(request: Request, exception: Exception):
+async def general_exception_handler(
+    request: Request,
+    exception: Exception,
+) -> HTMLResponse:
     logger.exception("Unhandled exception occured")
-    context = {
+
+    context: dict[str, str] = {
         "error": "Error has occured at server",
     }
 
@@ -109,13 +136,17 @@ async def general_exception_handler(request: Request, exception: Exception):
     )
 
 
-@app.get("/")
-async def index(request: Request):
-    title = "카페 카르테 - Cafe Carte | 비공식 웹 사이트"
-    meta_description = "카페 카르테의 비공식 팬 웹 사이트. Not associated with SAMG Entertainment or TWILLIT Studio."
-    fanding_link = "https://fanding.kr/@TWILLITSTUDIO_"
+@app.get(
+    "/",
+    include_in_schema=False,
+    response_class=HTMLResponse,
+)
+async def index(request: Request) -> HTMLResponse:
+    title: str = "카페 카르테 - Cafe Carte | 비공식 웹 사이트"
+    meta_description: str = "카페 카르테의 비공식 팬 웹 사이트. Not associated with SAMG Entertainment or TWILLIT Studio."
+    fanding_link: str = "https://fanding.kr/@TWILLITSTUDIO_"
 
-    members = [
+    members: list[str] = [
         "mocoparfe",
         "hanseorin",
         "dangkey",
@@ -123,7 +154,7 @@ async def index(request: Request):
         "aerusolstice",
     ]
 
-    members_ko = {
+    members_ko: dict[str, str] = {
         "mocoparfe": "모코 파르페",
         "hanseorin": "한서린",
         "dangkey": "댕키",
@@ -131,13 +162,13 @@ async def index(request: Request):
         "aerusolstice": "에루 솔스티스",
     }
 
-    twillit_links = {
+    twillit_links: dict[str, str] = {
         "x": "https://x.com/TWILLIT_studio_",
         "naver_cafe": "https://cafe.naver.com/twillitstudio",
         "youtube": "https://youtube.com/@TWILLITSTUDIOofficial",
     }
 
-    context = {
+    context: dict[str, Any] = {
         "title": title,
         "meta_description": meta_description,
         "image_base_url": BUCKET_BASE_URL,
@@ -157,20 +188,24 @@ async def index(request: Request):
     )
 
 
-@app.get("/about")
-async def about(request: Request):
-    title = "소개 - 카페 카르테"
-    meta_description = "비공식 웹 사이트 소개 및 개발자 정보."
+@app.get(
+    "/about",
+    include_in_schema=False,
+    response_class=HTMLResponse,
+)
+async def about(request: Request) -> HTMLResponse:
+    title: str = "소개 - 카페 카르테"
+    meta_description: str = "비공식 웹 사이트 소개 및 개발자 정보."
 
-    warning = (
+    warning: str = (
         '본 웹 사이트는 <a href="https://samg.net" target="_blank" rel="noopener noreferrer">SAMG Entertainment</a>의 브랜드인 TWILLIT STUDIO의 3D 버츄얼 스트리머/유튜버 그룹, \'카페 카르테\'의 <b>비공식 팬 웹 사이트</b>입니다.<br>'
         "SAMG Entertainment 또는 TWILLIT STUDIO의 허가없이 제작된 웹 사이트이며, 사전 공지 없이 언제든 삭제될 수 있습니다."
     )
-    developer_username = "HaeengIn"
-    developer_contact = "haeengin@gmail.com"
-    github_url = "https://github.com/HaeengIn/cafe-carte"
+    developer_username: str = "HaeengIn"
+    developer_contact: str = "haeengin@gmail.com"
+    github_url: str = "https://github.com/HaeengIn/cafe-carte"
 
-    context = {
+    context: dict[str, Any] = {
         "title": title,
         "meta_description": meta_description,
         "warning": warning,
@@ -186,25 +221,29 @@ async def about(request: Request):
     )
 
 
-@app.get("/status")
-async def status(request: Request):
+@app.get(
+    "/status",
+    include_in_schema=False,
+    response_class=HTMLResponse,
+)
+async def status(request: Request) -> HTMLResponse:
     async with aiofiles.open(
         "static/data/status/data.json",
         "r",
         encoding="utf-8",
     ) as file:
-        data = json.loads(await file.read())
+        data: dict = json.loads(await file.read())
 
-    image_base_url = f"{BUCKET_BASE_URL}/parents"
+    image_base_url: str = f"{BUCKET_BASE_URL}/parents"
 
-    license_data = data["parents_profile_image_license"]
-    availability_data = data["system"]["availability"]
-    compatibility_data = data["system"]["compatibility"]
+    license_data: list = data["parents_profile_image_license"]
+    availability_data: list = data["system"]["availability"]
+    compatibility_data: list = data["system"]["compatibility"]
 
-    title = "시스템 상태 - 카페 카르테"
-    meta_description = "카페 카르테 비공식 웹 사이트의 시스템 상태"
+    title: str = "시스템 상태 - 카페 카르테"
+    meta_description: str = "카페 카르테 비공식 웹 사이트의 시스템 상태"
 
-    context = {
+    context: dict[str, Any] = {
         "title": title,
         "meta_description": meta_description,
         "license_items": license_data,
@@ -220,9 +259,13 @@ async def status(request: Request):
     )
 
 
-@app.get("/sitemap.xml", include_in_schema=False)
-async def sitemap():
-    SITEMAP = Path(__file__).parent / "sitemap.xml"
+@app.get(
+    "/sitemap.xml",
+    include_in_schema=False,
+    response_class=FileResponse,
+)
+async def sitemap() -> FileResponse:
+    SITEMAP: Path = Path(__file__).parent / "sitemap.xml"
 
     return FileResponse(
         SITEMAP,
@@ -230,9 +273,13 @@ async def sitemap():
     )
 
 
-@app.get("/robots.txt", include_in_schema=False)
-async def robots():
-    ROBOTS = Path(__file__).parent / "robots.txt"
+@app.get(
+    "/robots.txt",
+    include_in_schema=False,
+    response_class=FileResponse,
+)
+async def robots() -> FileResponse:
+    ROBOTS: Path = Path(__file__).parent / "robots.txt"
 
     return FileResponse(
         ROBOTS,
