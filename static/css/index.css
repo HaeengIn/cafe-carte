@@ -56,6 +56,10 @@ div {
   gap: 20px;
 }
 
+.profile img {
+  border-radius: 20px;
+}
+
 .members .members-list .profile,
 .fanding .link,
 .twillitstudio .twillit-link-container .twillit-link .link {
