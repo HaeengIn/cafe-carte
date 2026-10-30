@@ -72,6 +72,9 @@ div {
   flex-direction: column;
   align-items: center;
   gap: 20px;
+
+  background-color: #000000;
+  color: #ffffff;
 }
 
 /* Fanding Carousel */
@@ -85,7 +88,7 @@ div {
   padding: 0;
 
   --carousel-side-gap: max(0px, calc((100vw - 1400px) / 2));
-  --carousel-fade-width: min(20vw, 240px);
+  --carousel-fade-width: min(30vw, 360px);
 }
 
 .fanding-carousel-viewport {
@@ -97,7 +100,7 @@ div {
   margin-inline: auto;
   padding: 0;
 
-  overflow: hidden;
+  overflow: visible;
   isolation: isolate;
   z-index: 1;
 }
@@ -118,12 +121,28 @@ div {
 
 .fanding-carousel::before {
   left: 0;
-  background: linear-gradient(to right, #000 0%, transparent 100%);
+  background: linear-gradient(
+    to right,
+    #000 0%,
+    rgba(0, 0, 0, 0.85) 20%,
+    rgba(0, 0, 0, 0.6) 40%,
+    rgba(0, 0, 0, 0.3) 60%,
+    rgba(0, 0, 0, 0.1) 80%,
+    transparent 100%
+  );
 }
 
 .fanding-carousel::after {
   right: 0;
-  background: linear-gradient(to left, #000 0%, transparent 100%);
+  background: linear-gradient(
+    to left,
+    #000 0%,
+    rgba(0, 0, 0, 0.85) 20%,
+    rgba(0, 0, 0, 0.6) 40%,
+    rgba(0, 0, 0, 0.3) 60%,
+    rgba(0, 0, 0, 0.1) 80%,
+    transparent 100%
+  );
 }
 
 .fanding-carousel-slide {
