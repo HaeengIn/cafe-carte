@@ -1,10 +1,13 @@
+{% set image_base_url = image_base_url | default("https://static.cafe-carte.fans/img") %}
+{% set fanding = fanding | default("https://fanding.kr/@TWILLITSTUDIO_") %}
+
 {% extends 'base.html' %}
 {% block css %}
     <link rel="stylesheet" href="/static/css/index.css?v={{ static_version('static/css/index.css') }}">
 {% endblock css %}
 {% block body %}
     <p class="description">
-        Cafe Carte - 카페 카르테. TWILLIT STUDIO의 3D VTuber 그룹인 카페 카르테의 비공식 팬 웹사이트입니다. 모코 파르페, 한서린, 댕키, 유우희, 에루 솔스티스를 포함한 멤버들과 카페 카르테에 대해 알아보세요!
+        TWILLIT STUDIO의 3D VTuber 그룹, 카페 카르테의 비공식 팬 웹사이트. 모코 파르페, 한서린, 댕키, 유우희, 에루 솔스티스를 포함한 멤버들과 카페 카르테에 대해 알아보세요.
     </p>
     <div class="front">
         <img class="front-image fade-down" decoding="async" class="front-image" src="{{ image_base_url }}/cafe-carte/front.avif" alt="카페 카르테 대문">
@@ -26,7 +29,7 @@
             <h1>팬딩 - Fanding</h1>
         </span>
         <h3 class="fade-down">카페 카르테의 굿즈를 만나는 유일한 방법</h3>
-        <div class="fanding-carousel">
+        <div class="fanding-carousel fade-down">
             <div id="fandingCarousel" class="fanding-carousel-viewport"></div>
             <button type="button" id="carouselPrev" class="carousel-arrow carousel-prev" aria-label="이전 이미지">&#10094;</button>
             <button type="button" id="carouselNext" class="carousel-arrow carousel-next" aria-label="다음 이미지">&#10095;</button>
