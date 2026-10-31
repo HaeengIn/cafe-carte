@@ -8,10 +8,6 @@ div {
   padding: 12px 0;
 }
 
-.description {
-  display: none;
-}
-
 .front {
   background-color: var(--cafe-carte-background);
   padding-top: 0;

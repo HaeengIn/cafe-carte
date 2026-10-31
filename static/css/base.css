@@ -48,3 +48,7 @@ b {
   height: 0;
   transition: height 0.4s ease;
 }
+
+.description {
+  display: none;
+}
