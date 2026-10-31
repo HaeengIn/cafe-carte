@@ -1,16 +1,27 @@
+{% set image_base_url = image_base_url | default("https://static.cafe-carte.fans/img") %}
+
 {% extends 'base.html' %}
 {% block css %}
     <link rel="stylesheet" href="/static/css/members/index.css?v={{ static_version('static/css/members/index.css') }}">
 {% endblock css %}
 {% block body %}
-    <div class="member-profiles">
-        {% for item in items %}
-        <div class="member-profile">
-            <a href="/members/{{ item.eng_name }}">
-                <img src="{{ image_base_url }}/{{ item.eng_name }}/profile.avif" alt="Member Profile Image">
-                <span class="{{ item.eng_name }}">{{ item.kor_name }}</span>
-            </a>
+    <p class="description">
+        카페 카르테를 이끌어가는 5명의 멤버들. 모코 파르페, 한서린, 댕키, 유우희, 에루 솔스티스에 대해 알아보세요.
+    </p>
+    <div class="background">
+        <div class="title">
+            <h1>멤버 - Members</h1>
+            <h3>카페 카르테에서 만날 수 있어요!</h3>
         </div>
-        {% endfor %}
+        <div class="member-profiles">
+            {% for item in items %}
+            <div class="member-profile">
+                <a href="/members/{{ item.eng_name }}">
+                    <img src="{{ image_base_url }}/{{ item.eng_name }}/profile.avif" alt="Member Profile Image" style="box-shadow: 0 0 12px var(--{{ item.eng_name }});">
+                    <b><span class="{{ item.eng_name }}" style="text-shadow: 0 0 12px var(--{{ item.eng_name }});">{{ item.kor_name }}</span></b>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
     </div>
 {% endblock body %}
