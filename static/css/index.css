@@ -72,9 +72,6 @@ div {
   flex-direction: column;
   align-items: center;
   gap: 20px;
-
-  background-color: #000000;
-  color: #ffffff;
 }
 
 /* Fanding Carousel */
@@ -123,11 +120,11 @@ div {
   left: 0;
   background: linear-gradient(
     to right,
-    #000 0%,
-    rgba(0, 0, 0, 0.85) 20%,
-    rgba(0, 0, 0, 0.6) 40%,
-    rgba(0, 0, 0, 0.3) 60%,
-    rgba(0, 0, 0, 0.1) 80%,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.85) 20%,
+    rgba(255, 255, 255, 0.6) 40%,
+    rgba(255, 255, 255, 0.3) 60%,
+    rgba(255, 255, 255, 0.1) 80%,
     transparent 100%
   );
 }
@@ -136,11 +133,11 @@ div {
   right: 0;
   background: linear-gradient(
     to left,
-    #000 0%,
-    rgba(0, 0, 0, 0.85) 20%,
-    rgba(0, 0, 0, 0.6) 40%,
-    rgba(0, 0, 0, 0.3) 60%,
-    rgba(0, 0, 0, 0.1) 80%,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.85) 20%,
+    rgba(255, 255, 255, 0.6) 40%,
+    rgba(255, 255, 255, 0.3) 60%,
+    rgba(255, 255, 255, 0.1) 80%,
     transparent 100%
   );
 }
