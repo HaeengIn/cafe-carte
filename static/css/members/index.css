@@ -4,7 +4,7 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,6 +50,8 @@ main {
   gap: 12px;
 
   color: #ffffff;
+  -webkit-text-stroke: 1.5px var(--cafe-carte);
+  font-size: 150%;
 }
 
 .member-profiles {
@@ -82,13 +84,43 @@ main {
 
 .member-profile span {
   margin-top: 8px;
+  font-size: 150%;
+  color: #ffffff;
 }
 
-@media (max-width: 480px) {
+/* CSS for small mobile devices */
+@media (max-width: 320px) {
+  .title {
+    font-size: 130%;
+  }
+}
+
+/* CSS for mobile devices */
+@media (max-width: 768px) {
+  main {
+    min-height: calc(100vh - 55px);
+    height: auto;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .background::before {
+    background-image: url(https://static.cafe-carte.fans/img/cafe-carte/members_rotated.avif);
+  }
+
   .member-profiles {
     flex-direction: column;
     padding: 20px 0;
     gap: 20px;
+  }
+}
+
+/* CSS for tablet devices */
+@media (max-width: 1024px) {
+  .member-profiles {
+    gap: 20px
   }
 }
 
