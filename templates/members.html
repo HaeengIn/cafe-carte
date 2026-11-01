@@ -15,13 +15,16 @@
         </div>
         <div class="member-profiles">
             {% for item in items %}
-            <div class="member-profile">
-                <a href="/members/{{ item.eng_name }}">
-                    <img src="{{ image_base_url }}/{{ item.eng_name }}/profile.avif" alt="Member Profile Image" style="box-shadow: 0 0 12px var(--{{ item.eng_name }});">
-                    <b><span class="{{ item.eng_name }}" style="text-shadow: 0 0 12px var(--{{ item.eng_name }});">{{ item.kor_name }}</span></b>
-                </a>
-            </div>
+                <div class="member-profile" data-member="{{ item.eng_name }}">
+                    <a href="/members/{{ item.eng_name }}">
+                        <img src="{{ image_base_url }}/{{ item.eng_name }}/profile.avif" alt="Member Profile Image">
+                        <b><span class="{{ item.eng_name }}">{{ item.kor_name }}</span></b>
+                    </a>
+                </div>
             {% endfor %}
         </div>
     </div>
 {% endblock body %}
+{% block script %}
+    <script src="/static/js/members/index.js?v={{ static_version('static/js/members/index.js') }}"></script>
+{% endblock script %}
