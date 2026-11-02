@@ -1,28 +1,43 @@
+{% set image_base_url = image_base_url | default("https://static.cafe-carte.fans/img") %}
+
 {% extends 'base.html' %}
 {% block css %}
     <link rel="stylesheet" href="/static/css/sns.css?v={{ static_version('static/css/sns.css') }}">
     <link rel="stylesheet" href="/static/css/member-color.css?v={{ static_version('static/css/member-color.css') }}">
 {% endblock css %}
 {% block body %}
-    <div class="members-banners">
-        {% for item in items %}
-        <div class="member-banner">
-            <img class="banner" src="{{ image_base_url }}/{{ item.eng_name }}/banner.avif" alt="Member Banner Image">
-            <div class="member-links {{ item.eng_name }}">
-                <a class="{{ item.eng_name }}" href="{{ links[item.eng_name].youtube }}" target="_blank" rel="noopener noreferrer">
-                    <img src="{{ image_base_url }}/{{ item.eng_name }}/youtube.png" alt="YouTube Link">
-                    YouTube
-                </a>
-                <a class="{{ item.eng_name }}" href="{{ links[item.eng_name].x }}" target="_blank" rel="noopener noreferrer">
-                    <img src="{{ image_base_url }}/{{ item.eng_name }}/x.png" alt="X Link">
-                    X
-                </a>
-                <a class="{{ item.eng_name }}" href="{{ links[item.eng_name].chzzk }}" target="_blank" rel="noopener noreferrer">
-                    <img src="{{ image_base_url }}/{{ item.eng_name }}/chzzk.png" alt="Chzzk Link">
-                    치지직
-                </a>
+    <div class="background">
+        <div class="members-banners">
+            {% for item in items %}
+            <div class="member-banner" data-member="{{ item.eng_name }}">
+                <img class="banner" src="{{ image_base_url }}/{{ item.eng_name }}/banner.avif" alt="Member Banner Image">
+                <div class="member-links {{ item.eng_name }}">
+                    <a class="{{ item.eng_name }}" href="{{ links[item.eng_name].youtube }}" target="_blank" rel="noopener noreferrer">
+                        <img src="{{ image_base_url }}/{{ item.eng_name }}/youtube.png" alt="YouTube Link">
+                        YouTube
+                    </a>
+                    <a class="{{ item.eng_name }}" href="{{ links[item.eng_name].x }}" target="_blank" rel="noopener noreferrer">
+                        <img src="{{ image_base_url }}/{{ item.eng_name }}/x.png" alt="X Link">
+                        X
+                    </a>
+                    {% if item.eng_name != "twillit-studio" %}
+                        <a class="{{ item.eng_name }}" href="{{ links[item.eng_name].chzzk }}" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ image_base_url }}/{{ item.eng_name }}/chzzk.png" alt="Chzzk Link">
+                            치지직
+                        </a>
+                    {% endif %}
+                    {% if item.eng_name == "twillit-studio" %}
+                        <a class="{{ item.eng_name }}" href="{{ links[item.eng_name].cafe }}" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ image_base_url }}/{{ item.eng_name }}/cafe.png" alt="Naver Cafe Link">
+                            네이버 카페
+                        </a>
+                    {% endif %}
+                </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
 {% endblock body %}
+{% block script %}
+    <script src="/static/js/sns.js?v={{ static_version('static/js/sns.js') }}"></script>
+{% endblock script %}
