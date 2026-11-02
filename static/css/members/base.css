@@ -68,6 +68,13 @@
   font-size: 70%;
 }
 
+details {
+  user-select: none;
+  -webkit-user-drag: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
 /* Base CSS for parents div */
 .parents .role {
   font-size: 150%;
