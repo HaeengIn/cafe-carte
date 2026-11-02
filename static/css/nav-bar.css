@@ -64,6 +64,10 @@ nav img {
   display: block;
 }
 
+nav a {
+  text-decoration: none;
+}
+
 @media (max-width: 480px) {
   .nav-menu {
     justify-content: flex-start;
