@@ -18,7 +18,7 @@ profiles.forEach((profile) => {
 const carousel = document.getElementById("fandingCarousel");
 
 if (carousel) {
-  const imageCount = 5;
+  const imageCount = 7;
 
   const images = Array.from(
     { length: imageCount },
