@@ -1,9 +1,4 @@
 {
-  "twillit-studio": {
-    "cafe": "https://cafe.naver.com/twillitstudio",
-    "youtube": "https://youtube.com/@TWILLITSTUDIOofficial",
-    "x": "https://x.com/TWILLIT_studio_"
-  },
   "mocoparfe": {
     "youtube": "https://youtube.com/@mocoparfe",
     "chzzk": "https://chzzk.naver.com/d20f164fe5946abe0bce2e5a43052923",
@@ -28,6 +23,11 @@
     "youtube": "https://youtube.com/@aerusolstice",
     "chzzk": "https://chzzk.naver.com/1bacd9d540012f7cf0c77fa968b47394",
     "x": "https://x.com/aerusolstice"
+  },
+  "twillit-studio": {
+    "youtube": "https://youtube.com/@TWILLITSTUDIOofficial",
+    "cafe": "https://cafe.naver.com/twillitstudio",
+    "x": "https://x.com/TWILLIT_studio_"
   },
   "samg-entertainment": {
     "homepage": "https://samg.net"
