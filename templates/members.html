@@ -15,12 +15,14 @@
         </div>
         <div class="member-profiles">
             {% for item in items %}
-                <div class="member-profile" data-member="{{ item.eng_name }}">
-                    <a href="/members/{{ item.eng_name }}">
-                        <img src="{{ image_base_url }}/{{ item.eng_name }}/profile.avif" alt="Member Profile Image">
-                        <b><span class="{{ item.eng_name }}">{{ item.kor_name }}</span></b>
-                    </a>
-                </div>
+                {% if item.eng_name != "twillit-studio" %}
+                    <div class="member-profile" data-member="{{ item.eng_name }}">
+                        <a href="/members/{{ item.eng_name }}">
+                            <img src="{{ image_base_url }}/{{ item.eng_name }}/profile.avif" alt="Member Profile Image">
+                            <b><span class="{{ item.eng_name }}">{{ item.kor_name }}</span></b>
+                        </a>
+                    </div>
+                {% endif %}
             {% endfor %}
         </div>
     </div>
