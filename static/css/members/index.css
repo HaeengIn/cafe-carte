@@ -89,14 +89,14 @@ main {
 }
 
 /* CSS for small mobile devices */
-@media (max-width: 320px) {
+@media (max-width: 321px) {
   .title {
     font-size: 130%;
   }
 }
 
 /* CSS for mobile devices */
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   main {
     min-height: calc(100vh - 55px);
     height: auto;
@@ -118,7 +118,7 @@ main {
 }
 
 /* CSS for tablet devices */
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
   .member-profiles {
     gap: 20px
   }
