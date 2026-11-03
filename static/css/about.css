@@ -1,8 +1,12 @@
+@import url(./variables.css?v=20261103);
+
 main {
   min-height: calc(100vh - 55px);
   display: flex;
   align-items: center;
   justify-content: center;
+
+  background-color: var(--cafe-carte-background);
 }
 
 .content {
@@ -30,8 +34,8 @@ a {
 span {
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   gap: 8px;
-  text-align: right;
 }
 
 span b {
