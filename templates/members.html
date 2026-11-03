@@ -9,14 +9,14 @@
         카페 카르테를 이끌어가는 5명의 멤버들. 모코 파르페, 한서린, 댕키, 유우희, 에루 솔스티스에 대해 알아보세요.
     </p>
     <div class="background">
-        <div class="title">
+        <div class="title fade-down">
             <h1>멤버 - Members</h1>
             <h3>카페 카르테에서 만날 수 있어요!</h3>
         </div>
         <div class="member-profiles">
             {% for item in items %}
                 {% if item.eng_name != "twillit-studio" %}
-                    <div class="member-profile" data-member="{{ item.eng_name }}">
+                    <div class="member-profile fade-down" data-member="{{ item.eng_name }}">
                         <a href="/members/{{ item.eng_name }}">
                             <img src="{{ image_base_url }}/{{ item.eng_name }}/profile.avif" alt="Member Profile Image">
                             <b><span class="{{ item.eng_name }}">{{ item.kor_name }}</span></b>
