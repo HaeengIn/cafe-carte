@@ -345,3 +345,45 @@ div {
 .twillitstudio .twillit-link-container .twillit-link .twillit-youtube {
   background-color: #ff0033;
 }
+
+.twillitstudio .twillit-link-container .twillit-link .link span {
+  word-break: keep-all;
+}
+
+@media (max-width: 481px) {
+  .front {
+    padding: 0;
+  }
+
+  .members,
+  .fanding,
+  .twillitstudio {
+    padding: 20px 20px;
+  }
+
+  .members {
+    padding-top: 0;
+  }
+
+  .members-list {
+    flex-direction: column;
+  }
+
+  .member-name {
+    display: none;
+  }
+
+  .twillit-link-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .link {
+    width: 188px;
+  }
+
+  .fanding-title,
+  .twillit-title {
+    font-size: 80%;
+  }
+}
