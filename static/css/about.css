@@ -1,11 +1,25 @@
-p,
-span {
-  text-align: center;
+main {
+  min-height: calc(100vh - 55px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  width: calc(100vw - 40px);
 }
 
 p {
+  text-align: left;
   font-size: 150%;
   color: #ff4a4a;
+  width: 600px;
+  word-break: keep-all;
 }
 
 a {
@@ -13,26 +27,78 @@ a {
   color: #3e7766;
 }
 
-a:visited {
-  color: #3e7766;
-}
-
 span {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  text-align: right;
+}
+
+span b {
+  font-size: 170%;
 }
 
 span a {
   font-size: 150%;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 481px) {
+  .content {
+    flex-direction: column;
+    align-items: flex-start;
+    width: calc(100vw - 20px);
+  }
+
   p {
-    font-size: 100%;
+    width: calc(100vw - 20px);
+    font-size: 120%;
+  }
+
+  span {
+    text-align: left;
+  }
+
+  span b {
+    font-size: 120%;
   }
 
   span a {
     font-size: 110%;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 769px) {
+  .content {
+    flex-direction: column;
+    align-items: flex-start;
+    width: calc(100vw - 200px);
+  }
+
+  p {
+    font-size: 150%;
+    width: 100%;
+  }
+
+  span {
+    text-align: left;
+    width: 100%;
+  }
+
+  span b {
+    font-size: 170%;
+  }
+
+  span a {
+    font-size: 150%;
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    word-break: keep-all;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1025px) {
+  .content {
+    width: calc(100vw - 60px);
   }
 }
