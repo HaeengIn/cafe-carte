@@ -8,7 +8,7 @@ body {
 summary {
   margin: 12px;
   cursor: pointer;
-  text-align: center;
+  text-align: left;
 
   user-select: none;
   -webkit-user-drag: none;
