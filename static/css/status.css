@@ -1,9 +1,18 @@
-@import url(/static/css/variables.css?v=20260820);
+@import url(./variables.css?v=20260820);
+
+body {
+  background-color: var(--cafe-carte-background);
+  height: 100%;
+}
 
 summary {
   margin: 12px;
   cursor: pointer;
   text-align: center;
+
+  user-select: none;
+  -webkit-user-drag: none;
+  -moz-user-select: none;
 }
 
 .license,
@@ -34,13 +43,20 @@ summary {
   gap: 8px;
 }
 
-a {
+.details-contents a {
   text-decoration: none;
   color: var(--cafe-carte);
+
+  transition: 0.5s cubic-bezier(0, 1, 1, 1);
 }
 
-a:hover {
+.details-contents a:hover {
   text-decoration: underline;
+
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -moz-transform: scale(1.2);
 }
 
 .available,
