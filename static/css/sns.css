@@ -28,11 +28,11 @@
   position: absolute;
   inset: 0;
   background-image: url("https://static.cafe-carte.fans/img/cafe-carte/sns-banner.avif");
-  background-size: 100vw auto;
-  background-attachment: scroll;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
   filter: blur(20px);
-  scale: 1.05;
+  scale: 1.1;
   z-index: 0;
 }
 
@@ -80,7 +80,7 @@
   margin: 4px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .members-banners {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -88,7 +88,7 @@
   }
 
   .member-banner img.banner {
-    width: 100%;
+    width: 95%;
   }
 
   .member-links {
@@ -97,5 +97,11 @@
 
   .member-links a img {
     max-width: 10%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .member-banner img.banner {
+    width: 95%;
   }
 }
