@@ -228,7 +228,7 @@ async def about(request: Request) -> HTMLResponse:
 )
 async def status(request: Request) -> HTMLResponse:
     async with aiofiles.open(
-        "static/data/status/data.json",
+        "static/data/status.json",
         "r",
         encoding="utf-8",
     ) as file:

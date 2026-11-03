@@ -27,7 +27,7 @@ async def index(request: Request) -> HTMLResponse:
         items: dict = json.loads(await file.read())
 
     async with aiofiles.open(
-        "static/data/sns/links.json",
+        "static/data/sns.json",
         "r",
         encoding="utf-8",
     ) as file:
