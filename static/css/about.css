@@ -90,8 +90,6 @@ span a {
 
   span a {
     font-size: 150%;
-    display: block;
-    width: fit-content;
     max-width: 100%;
     word-break: keep-all;
   }
