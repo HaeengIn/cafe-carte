@@ -1,6 +1,8 @@
+{% set image_base_url = image_base_url | default("https://static.cafe-carte.fans/img") %}
+
 {% extends 'base.html' %}
 {% block css %}
-    <link rel="stylesheet" href="/static/css/status/index.css?v={{ static_version('static/css/status/index.css') }}">
+    <link rel="stylesheet" href="/static/css/status.css?v={{ static_version('static/css/status.css') }}">
 {% endblock css %}
 {% block body %}
     <details>
