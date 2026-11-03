@@ -8,27 +8,29 @@
     <link rel="stylesheet" href="/static/css/about.css?v={{ static_version('static/css/about.css') }}">
 {% endblock css %}
 {% block body %}
-    <p id="warning" data-warning="{{ warning }}"></p>
-    <span>
-        <b>
-            [개발자]
-        </b>
-        <a href="http://haeengin.com" target="_blank" rel="noopener noreferrer">
-            {{ developer_username }}
-        </a>
-        <b>
-            [문의 및 연락]
-        </b>
-        <a href="mailto:{{ developer_contact }}" target="_blank" rel="noopener noreferrer">
-            {{ developer_contact }}
-        </a>
-        <b>
-            [GitHub 리포지토리 URL]
-        </b>
-        <a href="{{ github_url }}" target="_blank" rel="noopener noreferrer">
-            {{ github_url }}
-        </a>
-    </span>
+    <div class="content">
+        <p id="warning" data-warning="{{ warning }}"></p>
+        <span>
+            <b>
+                [개발자]
+            </b>
+            <a href="http://haeengin.com" target="_blank" rel="noopener noreferrer">
+                {{ developer_username }}
+            </a>
+            <b>
+                [문의 및 연락]
+            </b>
+            <a href="mailto:{{ developer_contact }}" target="_blank" rel="noopener noreferrer">
+                {{ developer_contact }}
+            </a>
+            <b>
+                [GitHub 리포지토리 URL]
+            </b>
+            <a href="{{ github_url }}" target="_blank" rel="noopener noreferrer">
+                {{ github_url }}
+            </a>
+        </span>
+    </div>
 {% endblock body %}
 {% block script %}
     <script src="/static/js/about.js?v={{ static_version('static/js/about.js') }}"></script>
