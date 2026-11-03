@@ -57,3 +57,8 @@ a,
 button {
   -webkit-tap-highlight-color: transparent;
 }
+
+a {
+  display: block;
+  width: fit-content;
+}
