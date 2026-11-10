@@ -234,8 +234,6 @@ async def status(request: Request) -> HTMLResponse:
     ) as file:
         data: dict = json.loads(await file.read())
 
-    image_base_url: str = f"{BUCKET_BASE_URL}/parents"
-
     license_data: list = data["parents_profile_image_license"]
     availability_data: list = data["system"]["availability"]
     compatibility_data: list = data["system"]["compatibility"]
@@ -249,7 +247,7 @@ async def status(request: Request) -> HTMLResponse:
         "license_items": license_data,
         "availability_items": availability_data,
         "compatibility_items": compatibility_data,
-        "image_base_url": image_base_url,
+        "image_base_url": BUCKET_BASE_URL,
     }
 
     return templates.TemplateResponse(
