@@ -1,3 +1,4 @@
+import logging
 import xml.etree.ElementTree as ET
 
 import httpx
@@ -8,6 +9,8 @@ api_router: APIRouter = APIRouter(
     tags=["API"],
 )
 
+logger = logging.getLogger(__name__)
+
 
 @api_router.get("/youtube/latest")
 async def get_latest_video(channel_id: str):
@@ -16,6 +19,7 @@ async def get_latest_video(channel_id: str):
             f"https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}",
             headers={"User-Agent": "Mozilla/5.0 (compatible; cafe-carte-bot/1.0)"},
         )
+    logger.warning(res.text[:500])
     root = ET.fromstring(res.text)
     ns = {
         "atom": "http://www.w3.org/2005/Atom",
