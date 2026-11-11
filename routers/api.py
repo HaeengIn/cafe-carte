@@ -19,7 +19,7 @@ async def get_latest_video(channel_id: str):
             f"https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}",
             headers={"User-Agent": "Mozilla/5.0 (compatible; cafe-carte-bot/1.0)"},
         )
-    logger.warning(res.text[:500])
+    logger.warning(f"{res.status_code} {res.text[:500]}")
     root = ET.fromstring(res.text)
     ns = {
         "atom": "http://www.w3.org/2005/Atom",
