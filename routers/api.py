@@ -17,7 +17,9 @@ async def get_latest_video(channel_id: str):
     async with httpx.AsyncClient() as client:
         res = await client.get(
             f"https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}",
-            headers={"User-Agent": "Mozilla/5.0 (compatible; cafe-carte-bot/1.0)"},
+            headers={
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            },
         )
     logger.warning(f"{res.status_code} {res.text[:500]}")
     root = ET.fromstring(res.text)
