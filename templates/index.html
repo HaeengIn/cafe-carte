@@ -38,26 +38,6 @@
             <button class="link">팬딩 바로가기</button>
         </a>
     </div>
-    <div class="youtube">
-        <span class="youtube-title">
-            <img src="{{ image_base_url }}/etc/youtube.avif" alt="유튜브 로고" class="youtube-logo">
-            <h1>최신 YouTube</h1>
-            <h3>카페 카르테의 최신 영상을 만나보세요</h3>
-        </span>
-        <div class="watch">
-            <div class="channel">
-                {% for item in youtube_channel %}
-                    <a href="#" data-channel-id="{{ item.id }}">{{ item.name }}</a>
-                {% endfor %}
-            </div>
-            <div class="video">
-                <iframe id="ytPlayer" width="560" height="315" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <a id="moreVideo" target="_blank" rel="noopener noreferrer">
-                    <button>더 많은 영상 보러가기</button>
-                </a>
-            </div>
-        </div>
-    </div>
     <!-- <footer data-nosnippet>
         <div class="logo">
             <img width="120" src="{{ image_base_url }}/cafe-carte/logo.avif" alt="카페 카르테 로고">

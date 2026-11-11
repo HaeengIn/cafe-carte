@@ -15,7 +15,6 @@ from starlette.templating import Jinja2Templates
 
 from routers.members import members_router
 from routers.sns import sns_router
-from routers.api import api_router
 
 app: FastAPI = FastAPI(title="Cafe Carte")
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -316,4 +315,3 @@ async def robots() -> FileResponse:
 
 app.include_router(members_router)
 app.include_router(sns_router)
-app.include_router(api_router)
