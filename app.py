@@ -15,6 +15,7 @@ from starlette.templating import Jinja2Templates
 
 from routers.members import members_router
 from routers.sns import sns_router
+from routers.api import api_router
 
 app: FastAPI = FastAPI(title="Cafe Carte")
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -168,6 +169,33 @@ async def index(request: Request) -> HTMLResponse:
         "youtube": "https://youtube.com/@TWILLITSTUDIOofficial",
     }
 
+    YOUTUBE_CHANNEL: list[dict[str, str]] = [
+        {
+            "name": "트윌릿 스튜디오",
+            "id": "UCvQee514TvQ3ZEu85kb_IUQ",
+        },
+        {
+            "name": "모코 파르페",
+            "id": "UCt6LGQPj3P0I4iZ8OC-mumg",
+        },
+        {
+            "name": "한서린",
+            "id": "UCrwJ-mvgziVzQd9X3GdFCpg",
+        },
+        {
+            "name": "댕키",
+            "id": "UCip-rvN0ItcUTeP3_vtMVyw",
+        },
+        {
+            "name": "유우희",
+            "id": "UCrZUToPhf-Osc5Sy1Y0ZBBw",
+        },
+        {
+            "name": "에루 솔스티스",
+            "id": "UCQKPXExms-zIvUd65bv1LUg",
+        },
+    ]
+
     context: dict[str, Any] = {
         "title": title,
         "meta_description": meta_description,
@@ -176,6 +204,7 @@ async def index(request: Request) -> HTMLResponse:
         "members_ko": members_ko,
         "fanding": fanding_link,
         "twillit_links": twillit_links,
+        "youtube_channel": YOUTUBE_CHANNEL
     }
 
     return templates.TemplateResponse(
@@ -287,3 +316,4 @@ async def robots() -> FileResponse:
 
 app.include_router(members_router)
 app.include_router(sns_router)
+app.include_router(api_router)
