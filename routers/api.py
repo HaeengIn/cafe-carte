@@ -13,7 +13,8 @@ api_router: APIRouter = APIRouter(
 async def get_latest_video(channel_id: str):
     async with httpx.AsyncClient() as client:
         res = await client.get(
-            f"https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}"
+            f"https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}",
+            headers={"User-Agent": "Mozilla/5.0 (compatible; cafe-carte-bot/1.0)"},
         )
     root = ET.fromstring(res.text)
     ns = {
