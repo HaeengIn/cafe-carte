@@ -1,30 +1,41 @@
 import Link from "next/link";
 import Image from "next/image";
-import { imgBucketUrl } from "@/app/config"
+import { imgBucketUrl } from "@/app/config";
 
 export default function Members() {
-  const memberList = {
-    mocoparfe: {
+  type Member = {
+    id: number;
+    eng: string;
+    kor: string;
+  };
+
+  const memberList: Member[] = [
+    {
+      id: 1,
       eng: "mocoparfe",
       kor: "모코 파르페",
     },
-    hanseorin: {
+    {
+      id: 2,
       eng: "hanseorin",
       kor: "한서린",
     },
-    dangkey: {
+    {
+      id: 3,
       eng: "dangkey",
       kor: "댕키",
     },
-    uuhee: {
+    {
+      id: 4,
       eng: "uuhee",
       kor: "유우희",
     },
-    aerusolstice: {
+    {
+      id: 5,
       eng: "aerusolstice",
       kor: "에루 솔스티스",
     },
-  };
+  ];
 
   return (
     <div className="background">
@@ -33,12 +44,8 @@ export default function Members() {
         <h3>카페 카르테에서 만날 수 있어요!</h3>
       </div>
       <div className="member-profiles">
-        {Object.values(memberList).map((item) => (
-          <div
-            className="member-profile fade-down"
-            data-member={item.eng}
-            key={item.eng}
-          >
+        {memberList.map((item) => (
+          <div className="member-profile fade-down" key={item.id}>
             <Link href={`/members/${item.eng}`}>
               <Image
                 src={`${imgBucketUrl}/${item.eng}/profile.avif`}
