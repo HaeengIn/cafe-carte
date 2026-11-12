@@ -11,6 +11,7 @@ export default function Navbar() {
           alt="카페 카르테 로고"
           width={238}
           height={127}
+          unoptimized
         />
       </Link>
       <Link href="/members">멤버</Link>
