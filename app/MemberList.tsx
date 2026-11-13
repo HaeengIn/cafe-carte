@@ -13,10 +13,7 @@ export default function MemberList() {
     <div className={styles.members}>
       <h1 className="fade-down">멤버 - Members</h1>
       <h3
-        className={[
-          styles["member-name"],
-          hoveredMember ? styles[hoveredMember.eng] : "",
-        ]
+        className={[styles["member-name"], hoveredMember?.eng ?? ""]
           .filter(Boolean)
           .join(" ")}
       >

@@ -7,7 +7,7 @@ import styles from "./index.module.css";
 export default function Index() {
   return (
     <div className={styles.home}>
-      <p className={styles.description}>
+      <p className="description">
         TWILLIT STUDIO의 3D VTuber 그룹, 카페 카르테의 비공식 팬 웹사이트. 모코
         파르페, 한서린, 댕키, 유우희, 에루 솔스티스를 포함한 멤버들과 카페
         카르테에 대해 알아보세요.
