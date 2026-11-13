@@ -70,7 +70,7 @@ export type Sns = {
 /**
  * @type object
  */
-export const sns = {
+export const sns: Record<string, Sns> = {
   mocoparfe: {
     youtube: `${youtube}/@mocoparfe`,
     chzzk: `${chzzk}/d20f164fe5946abe0bce2e5a43052923`,
@@ -104,7 +104,7 @@ export const sns = {
   "samg-entertainment": {
     homepage: "https://samg.net",
   },
-} satisfies Record<string, Sns>;
+};
 
 // System Status
 
@@ -140,7 +140,7 @@ export interface StatusConfig {
   };
 }
 
-export const status = {
+export const status: StatusConfig = {
   parents_profile_image_license: [
     {
       id: 1,
@@ -292,4 +292,4 @@ export const status = {
       },
     ],
   },
-} satisfies StatusConfig;
+};
