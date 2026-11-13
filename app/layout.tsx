@@ -1,6 +1,7 @@
 import Navbar from "./Navbar";
 import type { ReactNode } from "react";
 import "./reset.css";
+import "./global.css";
 
 export default function App({ children }: { children: ReactNode }) {
   return (
