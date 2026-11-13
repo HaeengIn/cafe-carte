@@ -2,6 +2,35 @@ import Link from "next/link";
 import Image from "next/image";
 import { imgBucketUrl, memberList } from "@/app/config";
 import styles from "./members.module.css";
+import { Metadata } from "next";
+
+const title: string = "멤버 | 카페 카르테";
+const desc: string = "카페 카르테를 이끌어가는 5명의 멤버들을 만나보세요.";
+const url: string = "https://cafe-carte.fans/members";
+
+export const metadata: Metadata = {
+  title: title,
+  description: desc,
+  alternates: {
+    canonical: url,
+  },
+  openGraph: {
+    title: title,
+    description: desc,
+    siteName: "카페 카르테",
+    url: url,
+    images: [
+      {
+        url: `${imgBucketUrl}/cafe-carte/banner.jpg`,
+        alt: "카페 카르테 배너 이미지",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "ko_KR",
+    type: "website",
+  },
+};
 
 export default function Members() {
   return (
