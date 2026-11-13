@@ -40,7 +40,7 @@
   -ms-transform: scale(0.9);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 1024px) {
   .members {
     padding: 20px 20px;
   }
