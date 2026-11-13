@@ -7,6 +7,10 @@
   gap: 20px;
 }
 
+.desc {
+  text-align: center;
+}
+
 /* Fanding Carousel */
 
 .fanding-carousel {

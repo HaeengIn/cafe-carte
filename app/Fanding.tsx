@@ -55,12 +55,12 @@ export default function Fanding() {
           src={`${imgBucketUrl}/cafe-carte/fanding.avif`}
           alt="팬딩 로고"
           className={styles["fanding-logo"]}
-          width={0}
-          height={0}
+          width={48}
+          height={48}
         />
         <h1>팬딩 - Fanding</h1>
       </span>
-      <h3 className="fade-down">카페 카르테의 굿즈를 만나는 유일한 방법</h3>
+      <h3 className={`${styles.desc} fade-down`}>카페 카르테의 굿즈를 만나는 유일한 방법</h3>
       <div className={`${styles["fanding-carousel"]} fade-down`}>
         <div className={styles["fanding-carousel-viewport"]}>
           {FANDING_IMAGES.map((src, index) => {
