@@ -1,0 +1,113 @@
+@import url(/app/variables.css);
+
+.background {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: calc(100vh - 55px);
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url(https://static.cafe-carte.fans/img/cafe-carte/members.avif);
+  background-size: cover;
+  background-position: center;
+  filter: blur(20px);
+  scale: 1.05;
+  z-index: 0;
+}
+
+.title,
+.member-profiles {
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  color: #ffffff;
+  -webkit-text-stroke: 1.5px var(--cafe-carte);
+  font-size: 150%;
+}
+
+.member-profiles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.member-profile a {
+  max-width: 179px;
+  font-size: larger;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transition: 0.5s cubic-bezier(0, 1, 1, 1);
+}
+
+.member-profile a:hover {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+}
+
+.member-profile img {
+  display: block;
+}
+
+.member-profile span {
+  margin-top: 8px;
+  font-size: 150%;
+  color: #ffffff;
+}
+
+/* CSS for small mobile devices */
+@media (max-width: 321px) {
+  .title {
+    font-size: 130%;
+  }
+}
+
+/* CSS for mobile devices */
+@media (max-width: 769px) {
+  .background {
+    min-height: calc(100vh - 55px);
+    height: auto;
+  }
+
+  .background::before {
+    background-image: url(https://static.cafe-carte.fans/img/cafe-carte/members_rotated.avif);
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .member-profiles {
+    flex-direction: column;
+    padding: 20px 0;
+    gap: 20px;
+  }
+}
+
+/* CSS for tablet devices */
+@media (max-width: 1025px) {
+  .member-profiles {
+    gap: 20px;
+  }
+}
