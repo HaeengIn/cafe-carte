@@ -1,23 +1,27 @@
 import Link from "next/link";
 import Image from "next/image";
 import { imgBucketUrl } from "./config";
+import "./nav-bar.css";
 
 export default function Navbar() {
   return (
-    <nav>
-      <Link href="/">
+    <nav className="navbar">
+      <Link href="/" className="logo">
         <Image
+          width={93}
+          height={50}
+          className="nav-logo"
           src={`${imgBucketUrl}/cafe-carte/logo.avif`}
           alt="카페 카르테 로고"
-          width={238}
-          height={127}
           unoptimized
         />
       </Link>
-      <Link href="/members">멤버</Link>
-      <Link href="/sns">SNS</Link>
-      <Link href="/about">소개</Link>
-      <Link href="/status">시스템 상태</Link>
+      <div className="nav-menu">
+        <a href="/members">MEMBERS</a>
+        <a href="/sns">SNS</a>
+        <a href="/about">ABOUT</a>
+        <a href="/status">STATUS</a>
+      </div>
     </nav>
   );
 }
