@@ -1,4 +1,5 @@
 import Navbar from "./Navbar";
+import ScrollAnimation from "./ScrollAnimation";
 import type { ReactNode } from "react";
 import "./reset.css";
 import "./global.css";
@@ -12,6 +13,7 @@ export default function App({ children }: { children: ReactNode }) {
       </head>
       <body>
         <Navbar />
+        <ScrollAnimation />
         <main>{children}</main>
       </body>
     </html>
