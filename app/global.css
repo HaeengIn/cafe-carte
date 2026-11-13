@@ -63,3 +63,27 @@ b {
   display: block;
   width: fit-content;
 }
+
+.mocoparfe {
+  color: var(--mocoparfe);
+}
+
+.hanseorin {
+  color: var(--hanseorin);
+}
+
+.dangkey {
+  color: var(--dangkey);
+}
+
+.uuhee {
+  color: var(--uuhee);
+}
+
+.aerusolstice {
+  color: var(--aerusolstice);
+}
+
+.twillit-studio {
+  color: var(--twillit-studio);
+}
