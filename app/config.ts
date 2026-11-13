@@ -16,7 +16,7 @@ export const faviconBucketUrl: string = `${baseBucketUrl}/favicon`;
 
 // Member List
 
-type Member = {
+export type Member = {
   id: number;
   eng: string;
   kor: string;
