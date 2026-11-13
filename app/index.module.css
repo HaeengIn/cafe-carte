@@ -10,7 +10,7 @@ body {
 
 .front {
   background-color: var(--cafe-carte-background);
-  padding-top: 0;
+  padding-top: 0 !important;
 }
 
 .front-image {
