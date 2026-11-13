@@ -3,6 +3,7 @@ import ScrollAnimation from "./ScrollAnimation";
 import type { ReactNode } from "react";
 import "./reset.css";
 import "./global.css";
+import "./scroll-animation.css";
 
 export default function App({ children }: { children: ReactNode }) {
   return (
