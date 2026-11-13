@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { imgBucketUrl } from "./config";
-import "./fanding.module.css"
+import styles from "./fanding.module.css";
 
 const FANDING_IMAGES = Array.from(
   { length: 7 },
@@ -49,20 +49,20 @@ export default function Fanding() {
   }, []);
 
   return (
-    <div className="fanding">
-      <span className="fanding-title fade-down">
+    <div className={styles.fanding}>
+      <span className={`${styles["fanding-title"]} fade-down`}>
         <Image
           src={`${imgBucketUrl}/cafe-carte/fanding.avif`}
           alt="팬딩 로고"
-          className="fanding-logo"
+          className={styles["fanding-logo"]}
           width={0}
           height={0}
         />
         <h1>팬딩 - Fanding</h1>
       </span>
       <h3 className="fade-down">카페 카르테의 굿즈를 만나는 유일한 방법</h3>
-      <div className="fanding-carousel fade-down">
-        <div className="fanding-carousel-viewport">
+      <div className={`${styles["fanding-carousel"]} fade-down`}>
+        <div className={styles["fanding-carousel-viewport"]}>
           {FANDING_IMAGES.map((src, index) => {
             const offset =
               ((index - currentIndex + length + half) % length) - half;
@@ -77,7 +77,7 @@ export default function Fanding() {
                 ref={(el) => {
                   slideRefs.current[index] = el;
                 }}
-                className="fanding-carousel-slide"
+                className={styles["fanding-carousel-slide"]}
                 style={
                   {
                     "--offset": offset,
@@ -102,7 +102,7 @@ export default function Fanding() {
         <button
           type="button"
           onClick={prevSlide}
-          className="carousel-arrow carousel-prev"
+          className={`${styles["carousel-arrow"]} ${styles["carousel-prev"]}`}
           aria-label="이전 이미지"
         >
           &#10094;
@@ -110,7 +110,7 @@ export default function Fanding() {
         <button
           type="button"
           onClick={nextSlide}
-          className="carousel-arrow carousel-next"
+          className={`${styles["carousel-arrow"]} ${styles["carousel-next"]}`}
           aria-label="다음 이미지"
         >
           &#10095;
@@ -122,7 +122,7 @@ export default function Fanding() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <button className="link">팬딩 바로가기</button>
+        <button className={styles.link}>팬딩 바로가기</button>
       </a>
     </div>
   );
