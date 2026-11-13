@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { imgBucketUrl, memberList } from "@/app/config";
-import styles from "./members.module.css"
+import styles from "./members.module.css";
 
 export default function Members() {
   return (
@@ -12,7 +12,11 @@ export default function Members() {
       </div>
       <div className={styles["member-profiles"]}>
         {memberList.map((item) => (
-          <div className={`${styles["member-profile"]} fade-down`} key={item.id}>
+          <div
+            className={`${styles["member-profile"]} ${item.eng} fade-down`}
+            key={item.id}
+            data-member={item.eng}
+          >
             <Link href={`/members/${item.eng}`}>
               <Image
                 src={`${imgBucketUrl}/${item.eng}/profile.avif`}
@@ -21,7 +25,7 @@ export default function Members() {
                 height={236}
               />
               <b>
-                <span className={`${styles}.${item.eng}`}></span>
+                <span className={item.eng}>{item.kor}</span>
               </b>
             </Link>
           </div>

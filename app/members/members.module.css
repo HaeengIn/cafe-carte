@@ -68,23 +68,48 @@
 
 .member-profile img {
   display: block;
+  border: 2px solid var(--member-color);
+  border-radius: 12px;
+  box-shadow: 0 0 12px var(--member-color);
 }
 
 .member-profile span {
   margin-top: 8px;
   font-size: 150%;
   color: #ffffff;
+  text-shadow: 0 0 12px var(--member-color);
+  -webkit-text-stroke: 0.5px var(--member-color);
+}
+
+.member-profile[data-member="mocoparfe"] {
+  --member-color: var(--mocoparfe);
+}
+
+.member-profile[data-member="hanseorin"] {
+  --member-color: var(--hanseorin);
+}
+
+.member-profile[data-member="dangkey"] {
+  --member-color: var(--dangkey);
+}
+
+.member-profile[data-member="uuhee"] {
+  --member-color: var(--uuhee);
+}
+
+.member-profile[data-member="aerusolstice"] {
+  --member-color: var(--aerusolstice);
 }
 
 /* CSS for small mobile devices */
-@media (max-width: 321px) {
+@media (max-width: 320px) {
   .title {
     font-size: 130%;
   }
 }
 
-/* CSS for mobile devices */
-@media (max-width: 769px) {
+/* CSS for mobile ~ small tablet devices */
+@media (max-width: 1024px) {
   .background {
     min-height: calc(100vh - 55px);
     height: auto;
@@ -105,9 +130,9 @@
   }
 }
 
-/* CSS for tablet devices */
-@media (max-width: 1025px) {
+/* CSS for small tablet ~ tablet devices */
+@media (min-width: 1025px) and (max-width: 1080px) {
   .member-profiles {
-    gap: 20px;
+    gap: 16px;
   }
 }
