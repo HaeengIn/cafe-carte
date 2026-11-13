@@ -1,6 +1,6 @@
 {
   "name": "cafe-carte",
-  "version": "26.11.13",
+  "version": "v0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
