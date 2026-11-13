@@ -1,42 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import { imgBucketUrl } from "@/app/config";
+import { imgBucketUrl, memberList } from "@/app/config";
 
 export default function Members() {
-  type Member = {
-    id: number;
-    eng: string;
-    kor: string;
-  };
-
-  const memberList: Member[] = [
-    {
-      id: 1,
-      eng: "mocoparfe",
-      kor: "모코 파르페",
-    },
-    {
-      id: 2,
-      eng: "hanseorin",
-      kor: "한서린",
-    },
-    {
-      id: 3,
-      eng: "dangkey",
-      kor: "댕키",
-    },
-    {
-      id: 4,
-      eng: "uuhee",
-      kor: "유우희",
-    },
-    {
-      id: 5,
-      eng: "aerusolstice",
-      kor: "에루 솔스티스",
-    },
-  ];
-
   return (
     <div className="background">
       <div className="title fade-down">
