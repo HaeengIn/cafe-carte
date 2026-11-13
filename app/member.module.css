@@ -1,0 +1,59 @@
+@import url(./variables.css);
+
+.members {
+  background-color: var(--cafe-carte-background);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.members .member-name {
+  min-height: 1.6em;
+  margin: 0;
+}
+
+.members .members-list {
+  display: flex;
+  gap: 20px;
+}
+
+.profile img {
+  border-radius: 20px;
+}
+
+.members .members-list .profile {
+  transition: 0.5s cubic-bezier(0, 1, 1, 1);
+  -webkit-transition: 0.5s cubic-bezier(0, 1, 1, 1);
+}
+
+.members .members-list .profile:hover {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+}
+
+.members .members-list .profile:active {
+  transform: scale(0.9);
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+}
+
+@media (max-width: 480px) {
+  .members {
+    padding: 20px 20px;
+  }
+
+  .members {
+    padding-top: 0;
+  }
+
+  .members-list {
+    flex-direction: column;
+  }
+
+  .member-name {
+    display: none;
+  }
+}
