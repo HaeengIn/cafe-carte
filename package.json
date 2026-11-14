@@ -7,10 +7,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "format": "prettier --write --ignore-unknown \"app/**/*\""
   },
   "dependencies": {
     "next": "16.4.6",
+    "prettier": "^3.10.1",
     "react": "19.3.0",
     "react-dom": "19.3.0"
   },
