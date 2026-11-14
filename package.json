@@ -1,6 +1,6 @@
 {
   "name": "cafe-carte",
-  "version": "v0.2.1",
+  "version": "v0.2.3",
   "private": true,
   "scripts": {
 	"preinstall": "npx only-allow pnpm",
