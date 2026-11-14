@@ -5,6 +5,7 @@ import { imgBucketUrl, Member, memberList } from "./config";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./member.module.css";
+import type { CSSProperties } from 'react';
 
 export default function MemberList() {
   const [hoveredMember, setHoveredMember] = useState<Member | null>(null);
@@ -34,6 +35,11 @@ export default function MemberList() {
               alt={`${item.kor} 프로필 이미지`}
               width={179}
               height={236}
+              style={
+                {
+                  "--member-color": `var(--${item.eng})`,
+                } as CSSProperties
+              }
             />
           </Link>
         ))}

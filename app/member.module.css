@@ -21,6 +21,7 @@
 
 .profile img {
   border-radius: 20px;
+  box-shadow: 0 0 12px var(--member-color);
 }
 
 .members .members-list .profile {
