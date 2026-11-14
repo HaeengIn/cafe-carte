@@ -5,7 +5,7 @@ import { imgBucketUrl, Member, memberList } from "./config";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./member.module.css";
-import type { CSSProperties } from 'react';
+import type { CSSProperties } from "react";
 
 export default function MemberList() {
   const [hoveredMember, setHoveredMember] = useState<Member | null>(null);

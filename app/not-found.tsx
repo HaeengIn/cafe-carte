@@ -12,7 +12,10 @@ export default function NotFound() {
       <div className="title">
         <h1>페이지를 찾을 수 없음</h1>
         <h3>404 Not Found</h3>
-        <button type="button" onClick={() => router.back()}>
+        <button
+          type="button"
+          onClick={() => router.back()}
+        >
           <Image
             src={`${imgBucketUrl}/global/backward-icon.avif`}
             alt="뒤로가기 아이콘"

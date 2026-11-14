@@ -1,10 +1,9 @@
-import type { ReactNode } from "react"
+import type { ReactNode } from "react";
 
-export default function({ memberChildren }: { memberChildren: ReactNode }) {
+export default function ({ memberChildren }: { memberChildren: ReactNode }) {
   return (
     <div>
       <div className="profile"></div>
-      
     </div>
-  )
+  );
 }

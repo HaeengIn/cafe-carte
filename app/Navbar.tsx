@@ -6,7 +6,10 @@ import "./nav-bar.css";
 export default function Navbar() {
   return (
     <nav className="navbar">
-      <Link href="/" className="logo">
+      <Link
+        href="/"
+        className="logo"
+      >
         <Image
           width={93}
           height={50}

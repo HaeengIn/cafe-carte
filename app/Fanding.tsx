@@ -60,7 +60,9 @@ export default function Fanding() {
         />
         <h1>팬딩 - Fanding</h1>
       </span>
-      <h3 className={`${styles.desc} fade-down`}>카페 카르테의 굿즈를 만나는 유일한 방법</h3>
+      <h3 className={`${styles.desc} fade-down`}>
+        카페 카르테의 굿즈를 만나는 유일한 방법
+      </h3>
       <div className={`${styles["fanding-carousel"]} fade-down`}>
         <div className={styles["fanding-carousel-viewport"]}>
           {FANDING_IMAGES.map((src, index) => {
