@@ -1,5 +1,3 @@
-@import url(./font.css);
-
 :root {
   --mocoparfe: #fba7d2;
   --hanseorin: #f03c4b;
@@ -11,14 +9,4 @@
 
   --cafe-carte: #3e7766;
   --cafe-carte-background: #efeeea;
-
-  --font-Thin: "Pretendard Thin";
-  --font-ExtraLight: "Pretendard ExtraLight";
-  --font-Light: "Pretendard Light";
-  --font-Regular: "Pretendard Regular";
-  --font-Medium: "Pretendard Medium";
-  --font-SemiBold: "Pretendard SemiBold";
-  --font-Bold: "Pretendard Bold";
-  --font-ExtraBold: "Pretendard ExtraBold";
-  --font-Black: "Pretendard Black";
 }

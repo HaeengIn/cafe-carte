@@ -189,8 +189,9 @@
   background-color: #5d63f6;
   color: white;
 
-  font-family: var(--font-SemiBold);
+  font-family: var(--paperlogy);
   font-size: 110%;
+  font-weight: 600;
 
   border-radius: 16px;
   border-style: none;
