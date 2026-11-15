@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { imgBucketUrl } from "./config";
+import { imgBucketUrl } from "../config";
 import "./nav-bar.css";
 
 export default function Navbar() {

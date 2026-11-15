@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { imgBucketUrl } from "./config";
+import { imgBucketUrl } from "../config";
 import styles from "./fanding.module.css";
 
 const FANDING_IMAGES = Array.from(
