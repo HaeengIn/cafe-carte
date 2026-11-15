@@ -60,6 +60,11 @@ b {
   display: none;
 }
 
+button {
+  font-family: var(--paperlogy);
+  font-weight: 400;
+}
+
 a,
 button {
   -webkit-tap-highlight-color: transparent;
