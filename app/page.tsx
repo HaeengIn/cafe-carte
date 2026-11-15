@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { imgBucketUrl } from "./config";
-import MemberList from "./MemberList";
-import Fanding from "./Fanding";
+import MemberList from "./components/MemberList";
+import Fanding from "./components/Fanding";
 import styles from "./index.module.css";
 import { Metadata } from "next";
 
@@ -49,6 +49,7 @@ export default function Index() {
           alt="카페 카르테 대문"
           width={1280}
           height={600}
+          priority
         />
       </div>
       <MemberList />

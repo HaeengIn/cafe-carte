@@ -1,5 +1,5 @@
-import Navbar from "./Navbar";
-import ScrollAnimation from "./ScrollAnimation";
+import Navbar from "./components/Navbar";
+import ScrollAnimation from "./components/ScrollAnimation";
 import type { ReactNode } from "react";
 import "./reset.css";
 import "./global.css";
