@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { imgBucketUrl } from "./config";
-import MemberList from "./components/MemberList";
-import Fanding from "./components/Fanding";
+import MemberList from "./_components/MemberList";
+import Fanding from "./_components/Fanding";
 import styles from "./index.module.css";
 import { Metadata } from "next";
 

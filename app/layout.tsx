@@ -1,5 +1,5 @@
-import Navbar from "./components/Navbar";
-import ScrollAnimation from "./components/ScrollAnimation";
+import Navbar from "./_components/Navbar";
+import ScrollAnimation from "./_components/ScrollAnimation";
 import type { ReactNode } from "react";
 import "./reset.css";
 import "./global.css";
@@ -125,7 +125,10 @@ const Paperlogy = localFont({
 
 export default function App({ children }: { children: ReactNode }) {
   return (
-    <html lang="ko" className={Paperlogy.variable}>
+    <html
+      lang="ko"
+      className={Paperlogy.variable}
+    >
       <head>
         <meta charSet="UTF-8" />
         <meta
