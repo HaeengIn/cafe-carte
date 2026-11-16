@@ -128,7 +128,7 @@ export interface AvailabilityInfo {
 
 export interface CompatibilityInfo {
   id: number;
-  platform: string;
+  engine: string;
   status: number;
 }
 
@@ -277,17 +277,17 @@ export const status: StatusConfig = {
     compatibility: [
       {
         id: 1,
-        platform: "Blink",
+        engine: "Blink",
         status: 1,
       },
       {
         id: 2,
-        platform: "Webkit",
+        engine: "Webkit",
         status: 1,
       },
       {
         id: 3,
-        platform: "Gecko",
+        engine: "Gecko",
         status: 2,
       },
     ],
