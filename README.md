@@ -12,22 +12,22 @@
 
 2. 프로젝트 의존성을 설치합니다.
    ```bash
-   npm ci
+   pnpm install --frozen-lockfile
    ```
 
 ## 로컬 서버 실행
 
-본 프로젝트는 Next.js 프로젝트로, npm을 이용하여 로컬 서버를 실행합니다.
+본 프로젝트는 Next.js 프로젝트로, pnpm을 이용하여 로컬 서버를 실행합니다.
 
 - 프로덕션 서버 실행
 
   ```bash
-  npm run build && npm run start
+  pnpm run build && pnpm run start
   ```
 
 - 개발 서버 실행
   ```bash
-  npm run dev
+  pnpm run dev
   ```
 
 프로덕션 서버는 실제 배포 환경에서 사용하며, 로컬 개발 시에는 개발 서버를 실행해주세요.
