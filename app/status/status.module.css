@@ -1,0 +1,91 @@
+@import url(/app/variables.css);
+
+body {
+  background-color: var(--cafe-carte-background);
+  height: 100%;
+}
+
+.status-title {
+  margin: 12px;
+  cursor: pointer;
+  text-align: left;
+
+  user-select: none;
+  -webkit-user-drag: none;
+  -moz-user-select: none;
+}
+
+.license,
+.availability,
+.compatibility {
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.license .content-container {
+  display: flex;
+  align-items: center;
+}
+
+.license .content-container img {
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 30%;
+}
+
+.license .content-container .content {
+  margin: 0 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--cafe-carte);
+
+  transition: 0.5s cubic-bezier(0, 1, 1, 1);
+}
+
+.link:hover {
+  text-decoration: underline;
+
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+}
+
+.available,
+.compatibility-content .compatible {
+  color: green;
+}
+
+.unavailable,
+.compatibility-content .uncompatible {
+  color: red;
+}
+
+.ongoing,
+.compatibility-content .unknown {
+  color: orange;
+}
+
+.availability span,
+.compatibility span {
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .license .content-container {
+    flex-direction: column;
+  }
+
+  .license .content-container .content {
+    align-items: center;
+    text-align: center;
+  }
+}
