@@ -23,7 +23,8 @@ export default function Status() {
               />
               <div className={styles.content}>
                 <h1>{item.name}</h1>
-                <a className={styles.link}
+                <a
+                  className={styles.link}
                   href={`https://x.com/${item.userHandle}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -38,7 +39,8 @@ export default function Status() {
                 <span>Detail: {item.detail}</span>
                 {item.id === 7 && <span>Unable to view due to request</span>}
                 {(item.id === 1 || item.id === 3) && (
-                  <a className={styles.link}
+                  <a
+                    className={styles.link}
                     href={item.homepage}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -47,7 +49,8 @@ export default function Status() {
                   </a>
                 )}
                 {item.id !== 7 && item.id !== 1 && item.id !== 3 && (
-                  <a className={styles.link}
+                  <a
+                    className={styles.link}
                     href={`${imgBucketUrl}/license/${item.username}.avif`}
                     target="_blank"
                     rel="noopener noreferrer"
