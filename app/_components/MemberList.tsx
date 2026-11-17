@@ -4,7 +4,7 @@ import { useState } from "react";
 import { imgBucketUrl, Member, memberList } from "../config";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./member.module.css";
+import styles from "./member-list.module.css";
 import type { CSSProperties } from "react";
 
 export default function MemberList() {
