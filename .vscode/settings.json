@@ -1,11 +1,14 @@
 {
   "[astro]": {
     "editor.defaultFormatter": "astro-build.astro-vscode",
-    "editor.tabSize": 2,
+    "editor.tabSize": 2
   },
   "files.watcherExclude": {
     "**/node_modules/**": true,
     "**/.astro/**": true,
     "**/dist/**": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.prettier": "explicit"
   }
 }
