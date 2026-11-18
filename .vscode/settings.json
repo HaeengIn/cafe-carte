@@ -2,5 +2,10 @@
   "[astro]": {
     "editor.defaultFormatter": "astro-build.astro-vscode",
     "editor.tabSize": 2,
+  },
+  "files.watcherExclude": {
+    "**/node_modules/**": true,
+    "**/.astro/**": true,
+    "**/dist/**": true
   }
 }
