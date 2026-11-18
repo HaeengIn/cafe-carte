@@ -1,11 +1,12 @@
 ---
+import { Image } from "astro:assets";
 import { imgBucketUrl } from "../config";
-import "./nav-bar.css";
+import "@styles/nav-bar.css";
 ---
 
 <nav class="navbar">
   <a href="/" class="logo">
-    <img
+    <Image
       width={93}
       height={50}
       class="nav-logo"
