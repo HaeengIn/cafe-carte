@@ -8,5 +8,14 @@
     "dist",
     "deprecated",
     "node_modules"
-  ]
+  ],
+  "compilerOptions": {
+    "paths": {
+      "@components/*": [
+        "./src/components/*"
+      ]
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
+  }
 }
