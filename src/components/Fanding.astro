@@ -1,0 +1,85 @@
+---
+import { imgBucketUrl } from "../config";
+import "@styles/fanding.css";
+
+const FANDING_IMAGES = Array.from(
+  { length: 7 },
+  (_, i) => `${imgBucketUrl}/cafe-carte/fanding/${i + 1}.jpg`,
+);
+
+const length = FANDING_IMAGES.length;
+const half = Math.floor(length / 2);
+
+const slides = FANDING_IMAGES.map((src, index) => {
+  const offset = ((index - 0 + length + half) % length) - half;
+  const distance = Math.abs(offset);
+  return {
+    src,
+    index,
+    offset,
+    scale: distance === 0 ? 1.5 : distance === 1 ? 0.9 : 0.75,
+    shade: distance === 0 ? 0 : distance === 1 ? 0.45 : 0.75,
+    zIndex: length - distance,
+    opacity: distance <= 2 ? 1 : 0,
+  };
+});
+---
+
+<div class="fanding" data-fanding>
+  <span class="fanding-title fade-down">
+    <img
+      src={`${imgBucketUrl}/cafe-carte/fanding.avif`}
+      alt="팬딩 로고"
+      class="fanding-logo"
+      width="48"
+      height="48"
+    />
+    <h1>팬딩 - Fanding</h1>
+  </span>
+  <h3 class="desc fade-down">카페 카르테의 굿즈를 만나는 유일한 방법</h3>
+  <div class="fanding-carousel fade-down">
+    <div class="fanding-carousel-viewport">
+      {slides.map((slide) => (
+        <div
+          class="fanding-carousel-slide"
+          data-slide
+          style={`--offset:${slide.offset};--scale:${slide.scale};--shade:${slide.shade};--z-index:${slide.zIndex};opacity:${slide.opacity}`}
+        >
+          <img
+            src={slide.src}
+            alt={`팬딩 이미지 ${slide.index + 1}`}
+            width="1790"
+            height="1000"
+            draggable="false"
+          />
+        </div>
+      ))}
+    </div>
+    <button
+      type="button"
+      data-prev
+      class="carousel-arrow carousel-prev"
+      aria-label="이전 이미지"
+    >
+      &#10094;
+    </button>
+    <button
+      type="button"
+      data-next
+      class="carousel-arrow carousel-next"
+      aria-label="다음 이미지"
+    >
+      &#10095;
+    </button>
+  </div>
+  <a
+    class="fade-down"
+    href="https://fanding.kr/@TWILLITSTUDIO_"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <button class="link">팬딩 바로가기</button>
+  </a>
+</div>
+
+<script src="./fanding.ts"></script>
