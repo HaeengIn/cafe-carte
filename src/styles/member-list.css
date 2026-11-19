@@ -1,4 +1,4 @@
-@import url(../variables.css);
+@import url(./variables.css);
 
 .members {
   background-color: var(--cafe-carte-background);
