@@ -1,0 +1,84 @@
+@import url(./variables.css);
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  min-height: calc(100vh - 55px);
+
+  background-color: var(--cafe-carte-background);
+}
+
+.warning {
+  text-align: left;
+  font-size: 150%;
+  color: #ff4a4a;
+  width: 600px;
+  word-break: keep-all;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.link {
+  text-decoration: none;
+  color: #3e7766;
+}
+
+.dev-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.header {
+  font-size: 170%;
+}
+
+.dev-info .link {
+  font-size: 150%;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .warning {
+    font-size: 120%;
+    word-break: keep-all;
+    width: 100vw;
+    text-align: center;
+  }
+
+  .warning-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dev-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    text-align: center;
+  }
+
+  .header {
+    font-size: 120%;
+  }
+
+  .dev-info .link {
+    font-size: 110%;
+  }
+}
