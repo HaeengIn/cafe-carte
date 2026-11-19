@@ -1,0 +1,109 @@
+---
+import { imgBucketUrl, status } from "@/config";
+import Layout from "@/layouts/Layout.astro";
+import "@styles/status.css";
+---
+
+<Layout title="시스템 상태 | 카페 카르테">
+  <div>
+    <details>
+      <summary class="status-title">[ Profile Image Usage Status ]</summary>
+      <div class="license">
+        {status["parents_profile_image_license"].map((item) => (
+          <div class="content-container fade-right">
+            <img
+              src={`${imgBucketUrl}/parents/${item.username}.avif`}
+              alt={`${item.name} 프로필 이미지`}
+              width={200}
+              height={200}
+            />
+            <div class="content">
+              <h1>{item.name}</h1>
+              <a
+                class="link"
+                href={`https://x.com/${item.userHandle}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {item.userHandle}
+              </a>
+              <span>
+                Status: {item.status === 0 && "Rejected"}
+                {item.status === 1 && "Allowed"}
+                {item.status === 2 && "Pending"}
+              </span>
+              <span>Detail: {item.detail}</span>
+              {item.id === 7 && <span>Unable to view due to request</span>}
+              {(item.id === 1 || item.id === 3) && (
+                <a
+                  class="link"
+                  href={item.homepage}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Visit official homepage
+                </a>
+              )}
+              {item.id !== 7 && item.id !== 1 && item.id !== 3 && (
+                <a
+                  class="link"
+                  href={`${imgBucketUrl}/license/${item.username}.avif`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Screenshot
+                </a>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </details>
+    <details>
+      <summary class="status-title">[ System Status ]</summary>
+      <div class="availability">
+        {status["system"]["availability"].map((item) => (
+          <div class="availability-content">
+            <h1 class="fade-right">{item.url}</h1>
+            {item.status === 0 && (
+              <span class="unavailable fade-right">
+                ❎ Unavailable
+              </span>
+            )}
+            {item.status === 1 && (
+              <span class="styles.available fade-right">✅ Available</span>
+            )}
+            {item.status === 2 && (
+              <span class="styles.ongoing fade-right">🔁 Ongoing</span>
+            )}
+          </div>
+        ))}
+      </div>
+    </details>
+    <details>
+      <summary class="status-title">
+        [ Browser Compatibility Status ]
+      </summary>
+      <div class="compatibility">
+        {status["system"]["compatibility"].map((item) => (
+          <div class="compatibility-content">
+            <h1 class="fade-right">{item.engine}</h1>
+            {item.status === 0 && (
+              <span class="uncompatible fade-right">
+                ❎ Uncompatible
+              </span>
+            )}
+            {item.status === 1 && (
+              <span class="compatible fade-right">
+                ✅ Compatible
+              </span>
+            )}
+            {item.status === 2 && (
+              <span class="unknown fade-right">❓ Unknown</span>
+            )}
+          </div>
+        ))}
+      </div>
+    </details>
+  </div>
+</Layout>
