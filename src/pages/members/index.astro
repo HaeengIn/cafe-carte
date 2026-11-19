@@ -1,0 +1,31 @@
+---
+import { imgBucketUrl, memberList } from "@/config.ts";
+import Layout from "@/layouts/Layout.astro";
+import "@styles/members/index.css";
+---
+
+<Layout title="멤버 | 카페 카르테">
+  <div class="background">
+    <div class="title fade-down">
+      <h1>멤버 - Members</h1>
+      <h3>카페 카르테에서 만날 수 있어요!</h3>
+    </div>
+    <div class="member-profiles">
+      {memberList.map((item) => (
+        <div class={`member-profile ${item.eng} fade-down`} data-member={item.eng}>
+          <a href={`/members/${item.eng}`}>
+            <img
+              src={`${imgBucketUrl}/${item.eng}/profile.avif`}
+              alt={`${item.kor} 프로필 이미지`}
+              width={179}
+              height={236}
+            />
+            <b>
+              <span class={item.eng}>{item.kor}</span>
+            </b>
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</Layout>
