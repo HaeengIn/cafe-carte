@@ -1,0 +1,110 @@
+---
+import { imgBucketUrl, memberList, sns } from "@/config";
+import Layout from "@/layouts/Layout.astro";
+import "@styles/sns.css";
+---
+
+<Layout title="SNS | 카페 카르테">
+  <div class="background">
+    <div class="members-banners">
+      {memberList.map((item) => (
+        <div
+          class="member-banner"
+          data-member={item.eng}
+          style={`--member-color: var(--${item.eng})`}
+        >
+          <img
+            class="banner fade-down"
+            src={`${imgBucketUrl}/${item.eng}/banner.avif`}
+            alt={`${item.kor} 배너 이미지`}
+            width={1707}
+            height={282}
+          />
+          <div class={`member-links ${item.eng}`}>
+            <a
+              class={`${item.eng} fade-down`}
+              href={sns[item.eng as keyof typeof sns]?.youtube}
+            >
+              <img
+                src={`${imgBucketUrl}/${item.eng}/youtube.png`}
+                alt={`${item.kor} 유튜브 링크`}
+                width={256}
+                height={256}
+              />
+              <span>YouTube</span>
+            </a>
+            <a
+              class={`${item.eng} fade-down`}
+              href={sns[item.eng as keyof typeof sns]?.x}
+            >
+              <img
+                src={`${imgBucketUrl}/${item.eng}/x.png`}
+                alt={`${item.kor} X 링크`}
+                width={256}
+                height={256}
+              />
+              <span>X</span>
+            </a>
+            <a
+              class={`${item.eng} fade-down`}
+              href={sns[item.eng as keyof typeof sns]?.chzzk}
+            >
+              <img
+                src={`${imgBucketUrl}/${item.eng}/chzzk.png`}
+                alt={`${item.kor} 치지직 링크`}
+                width={256}
+                height={256}
+              />
+              <span>치지직</span>
+            </a>
+          </div>
+        </div>
+      ))}
+      <div
+        class="member-banner"
+        data-member="twillit-studio"
+        style="--member-color: var(--twillit-studio)"
+      >
+        <img
+          class="banner fade-down"
+          src={`${imgBucketUrl}/twillit-studio/banner.avif`}
+          alt="트윌릿 스튜디오 배너 이미지"
+          width={1707}
+          height={282}
+        />
+        <div class="member-links twillit-studio">
+          <a
+            class="twillit-studio fade-down"
+            href={sns["twillit-studio"].youtube}
+          >
+            <img
+              src={`${imgBucketUrl}/twillit-studio/youtube.png`}
+              alt={`트윌릿 스튜디오 유튜브 링크`}
+              width={256}
+              height={256}
+            />
+            <span>YouTube</span>
+          </a>
+          <a class="twillit-studio fade-down" href={sns["twillit-studio"].x}>
+            <img
+              src={`${imgBucketUrl}/twillit-studio/x.png`}
+              alt={`트윌릿 스튜디오 X 링크`}
+              width={256}
+              height={256}
+            />
+            <span>X</span>
+          </a>
+          <a class="twillit-studio fade-down" href={sns["twillit-studio"].cafe}>
+            <img
+              src={`${imgBucketUrl}/twillit-studio/cafe.png`}
+              alt={`트윌릿 스튜디오 네이버 카페 링크`}
+              width={256}
+              height={256}
+            />
+            <span>네이버 카페</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
