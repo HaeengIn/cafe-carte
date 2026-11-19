@@ -1,0 +1,30 @@
+---
+import { imgBucketUrl, memberList } from "../config";
+import "@styles/member-list.css";
+---
+
+<div class="members">
+  <h1 class="fade-down">멤버 - Members</h1>
+  <h3 id="member-name" class="member-name"></h3>
+  <div class="members-list">
+    {memberList.map((item) => (
+      <a
+        class="profile fade-right"
+        href={`/members/${item.eng}`}
+        data-eng={item.eng}
+        data-kor={item.kor}
+      >
+        <img
+          class="profile"
+          src={`${imgBucketUrl}/${item.eng}/profile.avif`}
+          alt={`${item.kor} 프로필 이미지`}
+          width={179}
+          height={236}
+          style={`--member-color: var(--${item.eng})`}
+        />
+      </a>
+    ))}
+  </div>
+</div>
+
+<script src="@scripts/member-list.js"></script>
