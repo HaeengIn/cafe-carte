@@ -1,3 +1,5 @@
+@import url(./font.css);
+
 :root {
   --mocoparfe: #fba7d2;
   --hanseorin: #f03c4b;
@@ -9,4 +11,6 @@
 
   --cafe-carte: #3e7766;
   --cafe-carte-background: #efeeea;
+
+  --paperlogy: "Paperlogy", sans-serif;
 }
