@@ -1,5 +1,9 @@
 @import url(./variables.css);
 
+html {
+  overflow-y: scroll;
+}
+
 body {
   font-family: var(--paperlogy);
   font-weight: 400;
