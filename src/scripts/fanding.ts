@@ -1,9 +1,14 @@
-const root = document.querySelector<HTMLElement>("[data-fanding]");
+let intervalId: number | undefined;
 
-if (root) {
+const InitializeFanding = () => {
+  const root = document.querySelector<HTMLElement>("[data-fanding]");
+
+  if (!root) return;
+
   const slides = Array.from(root.querySelectorAll<HTMLElement>("[data-slide]"));
   const length = slides.length;
   const half = Math.floor(length / 2);
+
   let currentIndex = 0;
   let prevIndex = 0;
 
@@ -34,6 +39,7 @@ if (root) {
       slide.style.setProperty("--z-index", String(length - distance));
       slide.style.opacity = distance <= 2 ? "1" : "0";
     });
+
     prevIndex = currentIndex;
   };
 
@@ -45,9 +51,19 @@ if (root) {
   root.querySelector("[data-next]")?.addEventListener("click", () => {
     go(currentIndex + 1);
   });
+
   root.querySelector("[data-prev]")?.addEventListener("click", () => {
     go(currentIndex - 1);
   });
 
-  window.setInterval(() => go(currentIndex + 1), 5000);
-}
+  intervalId = window.setInterval(() => go(currentIndex + 1), 5000);
+};
+
+document.addEventListener("astro:page-load", InitializeFanding);
+
+document.addEventListener("astro:before-swap", () => {
+  if (intervalId !== undefined) {
+    window.clearInterval(intervalId);
+    intervalId = undefined;
+  }
+});
