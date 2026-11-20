@@ -1,0 +1,266 @@
+---
+import "@styles/members/member/base.css";
+import Layout from "./Layout.astro";
+import { imgBucketUrl } from "@/config";
+
+const { title, member } = Astro.props;
+
+const { default: data } = await import(`../../public/${member}.json`);
+---
+
+<Layout title={title}>
+  <div class="profile">
+    <span class="info fade-right">
+      <p>{data.race}</p>
+      <h1 class={data.en_lowercase}>{data.ko}</h1>
+      <h5 class={data.en_lowercase}>{data.en_uppercase}</h5>
+      <p>
+        <Fragment set:html={data.story} />
+      </p>
+      <span class="position">
+        <b style={`color: var(--${data.en_lowercase});`}>「{data.position}」</b>{" "}
+        of Cafe Carte
+      </span>
+    </span>
+    <div class="image-wrapper">
+      <span class="debut-date fade-left">
+        <span>[ 데뷔일 ]</span>
+        <span>
+          {data.debut_date} on{" "}
+          <a
+            class="chzzk"
+            href={data.chzzk}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            CHZZK
+          </a>
+        </span>
+      </span>
+      <img
+        class="fade-left"
+        src={`${imgBucketUrl}/${data.en_lowercase}/portrait.avif`}
+        alt={`${data.ko} 프로필 이미지`}
+        width={450}
+        height={450}
+      />
+    </div>
+  </div>
+  <div class="detail">
+    {(data.en_lowercase === "mocoparfe" ||
+      data.en_lowercase === "hanseorin") && (
+      <>
+        <div class="detail-main">
+          <span class="info fade-right">
+            <span>
+              <b>나이</b>: {data.age}
+            </span>
+            <span>
+              <b>키</b>: {data.height}
+            </span>
+            <span>
+              <b>몸무게</b>: {data.weight}
+            </span>
+            <span>
+              <b>생일</b>: {data.birthday}
+            </span>
+            <span>
+              <b>MBTI</b>: {data.mbti}
+            </span>
+          </span>
+          {data.en_lowercase === "mocoparfe" && (
+            <>
+              <span class="favorite-song fade-down">
+                <b>[ 좋아하는 노래 ]</b>
+                {data.favorite_song.map((item: string) => (
+                  <span>{item}</span>
+                ))}
+              </span>
+              <span class="hobby fade-left">
+                <b>[ 좋아하는 취미 ]</b>
+                {data.favorite_hobby.map((item: string) => (
+                  <span>{item}</span>
+                ))}
+              </span>
+            </>
+          )}
+          {data.en_lowercase === "hanseorin" && (
+            <>
+              <span class="favorites fade-down">
+                <b>[ 좋아하는 것 ]</b>
+                {data.favorite.map((item: string) => (
+                  <span>{item}</span>
+                ))}
+              </span>
+              <span class="dislikes fade-left">
+                <b>[ 싫어하는 것 ]</b>
+                {data.dislike.map((item: string) => (
+                  <span>{item}</span>
+                ))}
+              </span>
+            </>
+          )}
+        </div>
+        <details>
+          <summary class="favorite-real fade-down">[ 빨간약 먹기 ]</summary>
+          <div class="favorite-real-contents">
+            <div>
+              <span>
+                <b>[ 좋아하는 것 (찐) ]</b>
+              </span>
+              <span>
+                {data.favorite_real.map((item: string) => (
+                  <span>{item}</span>
+                ))}
+              </span>
+            </div>
+          </div>
+        </details>
+      </>
+    )}
+    {data.en_lowercase !== "mocoparfe" && data.en_lowercase !== "hanseorin" && (
+      <>
+        <span class="info fade-right">
+          <span>
+            <b>나이</b>: <Fragment set:html={data.age} />
+          </span>
+          <span>
+            <b>키</b>: {data.height}
+          </span>
+          <span>
+            <b>몸무게</b>: {data.weight}
+          </span>
+          <span>
+            <b>생일</b>: {data.birthday}
+          </span>
+          {data.en_lowercase === "uuhee" && (
+            <span>
+              <b>MBTI</b>: {data.mbti}
+            </span>
+          )}
+          {data.en_lowercase === "aerusolstice" && (
+            <>
+              <span>
+                <b>MBTI</b>: {data.mbti}
+              </span>
+              <span>
+                <b>퍼스널 컬러</b>:{" "}
+                <span class="personal-color">{data.personal_color}</span>
+              </span>
+            </>
+          )}
+        </span>
+        <slot name="personal_details" />
+      </>
+    )}
+  </div>
+  <slot name="other_info" />
+  <div class="parents">
+    {data.en_lowercase === "hanseorin" && (
+      <>
+        <div class="mama-1 fade-right">
+          <span class="role">
+            <b>[ 마마 ]</b>
+          </span>
+          <a
+            class="profile-image"
+            href={data.parents.mama_1.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={data.mama_1.profile}
+              alt={`${data.ko} 마마 1 프로필 이미지`}
+              width={400}
+              height={400}
+            />
+          </a>
+          <span>@{data.parents.mama_1.username}</span>
+          <a
+            href={data.parents.mama_1.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {data.parents.mama_1.url}
+          </a>
+        </div>
+        <div class="mama-2 fade-down">
+          <span class="role">
+            <b>[ 마마 ]</b>
+          </span>
+          <a
+            class="profile-image"
+            href={data.parents.mama_2.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={data.mama_2.profile}
+              alt={`${data.ko} 마마 2 프로필 이미지`}
+              width={400}
+              height={400}
+            />
+          </a>
+          <span>@{data.parents.mama_2.username}</span>
+          <a
+            href={data.parents.mama_2.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {data.parents.mama_2.url}
+          </a>
+        </div>
+      </>
+    )}
+    {data.en_lowercase !== "hanseorin" && (
+      <div class="mama fade-right">
+        <span class="role">
+          <b>[ 마마 ]</b>
+        </span>
+        <a
+          class="profile-image"
+          href={data.parents.mama.url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src={data.mama.profile}
+            alt={`${data.ko} 마마 프로필 이미지`}
+            width={400}
+            height={400}
+          />
+        </a>
+        <span>@{data.parents.mama.username}</span>
+        <a
+          href={data.parents.mama.url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {data.parents.mama.url}
+        </a>
+      </div>
+    )}
+    <div class="papa fade-left">
+      <span class="role">
+        <b>[ 파파 ]</b>
+      </span>
+      <a
+        class="profile-image"
+        href={data.parents.papa.url}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src={data.papa.profile}
+          alt={`${data.ko} 파파 프로필 이미지`}
+          width={400}
+          height={400}
+        />
+      </a>
+      <span>@{data.parents.papa.username}</span>
+      <a href={data.parents.papa.url} target="_blank" rel="noopener noreferrer">
+        {data.parents.papa.url}
+      </a>
+    </div>
+  </div>
+</Layout>
